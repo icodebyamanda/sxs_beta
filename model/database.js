@@ -19,10 +19,11 @@ con.connect(function(err) {
   console.log("Connected!");
 
   let sql =
-    "DROP TABLE if exists students; CREATE TABLE students(id INT NOT NULL AUTO_INCREMENT, firstname VARCHAR(40) not null, lastname VARCHAR(40) not null, PRIMARY KEY (id));";
+    "DROP TABLE if exists responses; CREATE TABLE responses(id INT NOT NULL AUTO_INCREMENT, mood VARCHAR(255) not null, format VARCHAR(255) not null, url VARCHAR(500) not null, PRIMARY KEY (id));";
+    //"DROP TABLE if exists students; CREATE TABLE students(id INT NOT NULL AUTO_INCREMENT, firstname VARCHAR(40) not null, lastname VARCHAR(40) not null, PRIMARY KEY (id));";
   con.query(sql, function(err, result) {
     if (err) throw err;
-    console.log("Table creation `students` was successful!");
+    console.log("Table creation `responses` was successful!");
 
     console.log("Closing...");
   });
