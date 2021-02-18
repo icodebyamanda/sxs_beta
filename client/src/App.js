@@ -18,16 +18,14 @@ function App() {
   function handleClick(e) {
 
   
-    console.log(e.target.name)
+    // console.log(e.target.name)
 
     setMoodState(e.target.name);
-    console.log(e)
+    // console.log(e)
 
     getResponses() 
 
   }
-
-
 
   const getResponses = () => {
 
@@ -57,7 +55,6 @@ function App() {
     <div>
 
     <button name="sad" onClick={handleClick}>sad</button>
-
         
     <button name="fidgety" onClick={handleClick}>fidgety</button>
 
@@ -67,25 +64,7 @@ function App() {
 
     </div>
 
-    {/* {moods.map((mood) => ( 
-
-      <div 
-      name="moods"
-      key={mood.id}
-
-      >
-
-      <span onClick={() => handleClick(mood.id)}>
-
-      
-      </span>
-      
-      </div>
-
-    ))} */}
-
-    {/* display response with map */}
-
+      <h2> Your pick for today: {moods[1]}</h2>
 
     </div>
 
