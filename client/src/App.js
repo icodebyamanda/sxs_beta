@@ -7,10 +7,9 @@ import './App.css';
 
 function App() {
 
-  const [moods, setMoodState] = useState([]);
-  const [responses, setResponseState] = useState("")
-  // response state
-  // const [sad, setSadState] = useState("");
+  const [moods, setMoodState] = useState([]); // Take all the moods
+  const [responses, setResponsesState] = useState(null) // Match to the correct one
+
 
   useEffect(() => {
     getResponses();
@@ -26,9 +25,13 @@ function App() {
   const getResponses = (moodref) => {
     fetch(`/responses/${moodref}`)
       .then((response) => response.json())
-      .then()
+      .then((responses) => setResponsesState(responses))
+      .catch((error) => {
+        return error
+      });
+    };
     
-  }
+  
 
   return (
     <div className="App">
@@ -43,7 +46,10 @@ function App() {
       <div 
       name="moods"
       value={moods}
+      {moods.map(mood => )}
       >
+
+
 
         <button 
           name="sad"
@@ -59,6 +65,7 @@ function App() {
 
 
   );
+
 }
 
 export default App;
