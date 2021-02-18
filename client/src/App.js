@@ -15,17 +15,28 @@ function App() {
     getResponses();
   }, []);
 
-  function handleSadClick(e) {
+  function handleClick(e) {
 
-    setSadState(e.target.value);
+  
+    console.log(e.target.name)
+
+    setMoodState(e.target.name);
     console.log(e)
+
+    getResponses() 
 
   }
 
-  const getResponses = (moodref) => {
-    fetch(`/responses/${moodref}`)
+
+
+  const getResponses = () => {
+
+    fetch(`/responses/${moods}`)
       .then((response) => response.json())
-      .then((responses) => setResponsesState(responses))
+      .then((resp) => {
+        console.log(resp)
+        setResponsesState(resp)})
+
       .catch((error) => {
         return error
       });
@@ -43,26 +54,40 @@ function App() {
         <img src="./assets/emoticons/blessed.png" alt="blessed" />;
       </div> */}
 
-      <div 
-      name="moods"
-      value={moods}
-      {moods.map(mood => )}
-      >
+    <div>
 
+    <button name="sad" onClick={handleClick}>sad</button>
 
-
-        <button 
-          name="sad"
-          value={sad}
-          onClick={handleSadClick}
-        >sad</button>
         
-        <button>blessed</button>
+    <button name="fidgety" onClick={handleClick}>fidgety</button>
 
-      </div>
+    <button name="blessed" onClick={handleClick}>blessed</button>
+
+    <button name="determined" onClick={handleClick}>determined</button>
 
     </div>
 
+    {/* {moods.map((mood) => ( 
+
+      <div 
+      name="moods"
+      key={mood.id}
+
+      >
+
+      <span onClick={() => handleClick(mood.id)}>
+
+      
+      </span>
+      
+      </div>
+
+    ))} */}
+
+    {/* display response with map */}
+
+
+    </div>
 
   );
 
