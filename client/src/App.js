@@ -7,7 +7,7 @@ import './App.css';
 
 function App() {
 
-  const [moods, setMoods] = useState([{name:"sad"}, {name:"blessed"}, {name:"determined"}, {name:"fidgety"}]); // Take all the moods
+  const [moods, setMoods] = useState([{name:"sad", emoji:"😕"}, {name:"blessed", emoji:"🤗"}, {name:"determined", emoji:"😏"}, {name:"fidgety", emoji:"😣"}]); // Take all the moods
   const [pick, setPick] = useState(null) // Match to the correct one
 
 
@@ -16,14 +16,15 @@ function App() {
   //   getResponses(); // 
   // }, []);
 
-  function handleClick(e) {
-    e.preventDefault()
+  // function handleClick(e) {
+  //   e.preventDefault()
   
-    // console.log(e.target.name)
+  //   // console.log(e.target.name)
 
-    getAresponse() 
+  //   getAresponse() 
 
-  }
+  // }
+
 
   const getAresponse = (mood) => {
 
@@ -54,7 +55,7 @@ function App() {
       { moods.map((mood) => (
         <li key={mood.name}>
 
-        <button name={mood.name} onClick={() => getAresponse(mood.name)}>{mood.name}</button>
+        <button name={mood.name} onClick={() => getAresponse(mood.name)}>{mood.emoji}{mood.name}</button>
 
         </li>
       )) }
@@ -62,8 +63,22 @@ function App() {
     
     </ul>
 
-      <h2> Your pick for today:</h2>
-    
+      { pick &&  (
+
+        <div >
+
+
+      {/* <h2> Your pick for today:</h2> */}
+
+      <h3> 
+
+        <a href={pick.url}> your pick for today </a>
+
+      </h3>  
+
+      </div>
+
+      )}
 
     </div>
 
