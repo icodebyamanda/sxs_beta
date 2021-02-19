@@ -7,33 +7,31 @@ import './App.css';
 
 function App() {
 
-  const [moods, setMoodState] = useState([]); // Take all the moods
-  const [responses, setResponsesState] = useState(null) // Match to the correct one
+  const [moods, setMoods] = useState([{name:"sad"}, {name:"blessed"}, {name:"determined"}, {name:"fidgety"}]); // Take all the moods
+  const [pick, setPick] = useState(null) // Match to the correct one
 
 
-  useEffect(() => {
-    getResponses();
-  }, []);
+  // laucnh when page get loaded 
+  // useEffect(() => {
+  //   getResponses(); // 
+  // }, []);
 
   function handleClick(e) {
-
+    e.preventDefault()
   
     // console.log(e.target.name)
 
-    setMoodState(e.target.name);
-    // console.log(e)
-
-    getResponses() 
+    getAresponse() 
 
   }
 
-  const getResponses = () => {
+  const getAresponse = (mood) => {
 
-    fetch(`/responses/${moods}`)
+    fetch(`/responses/${mood}`)
       .then((response) => response.json())
       .then((resp) => {
         console.log(resp)
-        setResponsesState(resp)})
+        setPick(resp)})
 
       .catch((error) => {
         return error
@@ -48,23 +46,24 @@ function App() {
       React! Are you working? 
       </header>
 
-      {/* <div>
-        <img src="./assets/emoticons/blessed.png" alt="blessed" />;
-      </div> */}
 
-    <div>
+    <ul>
 
-    <button name="sad" onClick={handleClick}>sad</button>
-        
-    <button name="fidgety" onClick={handleClick}>fidgety</button>
+    {/* below is an attempt to have the button recognised*/}
 
-    <button name="blessed" onClick={handleClick}>blessed</button>
+      { moods.map((mood) => (
+        <li key={mood.name}>
 
-    <button name="determined" onClick={handleClick}>determined</button>
+        <button name={mood.name} onClick={() => getAresponse(mood.name)}>{mood.name}</button>
 
-    </div>
+        </li>
+      )) }
 
-      <h2> Your pick for today: {moods[1]}</h2>
+    
+    </ul>
+
+      <h2> Your pick for today:</h2>
+    
 
     </div>
 
