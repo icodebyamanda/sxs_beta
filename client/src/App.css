@@ -1,2 +1,58 @@
+@media screen and (min-width: 500px) {
+  ul {
+    display: block;
+    margin: 0.4em auto;
+  }
+}
+
 .Title {
+  text-align: center;
+  color: #00cc99;
+}
+
+ul {
+  list-style-type: none;
+  text-align: center;
+}
+
+li {
+  /* text-align: center; */
+  display: inline-block;
+}
+
+.MainButtons {
+  padding: 0.5em 3em;
+  border: 1px solid #ff99b3;
+  margin: 0 0.3em 0.3em 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  text-transform: capitalize;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  color: #ff9999;
+  text-align: center;
+  transition: all 0.15s;
+  letter-spacing: 1px;
+  background-color: #fff;
+}
+
+.MainButtons:active,
+.MainButtons:hover {
+  background-color: #ff9999;
+  color: #fff;
+  border-color: #bbbbbb;
+}
+
+.PickUrl {
+  text-align: center;
+}
+
+.PickIntroText {
+  padding: 10px;
+  color: #cc99ff;
+  text-emphasis: bold;
+}
+
+a {
+  /* text-decoration: none; */
 }

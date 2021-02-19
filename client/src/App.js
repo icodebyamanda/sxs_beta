@@ -40,8 +40,8 @@ function App() {
         
         <li key={mood.name}>
 
-          <button name={mood.name} onClick={() => getAresponse(mood.name)}>
-            { mood.name } {  mood.emoji}
+          <button className="MainButtons" name={mood.name} onClick={() => getAresponse(mood.name)}>
+            {mood.name} {` `} {mood.emoji}
           </button> 
 
         </li>
@@ -52,13 +52,11 @@ function App() {
 
       { pick &&  (
 
-        <div >
+        <div className="PickUrl">
 
-          <h3> 
+          <div className="PickIntroText">Your pick for today:</div>
 
-            <a href={pick.url} target="_blank"> Your pick for today </a>
-
-          </h3>  
+            <a href={pick.url} target="_blank" > Good vibes only... </a>
 
         </div>
 
