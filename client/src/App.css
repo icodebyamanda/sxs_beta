@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Sacramento&display=swap");
+
 @media screen and (min-width: 500px) {
   ul {
     display: block;
@@ -8,11 +11,19 @@
 .Title {
   text-align: center;
   color: #00cc99;
+  font-family: "Sacramento", cursive;
+}
+
+.header {
+  padding: 50px;
+  width: 100%;
 }
 
 ul {
   list-style-type: none;
   text-align: center;
+  /* display: inline-flex; */
+  justify-content: space-evenly;
 }
 
 li {
@@ -27,7 +38,7 @@ li {
   box-sizing: border-box;
   text-decoration: none;
   text-transform: capitalize;
-  font-family: "Roboto", sans-serif;
+  font-family: "Comfortaa", cursive;
   font-weight: 400;
   color: #ff9999;
   text-align: center;
