@@ -3,43 +3,79 @@
 
 @media screen and (min-width: 500px) {
   ul {
-    display: block;
+    display: flex;
+    flex-wrap: wrap;
     margin: 0.4em auto;
   }
 }
 
-.Title {
-  text-align: center;
-  color: #00cc99;
-  font-family: "Sacramento", cursive;
+.App {
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
 }
 
 .header {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
   padding: 50px;
-  width: 100%;
+  /* width: 100%; */
+  /* text-align: center; */
+}
+
+h1 {
+  display: flex;
+  text-align: center;
+  /* width: 100%; */
+  color: #00cc99;
+  /* padding-top: 20px; */
+  font-family: "Sacramento", cursive;
+  font-weight: bold;
+  letter-spacing: 3px;
+}
+
+body {
+  flex: 2;
+}
+
+.MoodQuestion {
+  font-family: "Comfortaa", cursive;
+  text-align: center;
 }
 
 ul {
-  list-style-type: none;
+  width: 100%;
+  list-style: none;
   text-align: center;
+  display: flex;
+  flex-wrap: wrap;
   /* display: inline-flex; */
   justify-content: space-evenly;
 }
 
 li {
-  /* text-align: center; */
+  /* width: 200px; */
+  text-align: center;
   display: inline-block;
+  padding: 20px;
+  margin: 50px;
 }
 
 .MainButtons {
-  padding: 0.5em 3em;
-  border: 1px solid #ff99b3;
-  margin: 0 0.3em 0.3em 0;
+  padding: 0.5em 2em;
+  /* padding: 15px; */
+  border: none;
+  /* border: 1px solid #ff99b3; */
+  /* margin: 0 0.3em 0.3em 0; */
   box-sizing: border-box;
+  border-radius: 12px;
   text-decoration: none;
   text-transform: capitalize;
   font-family: "Comfortaa", cursive;
-  font-weight: 400;
+  font-size: 1em;
+  font-weight: bold;
   color: #ff9999;
   text-align: center;
   transition: all 0.15s;
@@ -54,11 +90,16 @@ li {
   border-color: #bbbbbb;
 }
 
+#MoodName {
+  /* display: flex; */
+}
+
 .PickUrl {
   text-align: center;
 }
 
 .PickIntroText {
+  width: 100%;
   padding: 10px;
   color: #cc99ff;
   text-emphasis: bold;

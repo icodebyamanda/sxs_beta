@@ -28,39 +28,51 @@ function App() {
   
 
   return (
+    
 
     <div className="App">
-      <header className="header">
-        <h1 className="Title"> Step By Step </h1>
-      </header>
 
-    <ul>
+      {/* <head> */}
+        <header className="header">
+          <h1> Step By Step </h1>
+        </header>
+      {/* </head> */}
 
-      { moods.map((mood) => (
-        
-        <li key={mood.name}>
+      <body>
 
-          <button className="MainButtons" name={mood.name} onClick={() => getAresponse(mood.name)}>
-            {mood.name} {` `} {mood.emoji}
-          </button> 
+      <div className="MoodQuestion">
+        How do you feel today?
+      </div>
 
-        </li>
+      <ul>
 
-      ))}
-    
-    </ul>
+        { moods.map((mood) => (
+          
+          <li key={mood.name}>
 
-      { pick &&  (
+            <button className="MainButtons" name={mood.name} onClick={() => getAresponse(mood.name)}>
+              <span id="MoodName"> {mood.name} </span>  <br></br> <span id="MoodEmoji"> {mood.emoji}</span>
+            </button> 
 
-        <div className="PickUrl">
+          </li>
 
-          <div className="PickIntroText">Your pick for today:</div>
+        ))}
+      
+      </ul>
 
-            <a href={pick.url} target="_blank" > Good vibes only... </a>
+        { pick &&  (
 
-        </div>
+          <div className="PickUrl">
 
-      )}
+            <div className="PickIntroText">Your pick for today:</div>
+
+              <a href={pick.url} target="_blank" > Good vibes only... </a>
+
+          </div>
+
+        )}
+
+      </body>
 
     </div>
 
