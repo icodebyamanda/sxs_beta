@@ -32,17 +32,21 @@ function App() {
 
     <div className="App">
 
-      {/* <head> */}
         <header className="header">
-          <h1> Step By Step </h1>
-        </header>
-      {/* </head> */}
+          <div className="overlay">
+            <h1> Step By Step </h1>
 
+            <div className="MoodQuestion">
+              How do you feel today?
+            </div>
+
+          </div>
+          
+        </header>
+      
       <body>
 
-      <div className="MoodQuestion">
-        How do you feel today?
-      </div>
+
 
       <ul>
 
