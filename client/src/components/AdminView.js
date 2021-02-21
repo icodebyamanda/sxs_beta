@@ -17,23 +17,44 @@ export default function AdminView() {
       {/* <form onSubmit={handleSubmit}> */}
         <label>
           
-        Is it sad, blessed, determined or a fidgety' spirit this gift is meant to address:
-          <input
-            type="text"
+        Pick the spirit this gift will address:
+          {/* <input list="spirits"
             name="spirit"
             // value={spirit}
             // onChange={handleSpiritChange}
-          />
+          /> */}
+
+          <select id="spirits" name="spirits">
+
+            <option value="empty"></option>
+            <option value="blessed">Blessed</option>
+            <option value="determined">Determined</option>
+            <option value="fidgety">Fidgety</option>
+            <option value="sad">Sad</option>
+
+          </select>
+
         </label>
 ​
         <label>
           A quote or a video? Pick the media format:
-          <input
-            type="text"
-            name="media"
+          {/* <input
+            // type="text"
+            // name="media"
             // value={media}
             // onChange={handleMediaChange}
-          />
+          /> */}
+
+          <select id="medias" name="medias">
+
+            <option value="empty"></option>
+            <option value="video">Video</option>
+            <option value="quote">Quote</option>
+
+          </select>
+
+
+
         </label>
 
         <label>
