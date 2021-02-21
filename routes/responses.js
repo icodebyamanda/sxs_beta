@@ -22,4 +22,14 @@ router.get("/:mood", function(req, res, next) {
   .catch(err => res.status(500).send(err));
 });
 
+router.post("/", function(req, res, next) {
+
+  const { mood, format, url } = req.body;
+  db(`INSERT INTO responses (mood, format, url) VALUES ("${mood}", "${format}", "${url}");`)
+  .then((results) => {
+    res.send({message: "New Entry added"});
+  })
+  .catch((err) => res.status(500).send(err));
+});
+
 module.exports = router;

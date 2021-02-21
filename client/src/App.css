@@ -1,12 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Sacramento&display=swap");
 
+/* ! All components */
+
 @media screen and (min-width: 500px) {
   ul {
     display: flex;
     flex-wrap: wrap;
     margin: 0.4em auto;
   }
+
+  /* .FooterMainPageData {
+    padding: 25px;
+  } */
 }
 
 * {
@@ -20,11 +26,24 @@ body {
   flex: 2;
 }
 
+.FooterMainPageData {
+  text-align: center;
+  padding: 10px 5px 5px 5px;
+  color: #78244c;
+  text-decoration: none;
+}
+
+a {
+  color: #00cc99;
+}
+
 .App {
   /* display: flex;
   align-items: center;
   justify-content: center; */
 }
+
+/* ! UserView Only */
 
 .header {
   display: flex;
@@ -141,18 +160,7 @@ li {
   text-emphasis: bold;
 }
 
-a {
-  color: #00cc99;
-}
-
 /* .PickUrl {
   color: #00cc99;
   text-decoration: none;
 } */
-
-.FooterMainPageData {
-  text-align: center;
-  padding: 10px 5px 5px 5px;
-  color: #78244c;
-  text-decoration: none;
-}
