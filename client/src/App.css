@@ -15,16 +15,10 @@
   box-sizing: border-box;
 }
 body {
-  height: 900px;
-}
-
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-body {
-  height: 900px;
+  height: 600px;
+  /* display: grid; */
+  background-color: #edc7b7;
+  flex: 2;
 }
 
 .App {
@@ -47,7 +41,7 @@ body {
   height: auto;
   background-size: cover;
   background-repeat: no-repeat;
-  background-attachment: fixed;
+  background-attachment: local;
   position: relative;
   overflow: hidden;
   border-radius: 0 0 85% 85% / 30%;
@@ -59,18 +53,19 @@ h1 {
   /* width: 100%; */
   color: #00cc99;
   /* padding-top: 20px; */
+  padding-bottom: 150px;
   font-family: "Sacramento", cursive;
   font-weight: bold;
   letter-spacing: 3px;
 }
 
-body {
-  flex: 2;
-}
-
 .MoodQuestion {
   font-family: "Comfortaa", cursive;
   text-align: center;
+  font-size: 2rem;
+  color: #78244c;
+  padding: 100px 0 0 0;
+  letter-spacing: 3px;
 }
 
 ul {
@@ -103,14 +98,14 @@ li {
   text-decoration: none;
   text-transform: capitalize;
   font-family: "Comfortaa", cursive;
-  font-size: 1em;
+  font-size: 1.5em;
   font-weight: bold;
-  color: #ff9999;
+  color: #78244c;
   text-shadow: 0.5px 0.5px rgb(179, 174, 174);
   text-align: center;
   transition: all 0.15s;
   letter-spacing: 1px;
-  background-color: #fff;
+  background-color: #edc7b7;
 }
 
 .MainButtons:active,
@@ -125,21 +120,47 @@ li {
 }
 
 .PickUrl {
-  text-align: center;
-  background-image: linear-gradient(135deg, #9f05ff69 10%, #fd5e086b 100%);
-  border-radius: 85% 85% 0 0 / 30%;
   display: flex;
   flex: 1;
   align-items: center;
   justify-content: center;
   padding: 50px;
+  margin: 25px 0 0 0;
+  width: 100%;
+  height: auto;
+  text-align: center;
+  /* border-style: solid;
+  /* border-width: 1px; */
+  /* border-color: #00cc99; */
+  /* background: url("./assets/emoticons/hands.jpg"); */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: local;
+  position: relative;
+  overflow: hidden;
+  background-color: #edc7b7;
+  background-image: linear-gradient(
+    43deg,
+    #edc7b7 0%,
+    #924f6b 22%,
+    #3d1328 49%,
+    #9a7837 75%,
+    #edc7b7 100%
+  );
+
+  border-radius: 0 0 0 0 / 30%;
+  font-size: 1.5em;
 }
 
 .PickIntroText {
-  width: 100%;
+  /* width: 100%; */
   padding: 10px;
   color: #cc99ff;
   text-emphasis: bold;
+}
+
+footer {
+  align-items: center;
 }
 
 a {

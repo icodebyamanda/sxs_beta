@@ -36,17 +36,15 @@ function App() {
           <div className="overlay">
             <h1> Step By Step </h1>
 
-            <div className="MoodQuestion">
-              How do you feel today?
-            </div>
-
           </div>
           
         </header>
       
       <body>
 
-
+        <div className="MoodQuestion">
+          How do you feel today?
+        </div>
 
       <ul>
 
@@ -76,7 +74,18 @@ function App() {
 
         )}
 
+      <footer>
+        <div>
+          User View
+        </div>
+        <div>
+          Admin View
+        </div>
+      </footer>
+
       </body>
+
+      
 
     </div>
 
