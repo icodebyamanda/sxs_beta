@@ -22,6 +22,7 @@ router.get("/:mood", function(req, res, next) {
   .catch(err => res.status(500).send(err));
 });
 
+//! INSERT a new entry
 router.post("/", function(req, res, next) {
 
   const { mood, format, url } = req.body;

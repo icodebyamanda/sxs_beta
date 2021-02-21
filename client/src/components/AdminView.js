@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 
-const [newEntries, setNewEntries] = useState([]);
-const [spirit, setSpirit] = useState("");
-const [media, setMedia] = useState("");
-const [url, setUrl] = useState("");
+// const [newEntries, setNewEntries] = useState([]);
+// const [spirit, setSpirit] = useState("");
+// const [media, setMedia] = useState("");
+// const [url, setUrl] = useState("");
 
 
 export default function AdminView() {
@@ -12,7 +12,7 @@ export default function AdminView() {
       <h2>This is the Admin page</h2>
 
 
-      <form onSubmit={handleSubmit}>
+      {/* <form onSubmit={handleSubmit}>
         <label>
           Pick the spirit this gift is meant to address:
           <input
@@ -46,7 +46,7 @@ export default function AdminView() {
         <label>
           <input type="submit" value="submit" />
         </label>
-      </form>
+      </form> */}
 
 
 
