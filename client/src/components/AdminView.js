@@ -3,28 +3,72 @@ import React, { useEffect, useState } from "react";
 export default function AdminView() {
 
   const [newEntries, setNewEntries] = useState([]);
-  const [spirit, setSpirit] = useState("");
-  const [media, setMedia] = useState("");
+  const [mood, setMood] = useState("");
+  const [format, setFormat] = useState("");
   const [url, setUrl] = useState("");
 
 
 
+  function handleSubmit(e) {
+    e.preventDefault();
+    addNewEntry();
+  };
+
+  function handleMoodChange(e) {
+    setMood(e.target.value);
+  }
+
+  function handleFormatChange(e) {
+    setFormat(e.target.value);
+  };
+
+  function handleUrlChange(e) {
+    setUrl(e.target.value);
+  };
+
+  const getResponses = () => {
+    fetch("/responses")
+    .then((response) => response.json())
+    .then((newEntries) => {
+      setNewEntries(newEntries);
+    })
+    .catch((error) => {
+      return error;
+    });
+  };
+
+  const addNewEntry = () => {
+    fetch("/responses", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({mood, format, url}), //maybe const names here
+    })
+    .then(() => getResponses())
+    .catch((error) => {
+      return error;
+    });
+  };
+
   return (
+    
     <div>
+      
       <h2>This is the Admin page</h2>
 
-      <form >
-      {/* <form onSubmit={handleSubmit}> */}
+
+      <form onSubmit={handleSubmit}>
         <label>
           
-        Pick the spirit this gift will address:
+        Pick the mood this gift will address:
           {/* <input list="spirits"
             name="spirit"
             // value={spirit}
             // onChange={handleSpiritChange}
           /> */}
 
-          <select id="spirits" name="spirits">
+          <select id="moods" name="moods" value={mood} onChange={handleMoodChange}>
 
             <option value="empty"></option>
             <option value="blessed">Blessed</option>
@@ -37,7 +81,7 @@ export default function AdminView() {
         </label>
 ​
         <label>
-          A quote or a video? Pick the media format:
+          Pick the media format:
           {/* <input
             // type="text"
             // name="media"
@@ -45,15 +89,13 @@ export default function AdminView() {
             // onChange={handleMediaChange}
           /> */}
 
-          <select id="medias" name="medias">
+          <select id="formats" name="formats" value={format} onChange={handleFormatChange}>
 
             <option value="empty"></option>
             <option value="video">Video</option>
             <option value="quote">Quote</option>
 
           </select>
-
-
 
         </label>
 
@@ -62,8 +104,8 @@ export default function AdminView() {
           <input
             type="text"
             name="url"
-            // value={url}
-            // onChange={handleURLChange}
+            value={url}
+            onChange={handleUrlChange}
           />
         </label>
 ​
@@ -72,7 +114,7 @@ export default function AdminView() {
         </label>
       </form>
 
-    <div> New entry added! Enjoy it right away:</div>
+      <div> New entry added! Enjoy it right away:</div>
 
     </div>
   );
