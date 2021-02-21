@@ -6,6 +6,7 @@ export default function AdminView() {
   const [mood, setMood] = useState("");
   const [format, setFormat] = useState("");
   const [url, setUrl] = useState("");
+  // const [newEntryDisplay, setNewEntryDisplay] = usesState("");
 
 
 
@@ -43,7 +44,7 @@ export default function AdminView() {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({mood, format, url}), //maybe const names here
+      body: JSON.stringify({mood, format, url}), //maybe const names here <- Answer is yes!
     })
     .then(() => getResponses())
     .catch((error) => {
@@ -62,11 +63,6 @@ export default function AdminView() {
         <label>
           
         Pick the mood this gift will address:
-          {/* <input list="spirits"
-            name="spirit"
-            // value={spirit}
-            // onChange={handleSpiritChange}
-          /> */}
 
           <select id="moods" name="moods" value={mood} onChange={handleMoodChange}>
 
@@ -82,12 +78,6 @@ export default function AdminView() {
 ​
         <label>
           Pick the media format:
-          {/* <input
-            // type="text"
-            // name="media"
-            // value={media}
-            // onChange={handleMediaChange}
-          /> */}
 
           <select id="formats" name="formats" value={format} onChange={handleFormatChange}>
 
@@ -114,7 +104,19 @@ export default function AdminView() {
         </label>
       </form>
 
-      <div> New entry added! Enjoy it right away:</div>
+    { newEntries && (     
+      <div>
+
+        New entry added!
+
+        <a href={url} target="_blank" > Click here to enjoy it right away</a>
+
+      </div>
+
+    )
+
+      
+    }
 
     </div>
   );
