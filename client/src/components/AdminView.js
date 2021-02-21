@@ -52,6 +52,8 @@ export default function AdminView() {
     });
   };
 
+  let { isNewEntryAdded } = newEntries;
+
   return (
     
     <div>
@@ -104,7 +106,7 @@ export default function AdminView() {
         </label>
       </form>
 
-    { newEntries && (     
+    { isNewEntryAdded ? (     
       <div>
 
         New entry added!
@@ -113,10 +115,9 @@ export default function AdminView() {
 
       </div>
 
-    )
-
-      
-    }
+    ) : (
+      <div> </div>
+    )}
 
     </div>
   );
