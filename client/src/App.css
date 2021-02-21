@@ -143,10 +143,16 @@ li {
 
 a {
   color: #00cc99;
-  /* text-decoration: none; */
 }
 
-footer {
+/* .PickUrl {
+  color: #00cc99;
+  text-decoration: none;
+} */
+
+.FooterMainPageData {
   text-align: center;
   padding: 10px 5px 5px 5px;
+  color: #78244c;
+  text-decoration: none;
 }
