@@ -8,6 +8,7 @@ export default function AdminView() {
   const [url, setUrl] = useState("");
   // const [newEntryDisplay, setNewEntryDisplay] = usesState("");
 
+
   //! could useEffect the solution to the new entry display being static?
   // useEffect(() => {
   //   getResponses();
@@ -49,8 +50,8 @@ export default function AdminView() {
       },
       body: JSON.stringify({mood, format, url}), //maybe const names here <- Answer is yes!
     })
-    .then(() => getResponses())
-    .catch((error) => {
+    .then(() => getResponses()) // send all list of responses BUT I want the last one so last post entry into the responses
+    .catch((error) => { // Remove getResponses -> return object of that something inserted
       return error;
     });
   };

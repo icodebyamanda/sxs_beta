@@ -61,7 +61,7 @@ h1 {
   align-items: center;
   justify-content: center;
   padding: 50px;
-  background: url("./assets/emoticons/sunrise-header.jpg");
+  background: url("./assets/headers/sunrise-header.jpg");
   text-align: center;
   width: 100%;
   height: auto;
@@ -173,7 +173,7 @@ li {
   align-items: center;
   justify-content: center;
   padding: 50px;
-  background: url("./assets/headers/madabaobab.jpg");
+  background: url("./assets/headers/streetballet2.jpg");
   text-align: center;
   width: 100%;
   height: auto;
@@ -189,9 +189,9 @@ li {
   font-family: "Comfortaa", cursive;
   font-size: 0.5em;
   text-align: center;
-  font-weight: bold;
+  font-weight: 600;
   letter-spacing: 3px;
-  color: #edc7b7;
+  color: #78244c;
   text-shadow: 0.5px 0.5px rgb(179, 174, 174);
   padding-left: 10px;
   /* padding-top: 5px; */
