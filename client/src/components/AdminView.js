@@ -8,7 +8,10 @@ export default function AdminView() {
   const [url, setUrl] = useState("");
   // const [newEntryDisplay, setNewEntryDisplay] = usesState("");
 
-
+  //! could useEffect the solution to the new entry display being static?
+  // useEffect(() => {
+  //   getResponses();
+  // }, []);
 
   function handleSubmit(e) {
     e.preventDefault();
