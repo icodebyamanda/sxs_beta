@@ -31,66 +31,33 @@ export default function UserView() {
       <header className="headerUserView">
         <div className="overlay">
           <h1 id="HOneUser"> Step By Step </h1>
-
-        </div>
-          
+        </div>          
       </header>
       
       <body>
 
-      <div className="MoodQuestion">
-      How do you feel today?
-      </div>
+        <div className="MoodQuestion">
+        How do you feel today?
+        </div>
 
       <ul>
-
-      { moods.map((mood) => (
-          
+      { moods.map((mood) => (          
           <li key={mood.name}>
-
             <button className="MainButtons" name={mood.name} onClick={() => getAresponse(mood.name)}>
               <span id="MoodName"> {mood.name} </span>  <br></br> <span id="MoodEmoji"> {mood.emoji}</span>
             </button> 
-
           </li>
-
-        ))}
-      
+        ))}      
       </ul>
 
         { pick &&  (
-
           <div className="PickUrl">
-
             <div className="PickIntroText">Today you get:</div>
-
             <a href={pick.url} target="_blank" > Good vibes only... </a>
-
-              {/* <div className="PickUrl"><a href={pick.url} target="_blank" > Good vibes only... </a></div> */}
-
           </div>
-
         )}
 
-      {/* <footer>
-
-        <div>
-
-          User View
-
-        </div>
-        
-        <div>
-        
-          Admin View
-        
-        </div>
-      
-      </footer> */}
-
       </body>
-
-
 
     </div>
   );
