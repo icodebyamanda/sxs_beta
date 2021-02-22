@@ -1,8 +1,14 @@
 # Step By Step Project (SxS)
 
+## Run Your Development Servers
+
+- Run `yarn start` or `npm start`in project directory to start the Express server on port 5000
+- `cd client` and run `yarn start` or `npm start` to start client server in development mode with hot reloading in port 3000.
+- Client is configured so all API calls will be proxied to port 5000 for a smoother development experience
+
 ## The Step By Step project's full picture
 
-A web application to acknolewdge and lift up one's mood in the morning and create, digitally, a wellbeing routine.
+A web application to acknowlewdge and lift up one's mood in the morning and create, digitally, a wellbeing routine.
 
 ## This current piece: Avoid denial and keep the good vibes coming
 

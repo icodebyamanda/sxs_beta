@@ -50,7 +50,7 @@ export default function AdminView() {
       },
       body: JSON.stringify({mood, format, url}), //maybe const names here <- Answer is yes!
     })
-    .then(() => getResponses()) // send all list of responses BUT I want the last one so last post entry into the responses
+    .then((newEntries) => setNewEntries({newEntries: newEntries.url}) // send all list of responses BUT I want the last one so last post entry into the responses
     .catch((error) => { // Remove getResponses -> return object of that something inserted
       return error;
     });
@@ -124,6 +124,7 @@ export default function AdminView() {
       </div>
 
     <div className="NewEntryDisplay"> 
+
       { newEntries && (     
         <div>
 
