@@ -52,72 +52,87 @@ export default function AdminView() {
     });
   };
 
-  let { isNewEntryAdded } = newEntries;
+  // let { isNewEntryAdded } = {newEntries};
 
   return (
     
     <div>
+
+      <header className="headerAdminView">
+
+        <h1 id="hOneAdmin">Step By Step<span id="hTwoAdmin">Admin</span></h1>
+
+      </header>
       
-      <h2>This is the Admin page</h2>
+      <body>
+
+      <div className="formAdminView">
+
+        <form onSubmit={handleSubmit}>
+
+          <label>
+            
+          <div className="FormIntroText">Pick the mood this gift will address:</div>
+
+            <select className="EnteredValues" id="moods" name="moods" value={mood} onChange={handleMoodChange}>
+
+              <option value="empty"></option>
+              <option value="blessed">Blessed</option>
+              <option value="determined">Determined</option>
+              <option value="fidgety">Fidgety</option>
+              <option value="sad">Sad</option>
+
+            </select>
+
+          </label>
+  ​
+          <label>
+
+            <div className="FormIntroText">Pick the media format:</div>
 
 
-      <form onSubmit={handleSubmit}>
-        <label>
-          
-        Pick the mood this gift will address:
+            <select className="EnteredValues" id="formats" name="formats" value={format} onChange={handleFormatChange}>
 
-          <select id="moods" name="moods" value={mood} onChange={handleMoodChange}>
+              <option value="empty"></option>
+              <option value="video">Video</option>
+              <option value="quote">Quote</option>
 
-            <option value="empty"></option>
-            <option value="blessed">Blessed</option>
-            <option value="determined">Determined</option>
-            <option value="fidgety">Fidgety</option>
-            <option value="sad">Sad</option>
+            </select>
 
-          </select>
+          </label>
 
-        </label>
-​
-        <label>
-          Pick the media format:
-
-          <select id="formats" name="formats" value={format} onChange={handleFormatChange}>
-
-            <option value="empty"></option>
-            <option value="video">Video</option>
-            <option value="quote">Quote</option>
-
-          </select>
-
-        </label>
-
-        <label>
-          Bring on the URL:
-          <input
-            type="text"
-            name="url"
-            value={url}
-            onChange={handleUrlChange}
-          />
-        </label>
-​
-        <label>
-          <input type="submit" value="submit" />
-        </label>
-      </form>
-
-    { isNewEntryAdded ? (     
-      <div>
-
-        New entry added!
-
-        <a href={url} target="_blank" > Click here to enjoy it right away</a>
+          <label>
+          <div className="FormIntroText">Bring on the URL:</div>
+            <input
+              className="EnteredValues" 
+              type="text"
+              name="url"
+              value={url}
+              onChange={handleUrlChange}
+            />
+          </label><br></br>
+  ​
+          <label>
+            <input type="submit" value="submit" id="SubmitButton" />
+          </label>
+        </form>
 
       </div>
 
-    ) : (
-      <div> </div>
-    )}
+    <div className="NewEntryDisplay"> 
+      { newEntries && (     
+        <div>
+
+          <div id="EntryAdded">New entry added!</div>
+
+          <a href={url} target="_blank" > <span id="UrlAdmin"> Click here to enjoy it right away </span></a>
+
+        </div>
+
+      )}
+
+    </div>
+      </body>
 
     </div>
   );

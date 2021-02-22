@@ -43,9 +43,19 @@ a {
   justify-content: center; */
 }
 
+h1 {
+  display: flex;
+  text-align: center;
+  color: #00cc99;
+  padding-bottom: 150px;
+  font-family: "Sacramento", cursive;
+  font-weight: bold;
+  letter-spacing: 3px;
+}
+
 /* ! UserView Only */
 
-.header {
+.headerUserView {
   display: flex;
   flex: 1;
   align-items: center;
@@ -61,16 +71,6 @@ a {
   position: relative;
   overflow: hidden;
   border-radius: 0 0 85% 85% / 30%;
-}
-
-h1 {
-  display: flex;
-  text-align: center;
-  color: #00cc99;
-  padding-bottom: 150px;
-  font-family: "Sacramento", cursive;
-  font-weight: bold;
-  letter-spacing: 3px;
 }
 
 .MoodQuestion {
@@ -164,3 +164,102 @@ li {
   color: #00cc99;
   text-decoration: none;
 } */
+
+/* ! AdminView only */
+
+.headerAdminView {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+  background: url("./assets/headers/madabaobab.jpg");
+  text-align: center;
+  width: 100%;
+  height: auto;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: local;
+  position: relative;
+  overflow: hidden;
+  border-radius: 0 0 85% 85% / 30%;
+}
+
+#hTwoAdmin {
+  font-family: "Comfortaa", cursive;
+  font-size: 0.5em;
+  text-align: center;
+  font-weight: bold;
+  letter-spacing: 3px;
+  color: #edc7b7;
+  text-shadow: 0.5px 0.5px rgb(179, 174, 174);
+  padding-left: 10px;
+  /* padding-top: 5px; */
+}
+
+.formAdminView {
+  /* width: 200px; */
+  padding: 20px;
+  width: 100%;
+  align-items: center;
+}
+
+.FormIntroText {
+  padding: 10px;
+  margin: 5px 0;
+  font-size: 1em;
+}
+
+.EnteredValues {
+  border: 2px solid #eee;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 10px;
+  width: 100%;
+}
+
+.EnteredValues:hover {
+  background-color: #f1ae91;
+}
+
+#formats,
+#moods {
+  font-size: 1em;
+}
+
+input {
+  padding: 10px;
+  border: 0;
+  box-shadow: 0 0 15px 4px rgba(56, 56, 56, 0.06);
+}
+
+#SubmitButton {
+  appearance: none;
+  -webkit-appearance: none;
+  margin: 40px 0 20px 0;
+  border-radius: 10px;
+  padding: 10px;
+  border: none;
+  background-color: #78244c;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1em;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.NewEntryDisplay {
+  font-size: 20px;
+  padding: 20px;
+  text-align: center;
+  width: 100%;
+}
+
+#EntryAdded {
+  margin: 0 0 20px 0;
+}
+
+#UrlAdmin {
+  color: #78244c;
+  letter-spacing: 0.5px;
+}

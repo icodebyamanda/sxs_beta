@@ -28,9 +28,9 @@ export default function UserView() {
   return (
     <div>
 
-      <header className="header">
+      <header className="headerUserView">
       <div className="overlay">
-       <h1> Step By Step </h1>
+       <h1 id="HOneUser"> Step By Step </h1>
 
       </div>
           
