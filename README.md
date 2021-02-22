@@ -8,7 +8,7 @@
 
 ## The Step By Step project's full picture
 
-A web application to acknowlewdge and lift up one's mood in the morning and create, digitally, a wellbeing routine.
+A web application to acknowledge and lift up one's mood in the morning and create, digitally, a wellbeing routine.
 
 ## This current piece: Avoid denial and keep the good vibes coming
 
@@ -46,11 +46,6 @@ When opening the page, the admin user will see a three input form where she/he w
 - select one of the media format: video or quote
 - paste a url
 - click on the submit button
-
-This page has currenlty a bug where:
-
-- The text at the bottom regarding a new entry should only be displayed when an entry has been submitted
-- When pasting the URL it is already updating the link at the bottom of the page
 
 ## The data and database logic
 
