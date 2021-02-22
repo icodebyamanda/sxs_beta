@@ -29,10 +29,10 @@ export default function UserView() {
     <div>
 
       <header className="headerUserView">
-      <div className="overlay">
-       <h1 id="HOneUser"> Step By Step </h1>
+        <div className="overlay">
+          <h1 id="HOneUser"> Step By Step </h1>
 
-      </div>
+        </div>
           
       </header>
       
