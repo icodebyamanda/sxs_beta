@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 
 export default function UserView() {
 
-    const [moods, setMoods] = useState([
+  const [moods, setMoods] = useState([
     {name:"Sad", emoji:"😕"}, 
     {name:"Blessed", emoji:"🤗"}, 
     {name:"Determined", emoji:"😏"}, 
