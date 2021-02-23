@@ -97,12 +97,31 @@ Please head to the stylesheet to find more about the button border colours and t
 
 ## Suggested enhancements
 
-1. Allowing the social circle of the user to update the app's database.
+\*. Allowing the user'social circle to update the app's database.
 
 _Related user story:_
 As a user and admin of this app, it can feel lonely to be using it on my own. Besides, as social links are key to someone's wellbeing, I want my family and friends to co-curate this app at any time of the day while being on the go.
 
-2. Ideally the user would know from whom this link comes from
+- From opening up the admin form to new users...
+- ...to implementing a full on authentication feature
+- Improving the database to make it algorithm wise more flexible and to work out several logics...
+- ... No concrete idea of what could that be
+
+\*. Ideally the user would know from whom this link comes from
 
 _Related user story:_
 As a user, I see this wellbeing app as a wellbeing social link tool and would like to connect the links I receive to the person who sent them to me. Therefore I want to know whom sent me a specific link and thank them accordingly.
+
+\*. Embed the content so the user can stay on the app
+
+\*. Go beyond the emotional wellbeing and make it be an overall bonding tool between people (e.g. lovers, distant friends or relatives, acquaintances)
+
+## Fair warnings
+
+By taking this app, know:
+
+- it's a 2 components app
+- a homepage component was not finished
+- small front end and small backend
+- The styling does not seem scalable (css stylesheet based)
+- there is one simple table which has potential to scale to introduce more logic
