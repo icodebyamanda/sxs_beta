@@ -49,7 +49,9 @@ When opening the page, the admin user will see a three input form where she/he w
 
 ## The data and database logic
 
-The data are held into one table made of four columns: [Click to view the table](https://dbdesigner.page.link/JG22VNAkk8P3sji67)
+The data are held into one **MySql's** table made of four columns.
+
+[Click to view the table](https://dbdesigner.page.link/JG22VNAkk8P3sji67)
 
 ![Screenshot of the database](readme_assets/tableEntries.png)
 
@@ -64,6 +66,16 @@ Examples:
 - Sad: https://youtu.be/QooqZkNk8Bw
 
 This logic is very subjective.
+
+### Raw sample data to fill up the MySql's databases
+
+The table contains the 4 below columns:
+
+![schema database](readme_assets/sxsSchemaDb.png)
+
+**Please note the id is autoincremented.**
+
+INSERT INTO responses(mood, format, url) VALUES ("blessed", "video", "https://youtu.be/OMGd3mAfl-0"), ("blessed", "quote", "https://images.app.goo.gl/LCxwkCLjsJwwBkFY6"), ("determined", "video", "https://youtu.be/VDvr08sCPOc"), ("determined", "quote", "https://images.app.goo.gl/VHw3vzRA3YnrRD3q8"), ("fidgety", "video", "https://youtu.be/JkVqeHpqIMk"), ("fidgety", "quote", "https://images.app.goo.gl/BqDQthBbTiScr25P6"), ("sad", "video", "https://youtu.be/P00HMxdsVZI"), ("sad", "quote", "https://images.app.goo.gl/FMJKyGggoEJ3uGfx5");
 
 ## The endpoints
 
