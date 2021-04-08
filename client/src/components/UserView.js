@@ -35,8 +35,6 @@ export default function UserView() {
       </div>
 
       <div className="left">Left</div>
-      
-      <body>
 
         <div className="core">
 
@@ -62,8 +60,6 @@ export default function UserView() {
             )}
 
         </div>
-
-      </body>
 
       <div className="right">Right</div>
 

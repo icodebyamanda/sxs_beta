@@ -66,8 +66,6 @@ export default function AdminView() {
       
       <div className="left">Left</div>
 
-      <body>
-
         <div className="core">
 
           <div>
@@ -122,8 +120,6 @@ export default function AdminView() {
           </div>
       
         </div>
-
-      </body>
 
       <div className="right">Right</div>
 
