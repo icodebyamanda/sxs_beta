@@ -14,9 +14,13 @@ export default function Homepage() {
       <div className="left">Left</div>
 
       <div className="core">
-        Welcome!
-        At the moment I am doing nothing
-        and I got commented out in my parent file
+        
+        <span> 
+          Morning you, <br />
+          Today will be grand, <br />
+          and for everything else... <br />
+        </span>
+        <span> 'Hindsight is a gift' (H.Gadsby) </span>
       </div>
 
       <div className="right">Right</div>
