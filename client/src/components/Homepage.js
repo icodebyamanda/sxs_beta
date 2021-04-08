@@ -27,7 +27,6 @@ export default function Homepage() {
 
       <div className="footer">
         Footer
-
       </div>
 
 

@@ -39,9 +39,7 @@ function App() {
 
         </Switch>
 
-        <div className="footer">
-
-          <nav>
+          <nav className="footerApp">
             <ul>
               <li>
                 <Link to="/user" > User Page </Link>
@@ -54,8 +52,6 @@ function App() {
               </li>
             </ul>
           </nav>
-
-        </div>
 
       </div>
         
