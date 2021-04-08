@@ -13,9 +13,11 @@ function App() {
 
   return (
     
+    <div className="App">
+
     <Router> 
 
-      <div className="App">
+      <div>
 
         <Switch>
 
@@ -56,6 +58,8 @@ function App() {
       </div>
         
     </Router>
+
+    </div>
 
   );
   

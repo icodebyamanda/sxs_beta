@@ -114,7 +114,7 @@ export default function AdminView() {
           <div> 
 
             { newEntryDisplay && (     
-              <div>
+              <div className="footer">
                 <div id="EntryAdded">New entry added!</div>
                 <a href={url} target="_blank" > <span id="UrlAdmin">Click here to enjoy it right away </span></a>
               </div>
@@ -126,8 +126,6 @@ export default function AdminView() {
       </body>
 
       <div className="right">Right</div>
-
-      <div className="footer">Footer</div>
 
     </div>
   );

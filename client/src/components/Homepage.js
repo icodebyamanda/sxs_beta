@@ -21,6 +21,7 @@ export default function Homepage() {
           and for everything else... <br />
         </span>
         <span> 'Hindsight is a gift' (H.Gadsby) </span>
+      
       </div>
 
       <div className="right">Right</div>
