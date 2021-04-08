@@ -128,12 +128,3 @@ As a user, I see this wellbeing app as a wellbeing social link tool and would li
 
 \*. Go beyond the emotional wellbeing and make it be an overall bonding tool between people (e.g. lovers, distant friends or relatives, acquaintances)
 
-## Fair warnings
-
-By taking this app, know:
-
-- it's a 2 components app
-- a homepage component was not finished
-- small front end and small backend
-- The styling does not seem scalable (css stylesheet based)
-- there is one simple table which has potential to scale to introduce more logic
