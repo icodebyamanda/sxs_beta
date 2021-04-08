@@ -42,7 +42,7 @@ function App() {
         </Switch>
 
           <nav className="footerApp">
-            <ul>
+            <ul className="no-bullet">
               <li>
                 <Link to="/user" > User Page </Link>
               </li>

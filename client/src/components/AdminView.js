@@ -61,9 +61,12 @@ export default function AdminView() {
     <div className="grid-container">
 
       <div className="header">
-        <h1>Step By Step<span>Admin</span></h1>
+        <div id="admin-header">
+        <h1>Step By Step</h1>
+        <span>Admin</span>
+        </div>
       </div>
-      
+
       <div className="left">Left</div>
 
         <div className="core">

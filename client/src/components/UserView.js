@@ -29,7 +29,7 @@ export default function UserView() {
     <div className="grid-container">
 
       <div className="header">
-        <div>
+        <div id="user-header">
           <h1> Step By Step </h1>
         </div>          
       </div>
@@ -42,7 +42,7 @@ export default function UserView() {
           How do you feel today?
           </div>
 
-          <ul>
+          <ul className="no-bullet">
           { moods.map((mood) => (          
               <li key={mood.name}>
                 <button name={mood.name} onClick={() => getAresponse(mood.name)}>
