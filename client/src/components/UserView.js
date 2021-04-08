@@ -28,22 +28,22 @@ export default function UserView() {
   return (
     <div>
 
-      <header className="headerUserView">
-        <div className="overlay">
-          <h1 id="HOneUser"> Step By Step </h1>
+      <header>
+        <div>
+          <h1> Step By Step </h1>
         </div>          
       </header>
       
       <body>
 
-        <div className="MoodQuestion">
+        <div>
         How do you feel today?
         </div>
 
       <ul>
       { moods.map((mood) => (          
           <li key={mood.name}>
-            <button className="MainButtons" name={mood.name} onClick={() => getAresponse(mood.name)}>
+            <button name={mood.name} onClick={() => getAresponse(mood.name)}>
               <span id="MoodName"> {mood.name} </span>  <br></br> <span id="MoodEmoji"> {mood.emoji}</span>
             </button> 
           </li>
@@ -51,8 +51,8 @@ export default function UserView() {
       </ul>
 
         { pick &&  (
-          <div className="PickUrl">
-            <div className="PickIntroText">Today you get:</div>
+          <div>
+            <div>Today you get:</div>
             <a href={pick.url} target="_blank" > Good vibes only... </a>
           </div>
         )}

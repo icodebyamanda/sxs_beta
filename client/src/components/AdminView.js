@@ -60,19 +60,19 @@ export default function AdminView() {
     
     <div>
 
-      <header className="headerAdminView">
-        <h1 id="hOneAdmin">Step By Step<span id="hTwoAdmin">Admin</span></h1>
+      <header>
+        <h1>Step By Step<span>Admin</span></h1>
       </header>
       
       <body>
 
-        <div className="formAdminView">
+        <div>
 
           <form onSubmit={handleSubmit}>
 
             <label>           
-              <div className="FormIntroText">Pick the mood this gift will address:</div>
-              <select className="EnteredValues" id="moods" name="moods" value={mood} onChange={handleMoodChange}>
+              <div>Pick the mood this gift will address:</div>
+              <select id="moods" name="moods" value={mood} onChange={handleMoodChange}>
                 <option value="empty"></option>
                 <option value="blessed">Blessed</option>
                 <option value="determined">Determined</option>
@@ -82,8 +82,8 @@ export default function AdminView() {
             </label>
     ​
             <label>
-              <div className="FormIntroText">Pick the media format:</div>
-              <select className="EnteredValues" id="formats" name="formats" value={format} onChange={handleFormatChange}>
+              <div>Pick the media format:</div>
+              <select id="formats" name="formats" value={format} onChange={handleFormatChange}>
                 <option value="empty"></option>
                 <option value="video">Video</option>
                 <option value="quote">Quote</option>
@@ -91,9 +91,8 @@ export default function AdminView() {
             </label>
 
             <label>
-            <div className="FormIntroText">Bring on the URL:</div>
+            <div>Bring on the URL:</div>
               <input
-                className="EnteredValues" 
                 type="text"
                 name="url"
                 value={url}
@@ -108,7 +107,7 @@ export default function AdminView() {
 
         </div>
 
-        <div className="NewEntryDisplay" > 
+        <div> 
 
           { newEntryDisplay && (     
             <div>
