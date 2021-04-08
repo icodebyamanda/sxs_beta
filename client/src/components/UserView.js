@@ -26,38 +26,48 @@ export default function UserView() {
 
 
   return (
-    <div>
+    <div className="grid-container">
 
-      <header>
+      <div className="header">
         <div>
           <h1> Step By Step </h1>
         </div>          
-      </header>
+      </div>
+
+      <div className="left">Left</div>
       
       <body>
 
-        <div>
-        How do you feel today?
+        <div className="core">
+
+          <div>
+          How do you feel today?
+          </div>
+
+          <ul>
+          { moods.map((mood) => (          
+              <li key={mood.name}>
+                <button name={mood.name} onClick={() => getAresponse(mood.name)}>
+                  <span id="MoodName"> {mood.name} </span>  <br></br> <span id="MoodEmoji"> {mood.emoji}</span>
+                </button> 
+              </li>
+            ))}      
+          </ul>
+
+            { pick &&  (
+              <div>
+                <div>Today you get:</div>
+                <a href={pick.url} target="_blank" > Good vibes only... </a>
+              </div>
+            )}
+
         </div>
 
-      <ul>
-      { moods.map((mood) => (          
-          <li key={mood.name}>
-            <button name={mood.name} onClick={() => getAresponse(mood.name)}>
-              <span id="MoodName"> {mood.name} </span>  <br></br> <span id="MoodEmoji"> {mood.emoji}</span>
-            </button> 
-          </li>
-        ))}      
-      </ul>
-
-        { pick &&  (
-          <div>
-            <div>Today you get:</div>
-            <a href={pick.url} target="_blank" > Good vibes only... </a>
-          </div>
-        )}
-
       </body>
+
+      <div className="right">Right</div>
+
+      <div className="footer">Footer</div>
 
     </div>
   );

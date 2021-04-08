@@ -2,7 +2,7 @@ import React, { useEffect, useState }  from "react";
 import './App.css';
 import AdminView from "./components/AdminView";
 import UserView from "./components/UserView";
-// import Homepage from "./components/Homepage";
+import Homepage from "./components/Homepage";
 
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
@@ -17,45 +17,65 @@ function App() {
 
       <div className="App">
 
-      <Switch>
+        <Switch>
 
-        <Route path="/admin"> 
+          <Route path="/admin"> 
 
-          <AdminView />
+            <AdminView />
 
-        </Route>
+          </Route>
 
-        <Route path="/user"> 
+          <Route path="/user"> 
 
-          <UserView />
+            <UserView />
 
-        </Route>
+          </Route>
 
-        {/* <Route path="/"> 
+          <Route path="/"> 
 
-          <Homepage />
+            <Homepage />
 
-        </Route> */}
+          </Route>
 
-      </Switch>
+        </Switch>
 
-      </div>
+        <div className="footer">
 
-      <div className="FooterMainPageData">
+          <nav>
+            <ul>
+              <li>
+                <Link to="/user" > User Page </Link>
+              </li>
+              <li>
+                <Link to="/admin" > Admin Page </Link>
+              </li>
+              <li>
+                <Link to="/" > Homepage </Link>
+              </li>
+            </ul>
+          </nav>
 
-        <Link to="/user" > User Page </Link> 
-        <span> | </span>
-        <Link to="/admin" > Admin Page </Link>
-        {/* <span> | </span>
-        <Link to="/" > Home </Link> */}
+        </div>
 
       </div>
         
     </Router>
 
-
   );
+  
 
+}
+
+function Home() {
+  return <h2>Home</h2>;
+}
+
+function About() {
+  return <h2>About</h2>;
+}
+
+function Users() {
+  return <h2>Users</h2>;
 }
 
 export default App;

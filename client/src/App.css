@@ -3,10 +3,45 @@
 
 /* ! ----- All components ------ */
 
-@media screen and (min-width: 500px) {
-  ul {
+@media screen and (min-width: 600px) {
+  /* ul {
     display: flex;
     flex-wrap: wrap;
     margin: 0.4em auto;
-  }
+  } */
+}
+
+.App {
+  background-color: #edc7b7;
+}
+
+.header {
+  grid-area: header;
+}
+
+.left {
+  grid-area: left;
+}
+
+.core {
+  grid-area: core;
+}
+
+.footer {
+  grid-area: footer;
+}
+
+.right {
+  grid-area: right;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    "header header header header header header"
+    "left core core core core right"
+    "footer footer footer footer footer footer";
+  grid-gap: 10px;
+  background-color: #edc7b7;
+  padding: 10px;
 }

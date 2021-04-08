@@ -58,66 +58,76 @@ export default function AdminView() {
 
   return (
     
-    <div>
+    <div className="grid-container">
 
-      <header>
+      <div className="header">
         <h1>Step By Step<span>Admin</span></h1>
-      </header>
+      </div>
       
+      <div className="left">Left</div>
+
       <body>
 
-        <div>
+        <div className="core">
 
-          <form onSubmit={handleSubmit}>
+          <div>
 
-            <label>           
-              <div>Pick the mood this gift will address:</div>
-              <select id="moods" name="moods" value={mood} onChange={handleMoodChange}>
-                <option value="empty"></option>
-                <option value="blessed">Blessed</option>
-                <option value="determined">Determined</option>
-                <option value="fidgety">Fidgety</option>
-                <option value="sad">Sad</option>
-              </select>
-            </label>
-    ​
-            <label>
-              <div>Pick the media format:</div>
-              <select id="formats" name="formats" value={format} onChange={handleFormatChange}>
-                <option value="empty"></option>
-                <option value="video">Video</option>
-                <option value="quote">Quote</option>
-              </select>
-            </label>
+            <form onSubmit={handleSubmit}>
 
-            <label>
-            <div>Bring on the URL:</div>
-              <input
-                type="text"
-                name="url"
-                value={url}
-                onChange={handleUrlChange}/>
-            </label><br></br>
-    ​
-            <label>
-              <input type="submit" value="submit" id="SubmitButton" />
-            </label>
+              <label>           
+                <div>Pick the mood this gift will address:</div>
+                <select id="moods" name="moods" value={mood} onChange={handleMoodChange}>
+                  <option value="empty"></option>
+                  <option value="blessed">Blessed</option>
+                  <option value="determined">Determined</option>
+                  <option value="fidgety">Fidgety</option>
+                  <option value="sad">Sad</option>
+                </select>
+              </label>
+      ​
+              <label>
+                <div>Pick the media format:</div>
+                <select id="formats" name="formats" value={format} onChange={handleFormatChange}>
+                  <option value="empty"></option>
+                  <option value="video">Video</option>
+                  <option value="quote">Quote</option>
+                </select>
+              </label>
 
-          </form>
+              <label>
+              <div>Bring on the URL:</div>
+                <input
+                  type="text"
+                  name="url"
+                  value={url}
+                  onChange={handleUrlChange}/>
+              </label><br></br>
+      ​
+              <label>
+                <input type="submit" value="submit" id="SubmitButton" />
+              </label>
 
-        </div>
+            </form>
 
-        <div> 
+          </div>
 
-          { newEntryDisplay && (     
-            <div>
-              <div id="EntryAdded">New entry added!</div>
-              <a href={url} target="_blank" > <span id="UrlAdmin">Click here to enjoy it right away </span></a>
-            </div>
-          )}
-        </div>
+          <div> 
+
+            { newEntryDisplay && (     
+              <div>
+                <div id="EntryAdded">New entry added!</div>
+                <a href={url} target="_blank" > <span id="UrlAdmin">Click here to enjoy it right away </span></a>
+              </div>
+            )}
+          </div>
       
+        </div>
+
       </body>
+
+      <div className="right">Right</div>
+
+      <div className="footer">Footer</div>
 
     </div>
   );
