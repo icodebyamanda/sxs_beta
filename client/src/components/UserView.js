@@ -42,10 +42,10 @@ export default function UserView() {
           How do you feel today?
           </div>
 
-          <ul className="no-bullet">
+          <ul className="no-bullet" id="moodList">
           { moods.map((mood) => (          
               <li key={mood.name}>
-                <button name={mood.name} onClick={() => getAresponse(mood.name)}>
+                <button id="moodButton" name={mood.name} onClick={() => getAresponse(mood.name)}>
                   <span id="MoodName"> {mood.name} </span>  <br></br> <span id="MoodEmoji"> {mood.emoji}</span>
                 </button> 
               </li>

@@ -18,9 +18,9 @@ a:hover {
   color: #00cc99;
 }
 
-/* .no-bullet {
+.no-bullet {
   list-style: none;
-} */
+}
 
 .App {
   background-color: #edc7b7;
@@ -36,7 +36,6 @@ a:hover {
     "left core core core right"
     "footer footer footer footer footer";
   grid-gap: 5px;
-  /* background-color: #edc7b7; */
   padding: 10px;
 }
 
@@ -69,6 +68,29 @@ a:hover {
 
 .footerApp {
   font-size: 1em;
+}
+
+#moodButton {
+  padding: 0.5em 2em;
+  border: none;
+  border-radius: 12px;
+  font-family: "Comfortaa", cursive;
+  font-weight: bold;
+  color: #78244c;
+  font-size: 1em;
+  letter-spacing: 2px;
+  text-shadow: 0.5px 0.5px rgb(179, 174, 174);
+  transition: all 0.15s;
+  background-color: #edc7b7;
+}
+
+#moodList {
+  width: 100%;
+  /* align-items: center;
+  display: flex; */
+  /* flex-wrap: wrap; */
+  /* flex-shrink: 1; */
+  justify-content: space-evenly;
 }
 
 @media screen and (max-width: 550px) {
