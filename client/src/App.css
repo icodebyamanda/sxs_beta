@@ -35,12 +35,12 @@ ul {
   grid-area: header;
 }
 
-#user-header {
+/* #user-header {
   background: url("/Users/i-mac/personalProjects/sxs_beta/client/src/assets/headers/madabaobab.jpg");
-}
-#admin-header {
+} */
+/* #admin-header {
   background: url("/Users/i-mac/personalProjects/sxs_beta/client/src/assets/headers/colortwo.jpeg");
-}
+} */
 
 .left {
   grid-area: left;

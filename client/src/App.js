@@ -3,6 +3,7 @@ import './App.css';
 import AdminView from "./components/AdminView";
 import UserView from "./components/UserView";
 import Homepage from "./components/Homepage";
+import Navigation from "./components/Navigation";
 
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
@@ -21,27 +22,17 @@ function App() {
 
         <Switch>
 
-          <Route path="/admin"> 
+          <Route path="/admin" component={AdminView} /> 
 
-            <AdminView />
+          <Route path="/user" component={UserView} />
 
-          </Route>
-
-          <Route path="/user"> 
-
-            <UserView />
-
-          </Route>
-
-          <Route path="/"> 
-
-            <Homepage />
-
-          </Route>
+          <Route path="/" component={Homepage} />
 
         </Switch>
 
-          <nav className="footerApp">
+        <Navigation />
+
+          {/* <nav className="footerApp">
             <ul className="no-bullet">
               <li>
                 <Link to="/user" > User Page </Link>
@@ -53,7 +44,7 @@ function App() {
                 <Link to="/" > Homepage </Link>
               </li>
             </ul>
-          </nav>
+          </nav> */}
 
       </div>
         
