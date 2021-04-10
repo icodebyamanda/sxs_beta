@@ -1,5 +1,6 @@
 
-import { Link } from "react-router-dom";
+//import { Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 
 export default function Navigation() {
@@ -8,17 +9,13 @@ export default function Navigation() {
 
     <div>
       <nav className="footerApp">
-        <ul className="no-bullet">
-          <li>
-            <Link to="/user" > User Page </Link>
-          </li>
-          <li>
-            <Link to="/admin" > Admin Page </Link>
-          </li>
-          <li>
-            <Link to="/" > Homepage </Link>
-          </li>
-        </ul>
+        
+        <a> <Link to="/user" > User Page </Link>  </a>
+        {' | '} 
+        <a> <Link to="/admin" > Admin Page </Link> </a>
+        {' | '} 
+        <a> <Link to="/" > Homepage </Link>  </a>
+
       </nav>
     </div>
 

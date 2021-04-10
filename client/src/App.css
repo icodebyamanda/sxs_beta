@@ -9,12 +9,21 @@ ul {
   list-style: none;
 }
 
+a:link {
+  text-decoration: none;
+  color: #78244c;
+}
+
+a:hover {
+  color: #00cc99;
+}
+
 /* .no-bullet {
   list-style: none;
 } */
 
 .App {
-  /* background-color: #edc7b7; */
+  background-color: #edc7b7;
   width: 100%;
 }
 
@@ -27,7 +36,7 @@ ul {
     "left core core core right"
     "footer footer footer footer footer";
   grid-gap: 5px;
-  background-color: #edc7b7;
+  /* background-color: #edc7b7; */
   padding: 10px;
 }
 
