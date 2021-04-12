@@ -111,6 +111,8 @@ export default function AdminView() {
             </form>
 
           </div>
+        
+        </div>
 
           <div> 
 
@@ -122,7 +124,7 @@ export default function AdminView() {
             )}
           </div>
       
-        </div>
+        
 
       <div className="right">Right</div>
 

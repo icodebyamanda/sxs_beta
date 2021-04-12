@@ -36,7 +36,7 @@ export default function UserView() {
 
       <div className="left">Left</div>
 
-        <div className="core">
+        <div className="core" className="userCore">
 
           <div>
           How do you feel today?
@@ -51,19 +51,18 @@ export default function UserView() {
               </li>
             ))}      
           </ul>
-
+        </div>
+            
             { pick &&  (
-              <div>
+              <div className="footer">
                 <div>Today you get:</div>
                 <a href={pick.url} target="_blank" > Good vibes only... </a>
               </div>
             )}
 
-        </div>
+        
 
       <div className="right">Right</div>
-
-      <div className="footer">Footer</div>
 
     </div>
   );
