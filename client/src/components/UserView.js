@@ -36,13 +36,13 @@ export default function UserView() {
 
       <div className="left">Left</div>
 
-        <div className="core" className="userCore">
+        <div className="core userCore">
 
-          <div>
+          <div id="userQuestion">
           How do you feel today?
           </div>
 
-          <ul className="no-bullet" id="moodList">
+          <ul className="no-bullet moodList">
           { moods.map((mood) => (          
               <li key={mood.name}>
                 <button id="moodButton" name={mood.name} onClick={() => getAresponse(mood.name)}>
