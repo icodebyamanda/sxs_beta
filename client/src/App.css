@@ -112,10 +112,9 @@ a:hover {
   justify-content: space-evenly;
 }
 
-.form {
-  padding: 20px;
-  width: 100%;
-  align-items: center;
+/* Below form does not work*/
+form {
+  grid-row: 1;
 }
 
 @media only screen and (min-width: 551px) {
