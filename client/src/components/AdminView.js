@@ -12,7 +12,8 @@ export default function AdminView() {
   function handleSubmit(e) {
     e.preventDefault();
     addNewEntry();
-    displayLastEntry()
+    displayLastEntry();
+    clearForm();
   };
 
   function handleMoodChange(e) {
@@ -30,6 +31,12 @@ export default function AdminView() {
  const displayLastEntry = () => {
     setNewEntryDisplay(url)
  }
+
+ function clearForm() {
+    setMood('')
+    setFormat('')
+    setUrl('')
+ };
 
   const getResponses = () => {
     fetch("/responses")
@@ -71,7 +78,7 @@ export default function AdminView() {
 
         <div className="core">
 
-          <div>
+          <div className="form">
 
             <form onSubmit={handleSubmit}>
 
@@ -114,17 +121,12 @@ export default function AdminView() {
         
         </div>
 
-          <div> 
-
-            { newEntryDisplay && (     
-              <div className="footer">
-                <div id="EntryAdded">New entry added!</div>
-                <a href={url} target="_blank" > <span id="UrlAdmin">Click here to enjoy it right away </span></a>
-              </div>
-            )}
-          </div>
-      
-        
+          { newEntryDisplay && (     
+            <div className="footer">
+              <div id="EntryAdded">New entry added!</div>
+              <a href={url} target="_blank" > <span id="UrlAdmin">Click here to enjoy it right away </span></a>
+            </div>
+          )}
 
       <div className="right">Right</div>
 
