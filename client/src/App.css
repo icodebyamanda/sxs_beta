@@ -52,13 +52,6 @@ a:hover {
   grid-area: header;
 }
 
-/* #user-header {
-  background: url("/Users/i-mac/personalProjects/sxs_beta/client/src/assets/headers/madabaobab.jpg");
-} */
-/* #admin-header {
-  background: url("/Users/i-mac/personalProjects/sxs_beta/client/src/assets/headers/colortwo.jpeg");
-} */
-
 .left {
   grid-area: left;
 }
@@ -77,6 +70,19 @@ a:hover {
 
 .footerApp {
   font-size: 1em;
+}
+
+.user-header {
+  /* display: flex;
+  flex: 1; */
+  width: 100%;
+  height: auto;
+  background-size: cover;
+  background-position: center;
+  /* position: relative; */
+  padding: 40px;
+  justify-content: center;
+  /* overflow: hidden; */
 }
 
 #userQuestion {
@@ -115,6 +121,19 @@ a:hover {
 /* Below form does not work*/
 form {
   grid-row: 1;
+}
+
+.admin-header {
+  /* display: flex;
+  flex: 1; */
+  width: 100%;
+  height: auto;
+  background-size: cover;
+  background-position: center;
+  /* position: relative; */
+  padding: 40px;
+  justify-content: center;
+  /* overflow: hidden; */
 }
 
 @media only screen and (min-width: 551px) {

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import backgroundUser from "../assets/headers/userHeader2.png"
 
 export default function UserView() {
 
@@ -29,7 +30,10 @@ export default function UserView() {
     <div className="grid-container">
 
       <div className="header">
-        <div id="user-header">
+        <div 
+        className="user-header"
+        style={{ backgroundImage: `url(${backgroundUser})`}}
+        >
           <h1> Step By Step </h1>
         </div>          
       </div>

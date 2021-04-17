@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import backgroundAdmin from "../assets/headers/adminHeader.png"
 
 export default function AdminView() {
 
@@ -68,7 +69,10 @@ export default function AdminView() {
     <div className="grid-container">
 
       <div className="header">
-        <div id="admin-header">
+        <div className="admin-header"
+          style={{ backgroundImage: `url(${backgroundAdmin})`}}
+
+        >
         <h1>Step By Step</h1>
         <span>Admin</span>
         </div>
