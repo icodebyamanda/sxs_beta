@@ -30,7 +30,7 @@ function App() {
 
         </Switch>
 
-        <Navigation />
+        <div className="footerApp"> <Navigation /> </div>
 
       </div>
         

@@ -72,7 +72,6 @@ export default function AdminView() {
         style={{ backgroundImage: `url(${backgroundAdmin})`}}
       >
         <h1>Step By Step</h1>
-        <span>Admin</span>
       </div>
 
       <div className="left">Left</div>
@@ -130,6 +129,7 @@ export default function AdminView() {
           )}
 
       <div className="right">Right</div>
+
 
     </div>
   );

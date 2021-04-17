@@ -3,6 +3,7 @@ import backgroundUser from "../assets/headers/userHeader2.png"
 //import Headers from "./components/Headers";
 
 
+
 export default function UserView() {
 
   const [moods, setMoods] = useState([
@@ -49,7 +50,7 @@ export default function UserView() {
           { moods.map((mood) => (          
               <li key={mood.name}>
                 <button id="moodButton" name={mood.name} onClick={() => getAresponse(mood.name)}>
-                  <span id="MoodName"> {mood.name} </span>  <br></br> <span id="MoodEmoji"> {mood.emoji}</span>
+                  <span> {mood.name} </span>  <br></br> <span id="MoodEmoji"> {mood.emoji}</span>
                 </button> 
               </li>
             ))}      
@@ -62,8 +63,6 @@ export default function UserView() {
                 <a href={pick.url} target="_blank" > Good vibes only... </a>
               </div>
             )}
-
-        
 
       <div className="right">Right</div>
 
