@@ -68,14 +68,11 @@ export default function AdminView() {
     
     <div className="grid-container">
 
-      <div className="header">
-        <div className="admin-header"
-          style={{ backgroundImage: `url(${backgroundAdmin})`}}
-
-        >
+      <div className="header"
+        style={{ backgroundImage: `url(${backgroundAdmin})`}}
+      >
         <h1>Step By Step</h1>
         <span>Admin</span>
-        </div>
       </div>
 
       <div className="left">Left</div>
