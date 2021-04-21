@@ -68,22 +68,20 @@ export default function AdminView() {
     
     <div className="grid-container">
 
-      <div className="header"
+      <header className="header"
         style={{ backgroundImage: `url(${backgroundAdmin})`}}
       >
         <h1>Step By Step</h1>
-      </div>
+      </header>
 
       <div className="left">Left</div>
 
         <div className="core adminCore">
 
-          <div className="formStyle">
+            <form onSubmit={handleSubmit} className="formStyle">
 
-            <form onSubmit={handleSubmit}>
-
-              <label>           
-                <div>Pick the mood this gift will address:</div>
+              <label className="formLabel">           
+                <div className="formTitle">Pick the mood this gift will address:</div>
                 <select id="moods" name="moods" value={mood} onChange={handleMoodChange}>
                   <option value="empty"></option>
                   <option value="blessed">Blessed</option>
@@ -93,8 +91,8 @@ export default function AdminView() {
                 </select>
               </label>
       ​
-              <label>
-                <div>Pick the media format:</div>
+              <label className="formLabel">
+                <div className="formTitle">Pick the media format:</div>
                 <select id="formats" name="formats" value={format} onChange={handleFormatChange}>
                   <option value="empty"></option>
                   <option value="video">Video</option>
@@ -102,8 +100,8 @@ export default function AdminView() {
                 </select>
               </label>
 
-              <label>
-              <div>Bring on the URL:</div>
+              <label className="formLabel">
+              <div className="formTitle">Bring on the URL:</div>
                 <input
                   type="text"
                   name="url"
@@ -117,7 +115,6 @@ export default function AdminView() {
 
             </form>
 
-          </div>
         
         </div>
 

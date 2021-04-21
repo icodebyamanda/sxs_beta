@@ -32,14 +32,14 @@ export default function UserView() {
   return (
     <div className="grid-container">
 
-      <div className="header"
+      <header className="header"
         style={{ backgroundImage: `url(${backgroundUser})`}}
       >
           <h1> Step By Step </h1> 
           <div id="userQuestion">
           How do you feel today?
           </div>        
-      </div>
+      </header>
 
       <div className="left">Left</div>
 
@@ -51,16 +51,16 @@ export default function UserView() {
 
           <div className="userxCore">
 
-          <ul className="no-bullet moodList">
-            
-          { moods.map((mood) => (          
-              <li key={mood.name}>
-                <button id="moodButton" className="buttons" name={mood.name} onClick={() => getAresponse(mood.name)}>
-                  <span> {mood.name} </span>  <br></br> <span id="MoodEmoji"> {mood.emoji}</span>
-                </button> 
-              </li>
-            ))}    
-          </ul>
+            <ul className="no-bullet moodList">
+              
+            { moods.map((mood) => (          
+                <li key={mood.name}>
+                  <button id="moodButton" className="buttons" name={mood.name} onClick={() => getAresponse(mood.name)}>
+                    <span> {mood.name} </span>  <br></br> <span id="MoodEmoji"> {mood.emoji}</span>
+                  </button> 
+                </li>
+              ))}    
+            </ul>
           </div>
         </div>
             

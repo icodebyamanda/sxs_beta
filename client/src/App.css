@@ -102,8 +102,8 @@ a:hover {
 .footerApp {
   grid-area: footerApp;
   font-size: 1em;
-  padding: 100px;
-  margin: 20px;
+  padding: 70px;
+  margin: 25px;
 }
 
 /* ! --- UserView Only --- */
@@ -164,9 +164,54 @@ a:hover {
 
 /* ! --- AdminView Only --- */
 
-/* Below form does not work*/
+/* .adminCore {
+  display: flex;
+  width: 100%;
+} */
+
+/* .core.adminCore.formStyle {
+  display: flex;
+} */
+
+.formStyle {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
 form {
-  grid-row: 1;
+  padding: 20px;
+  align-items: center;
+}
+
+.formLabel {
+  padding: 10px;
+  margin: 5px 0;
+  font-size: 1em;
+}
+
+input,
+select {
+  border: 2px solid #eee;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 10px;
+  font-size: 1em;
+  width: 100%;
+}
+
+#SubmitButton {
+  appearance: none;
+  margin: 40px 0 20px 0;
+  border-radius: 10px;
+  padding: 10px;
+  border: none;
+  background-color: #00cc99;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1em;
+  border-radius: 5px;
+  width: 100%;
 }
 
 @media only screen and (min-width: 551px) {
