@@ -76,9 +76,9 @@ export default function AdminView() {
 
       <div className="left">Left</div>
 
-        <div className="core">
+        <div className="core adminCore">
 
-          <div className="form">
+          <div className="formStyle">
 
             <form onSubmit={handleSubmit}>
 
@@ -122,7 +122,7 @@ export default function AdminView() {
         </div>
 
           { newEntryDisplay && (     
-            <div className="footer">
+            <div className="display">
               <div id="EntryAdded">New entry added!</div>
               <a href={url} target="_blank" > <span id="UrlAdmin">Click here to enjoy it right away </span></a>
             </div>

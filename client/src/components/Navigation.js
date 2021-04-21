@@ -8,15 +8,21 @@ export default function Navigation() {
   return (
 
     <div>
+      
       <div className="header"></div>
+      
       <div className="left"></div>
+      
       <div className="core"></div>
+      
       <div className="right"></div>
-      <div className="footer"></div>
+      
+      <div className="display"></div>
 
       <div className="footerApp">
         <nav>
 
+        {/* a -href is loading slower than react link */}
         {/* <a href="/"> Homepage </a>
         {' | '} 
         <a href="/user"> User Page </a>

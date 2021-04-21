@@ -65,7 +65,7 @@ export default function UserView() {
         </div>
             
             { pick &&  (
-              <div className="footer">
+              <div className="display">
                 <div>Today you get:</div>
                 <a href={pick.url} target="_blank" > Good vibes only... </a>
               </div>

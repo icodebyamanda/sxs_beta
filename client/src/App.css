@@ -59,7 +59,7 @@ a:hover {
   grid-template-areas:
     "header header header header header"
     "left core core core right"
-    "footer footer footer footer footer"
+    "display display display display display"
     "footerApp footerApp footerApp footerApp footerApp";
   grid-gap: 5px;
   padding: 10px;
@@ -95,8 +95,8 @@ a:hover {
   margin: 2px;
 }
 
-.footer {
-  grid-area: footer;
+.display {
+  grid-area: display;
 }
 
 .footerApp {
