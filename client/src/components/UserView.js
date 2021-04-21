@@ -35,26 +35,33 @@ export default function UserView() {
       <div className="header"
         style={{ backgroundImage: `url(${backgroundUser})`}}
       >
-          <h1> Step By Step </h1>         
+          <h1> Step By Step </h1> 
+          <div id="userQuestion">
+          How do you feel today?
+          </div>        
       </div>
 
       <div className="left">Left</div>
 
         <div className="core userCore">
 
-          <div id="userQuestion">
+          {/* <div id="userQuestion">
           How do you feel today?
-          </div>
+          </div> */}
+
+          <div className="userxCore">
 
           <ul className="no-bullet moodList">
+            
           { moods.map((mood) => (          
               <li key={mood.name}>
-                <button id="moodButton" name={mood.name} onClick={() => getAresponse(mood.name)}>
+                <button id="moodButton" className="buttons" name={mood.name} onClick={() => getAresponse(mood.name)}>
                   <span> {mood.name} </span>  <br></br> <span id="MoodEmoji"> {mood.emoji}</span>
                 </button> 
               </li>
-            ))}      
+            ))}    
           </ul>
+          </div>
         </div>
             
             { pick &&  (
@@ -65,6 +72,8 @@ export default function UserView() {
             )}
 
       <div className="right">Right</div>
+
+      <div className="footerApp"></div>
 
     </div>
   );

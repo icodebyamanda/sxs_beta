@@ -130,6 +130,8 @@ export default function AdminView() {
 
       <div className="right">Right</div>
 
+      <div className="footerApp"></div>
+
 
     </div>
   );

@@ -27,14 +27,18 @@ function App() {
           <Route path="/user" component={UserView} />
 
           <Route path="/" component={Homepage} />
-
+          
         </Switch>
 
         <div className="footerApp"> <Navigation /> </div>
 
       </div>
+
+
         
     </Router>
+
+
 
     </div>
 

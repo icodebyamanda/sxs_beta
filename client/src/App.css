@@ -1,13 +1,23 @@
 @import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Sacramento&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Quicksand&display=swap");
 
 * {
   text-align: center;
 }
 
+html {
+  height: 100%;
+  width: 100%;
+}
+
 body {
-  height: 600px;
+  /* height: 600px; */
+
+  height: 100%;
+  width: 100%;
+  margin: 0;
 }
 
 h1 {
@@ -75,7 +85,9 @@ a:hover {
 .core {
   grid-area: core;
   /* background-color: #edc7b7; */
+  width: 100%;
   margin: 25px;
+  grid-template-areas: "userxCore";
 }
 
 .right {
@@ -90,29 +102,51 @@ a:hover {
 .footerApp {
   grid-area: footerApp;
   font-size: 1em;
-  padding: 5px;
+  padding: 100px;
   margin: 20px;
 }
 
 /* ! --- UserView Only --- */
 
+.userxCore {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.userxCore > ul {
+  width: 100%;
+}
+
+.userxCore > ul > li {
+  width: 50%;
+  margin: 25px 0 25px 0;
+}
+
+.no-bullet {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 #userQuestion {
   font-family: "Comfortaa", cursive;
   font-size: 1.5em;
-  color: #78244c;
+  color: white;
   padding: 30px 0 30px 0;
   letter-spacing: 1px;
 }
 
 #moodButton {
+  flex: 50%;
   padding: 0.5em 2em;
   border: none;
   border-radius: 12px;
-  font-family: "Comfortaa", cursive;
+  font-family: "Quicksand", sans-serif;
+  /* font-family: "Comfortaa", cursive; */
   font-weight: bold;
   color: #78244c;
   font-size: 1em;
-  letter-spacing: 2px;
+  letter-spacing: 5px;
+  /* letter-spacing: 2px; */
   text-shadow: 0.5px 0.5px rgb(179, 174, 174);
   transition: all 0.15s;
   /* background-color: #edc7b7; */
@@ -172,7 +206,8 @@ form {
   #userQuestion {
     font-family: "Comfortaa", cursive;
     font-size: 1em;
-    color: #78244c;
+    color: whitesmoke;
+    font-weight: 400;
     padding: 20px 0 20px 0;
     letter-spacing: 1px;
   }
@@ -182,6 +217,7 @@ form {
   }
 
   #moodButton {
+    font-family: "Comfortaa", cursive;
     font-size: 0.8em;
     padding: 5px;
   }

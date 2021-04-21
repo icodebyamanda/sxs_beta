@@ -8,7 +8,20 @@ export default function Navigation() {
   return (
 
     <div>
-      <nav className="footerApp">
+      <div className="header"></div>
+      <div className="left"></div>
+      <div className="core"></div>
+      <div className="right"></div>
+      <div className="footer"></div>
+
+      <div className="footerApp">
+        <nav>
+
+        {/* <a href="/"> Homepage </a>
+        {' | '} 
+        <a href="/user"> User Page </a>
+        {' | '} 
+        <a href="/admin"> Admin Page </a> */}
         
         <a> <Link to="/user" > User Page </Link>  </a>
         {' | '} 
@@ -16,7 +29,9 @@ export default function Navigation() {
         {' | '} 
         <a> <Link to="/" > Homepage </Link>  </a>
 
-      </nav>
+        </nav>
+      </div>
+
     </div>
 
 
