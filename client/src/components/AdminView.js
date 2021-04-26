@@ -80,9 +80,9 @@ export default function AdminView() {
 
             <form onSubmit={handleSubmit} className="formStyle">
 
-              <label className="formLabel">           
+              <label>           
                 <div className="formTitle">Pick the mood this gift will address:</div>
-                <select id="moods" name="moods" value={mood} onChange={handleMoodChange}>
+                <select className="EnteredValues"  id="moods" name="moods" value={mood} onChange={handleMoodChange}>
                   <option value="empty"></option>
                   <option value="blessed">Blessed</option>
                   <option value="determined">Determined</option>
@@ -91,26 +91,27 @@ export default function AdminView() {
                 </select>
               </label>
       ​
-              <label className="formLabel">
+              <label>
                 <div className="formTitle">Pick the media format:</div>
-                <select id="formats" name="formats" value={format} onChange={handleFormatChange}>
+                <select className="EnteredValues" id="formats" name="formats" value={format} onChange={handleFormatChange}>
                   <option value="empty"></option>
                   <option value="video">Video</option>
                   <option value="quote">Quote</option>
                 </select>
               </label>
 
-              <label className="formLabel">
+              <label id="inputAsAText" >
               <div className="formTitle">Bring on the URL:</div>
                 <input
+                  className="EnteredValues"
                   type="text"
                   name="url"
                   value={url}
                   onChange={handleUrlChange}/>
-              </label><br></br>
+              </label>
       ​
               <label>
-                <input type="submit" value="submit" id="SubmitButton" />
+                <input type="submit" value="Submit" id="SubmitButton" />
               </label>
 
             </form>

@@ -169,32 +169,42 @@ a:hover {
   margin: 5% auto;
 }
 
-.formStyle {
+/* .formStyle {
   display: flexbox;
   width: 100%;
   height: 100%;
-}
+} */
 
 form {
-  /* display: flexbox; */
+  display: flex;
+  flex-direction: column;
   padding: 20px;
-  align-items: center;
+  width: 100%;
+  /* height: 100%; */
 }
 
-.formLabel {
-  padding: 10px;
-  margin: 5px 0;
-  font-size: 1em;
-}
-
-input,
-select {
+/* .EnteredValues {
   border: 2px solid #eee;
   padding: 10px;
   margin: 5px 0;
   border-radius: 10px;
-  font-size: 1em;
   width: 100%;
+} */
+
+input[type="text"],
+select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: block;
+  border: 2px solid #eee;
+  border-radius: 10px;
+  box-sizing: border-box;
+  box-shadow: 0 0 15px 4px rgba(56, 56, 56, 0.06);
+}
+
+#inputAsAText {
+  margin-top: 20px;
 }
 
 #SubmitButton {
@@ -205,6 +215,7 @@ select {
   border: none;
   background-color: #00cc99;
   color: #fff;
+  box-shadow: 0 0 15px 4px rgba(56, 56, 56, 0.06);
   font-weight: 600;
   font-size: 1em;
   border-radius: 5px;
