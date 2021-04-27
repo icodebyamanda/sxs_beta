@@ -32,7 +32,8 @@ body {
     "header header header header header"
     "left core core core right"
     "display display display display display"
-    "footerApp footerApp footerApp footerApp footerApp";
+    /* "footerApp footerApp footerApp footerApp footerApp"; */
+    "footer footer footer footer footer";
   grid-gap: 5px;
   padding: 10px;
 }
@@ -65,7 +66,7 @@ a:hover {
   color: #00cc99;
 }
 
-.header {
+header {
   grid-area: header;
   width: auto;
   height: auto;
@@ -99,8 +100,8 @@ a:hover {
   grid-area: display;
 }
 
-.footerApp {
-  grid-area: footerApp;
+footer {
+  grid-area: footer;
   font-size: 1em;
   padding: 70px;
   margin: 25px;

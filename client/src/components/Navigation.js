@@ -19,8 +19,8 @@ export default function Navigation() {
       
       <div className="display"></div>
 
-      <div className="footerApp">
-        <nav>
+      {/* <div className="footerApp"> */}
+        <footer>
 
         {/* a -href is loading slower than react link */}
         {/* <a href="/"> Homepage </a>
@@ -35,8 +35,8 @@ export default function Navigation() {
         {' | '} 
         <a> <Link to="/" > Homepage </Link>  </a>
 
-        </nav>
-      </div>
+        </footer>
+      {/* </div> */}
 
     </div>
 
