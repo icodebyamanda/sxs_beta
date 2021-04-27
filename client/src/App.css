@@ -107,6 +107,11 @@ footer {
   margin: 25px;
 }
 
+.navBar {
+  padding: 20px 0 0 0;
+  position: sticky;
+}
+
 /* ! --- UserView Only --- */
 
 .userxCore {

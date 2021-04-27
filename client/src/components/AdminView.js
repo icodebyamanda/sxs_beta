@@ -73,7 +73,7 @@ export default function AdminView() {
       >
         <h1>Step By Step</h1>
         <div className="subheading" id="adminSubheading">
-          Feeling inspired?
+          Got inspired?
           </div>      
       </header>
 
