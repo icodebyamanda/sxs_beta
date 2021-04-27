@@ -251,8 +251,10 @@ select {
     align-items: center;
   }
 
-  .footerApp {
+  footer {
     font-size: 0.8em;
+    padding: 70px;
+    margin: 25px;
   }
 
   ul {
