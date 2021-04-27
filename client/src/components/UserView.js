@@ -36,7 +36,7 @@ export default function UserView() {
         style={{ backgroundImage: `url(${backgroundUser})`}}
       >
           <h1> Step By Step </h1> 
-          <div id="userQuestion">
+          <div className="subheading">
           How do you feel today?
           </div>        
       </header>

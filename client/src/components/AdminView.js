@@ -72,6 +72,9 @@ export default function AdminView() {
         style={{ backgroundImage: `url(${backgroundAdmin})`}}
       >
         <h1>Step By Step</h1>
+        <div className="subheading" id="adminSubheading">
+          Feeling inspired?
+          </div>      
       </header>
 
       <div className="left">Left</div>
