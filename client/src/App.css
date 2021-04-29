@@ -143,13 +143,12 @@ header {
   padding: 0.5em 2em;
   border: none;
   border-radius: 12px;
-
   background-color: white;
+  transition: all 0.15s;
 }
 
 .moodButton:active {
-  background-color: #924f6b;
-  color: #fff;
+  background-color: #edc7b7;
   border-color: #bbbbbb;
 }
 
@@ -160,23 +159,12 @@ header {
 
 #moodTitle {
   font-family: "Montserrat Alternates", sans-serif;
-  /* font-family: "Quicksand", sans-serif; */
   margin-top: 2px;
   margin: 0;
-  /* font-family: "Sacramento", cursive; */
-  /* font-family: "Comfortaa", cursive; */
   font-weight: 500;
-  /* background: whitesmoke; */
   color: #00cc99;
-  /* color: #78244c; */
   font-size: 1.2em;
   transition: all 0.15s;
-  /* letter-spacing: 5px; */
-  /* letter-spacing: 2px; */
-  /* text-shadow: 0.5px 0.5px black; */
-  /* text-shadow: 0.5px 0.5px #edc7b7; */
-  /* text-shadow: 0.5px 0.5px rgb(179, 174, 174); */
-  /* text-shadow: 0.5px 0.5px rgb(63, 57, 57); */
 }
 
 .moodList {
