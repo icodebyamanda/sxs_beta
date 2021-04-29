@@ -214,22 +214,10 @@ form {
   padding: 20px;
   width: 100%;
   font-family: "Quicksand", sans-serif;
-  /* font-family: "Roboto", sans-serif; */
-  /* font-family: "Comfortaa", cursive; */
-  /* font-weight: 600; */
-  /* font-family: "Quicksand", sans-serif; */
-  /* font-family: "Montserrat Alternates", sans-serif; */
-
   color: #78244c;
-  /* height: 100%; */
 }
 
-.EnteredValues {
-  /* border: 2px solid #eee;
-  padding: 10px;
-  margin: 5px 0;
-  border-radius: 10px;
-  width: 100%; */
+.enteredValues {
   font-family: "Quicksand", sans-serif;
   letter-spacing: 2px;
   font-size: 1em;
