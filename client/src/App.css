@@ -201,6 +201,13 @@ header {
   margin: 5% auto;
 }
 
+.formTitle {
+  padding-bottom: 30px;
+  margin: 5px 0;
+  letter-spacing: 2px;
+  font-size: 1.3em;
+}
+
 form {
   display: flex;
   flex-direction: column;
@@ -239,9 +246,8 @@ select {
   border-radius: 10px;
   box-sizing: border-box;
   box-shadow: 0 0 15px 4px rgba(56, 56, 56, 0.06);
-}
-
-option {
+  cursor: pointer;
+  line-height: 1.1;
 }
 
 #inputAsAText {
@@ -258,16 +264,9 @@ option {
   color: #fff;
   box-shadow: 0 0 15px 4px rgba(56, 56, 56, 0.06);
   font-weight: 600;
-  font-size: 1em;
+  font-size: 1.5em;
   border-radius: 5px;
   width: 100%;
-}
-
-.formTitle {
-  padding-bottom: 30px;
-  margin: 5px 0;
-  letter-spacing: 2px;
-  font-size: 1.3em;
 }
 
 @media only screen and (min-width: 551px) {
