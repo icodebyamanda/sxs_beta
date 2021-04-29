@@ -20,15 +20,14 @@ function App() {
       <div className="App">
 
         <Router>
-        
+
+        <Navigation />
+
         <Switch>
           <Route path="/admin" component={AdminView} /> 
           <Route path="/user" component={UserView} />
           <Route path="/" component={Homepage} />
         </Switch>
-
-
-        <Navigation />
 
         </Router>
       </div>
