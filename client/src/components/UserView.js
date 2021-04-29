@@ -36,7 +36,7 @@ export default function UserView() {
         style={{ backgroundImage: `url(${backgroundUser})`}}
       >
           <h1> Step By Step </h1> 
-          <div className="subheading">
+          <div className="defaultSubheading">
           How do you feel today?
           </div>        
       </header>
@@ -45,18 +45,14 @@ export default function UserView() {
 
         <div className="core userCore">
 
-          {/* <div id="userQuestion">
-          How do you feel today?
-          </div> */}
-
           <div className="userxCore">
 
             <ul className="no-bullet moodList">
               
             { moods.map((mood) => (          
                 <li key={mood.name}>
-                  <button id="moodButton" className="buttons" name={mood.name} onClick={() => getAresponse(mood.name)}>
-                    <span> {mood.name} </span>  <br></br> <span id="MoodEmoji"> {mood.emoji}</span>
+                  <button className="moodButton" name={mood.name} onClick={() => getAresponse(mood.name)}>
+                    <div id="moodTitle"> {mood.name} </div>  <br></br> <div id="moodEmoji"> {mood.emoji}</div>
                   </button> 
                 </li>
               ))}    
