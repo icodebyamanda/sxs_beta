@@ -81,7 +81,7 @@ export default function AdminView() {
 
         <div className="core adminCore">
 
-            <form onSubmit={handleSubmit} className="formStyle">
+            <form onSubmit={handleSubmit} className="adminFormStyle">
 
               <label>           
                 <div className="formTitle">Pick the mood this gift will address</div>
