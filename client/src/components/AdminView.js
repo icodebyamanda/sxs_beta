@@ -72,7 +72,7 @@ export default function AdminView() {
         style={{ backgroundImage: `url(${backgroundAdmin})`}}
       >
         <h1>Step By Step</h1>
-        <div className="subheading" id="adminSubheading">
+        <div className="defaultSubheading" id="adminSubheading">
           Got inspired?
           </div>      
       </header>
@@ -124,14 +124,12 @@ export default function AdminView() {
 
           { newEntryDisplay && (     
             <div className="response">
-              <div id="EntryAdded">New entry added!</div>
-              <a href={url} target="_blank" > <span id="UrlAdmin">Click here to enjoy it right away </span></a>
+              <div className="urlHeading" id="entryAdded">New entry added!</div>
+              <a href={url} target="_blank" > <div className="responseLink" id="adminLink">Click here to enjoy it right away </div></a>
             </div>
           )}
 
       <div className="right">Right</div>
-
-      <div className="footerApp"></div>
 
 
     </div>

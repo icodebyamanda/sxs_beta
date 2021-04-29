@@ -62,14 +62,12 @@ export default function UserView() {
             
             { pick &&  (
               <div className="response">
-                <div>Today you get:</div>
-                <a href={pick.url} target="_blank" > Good vibes only... </a>
+                <div className="urlHeading" id="responseSent">Today you get,</div>
+                <a href={pick.url} target="_blank"> <br></br> <div className="responseLink" id="userLink"> Good vibes only...  </div> </a>
               </div>
             )}
 
       <div className="right">Right</div>
-
-      <div className="footerApp"></div>
 
     </div>
   );
