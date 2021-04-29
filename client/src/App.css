@@ -18,6 +18,7 @@ body {
   height: 100%;
   width: 100%;
   margin: 0;
+  padding-bottom: 50px;
 }
 
 .App {
@@ -31,7 +32,7 @@ body {
   grid-template-areas:
     "header header header header header"
     "left core core core right"
-    "display display display display display"
+    "response response response response response"
     /* "footerApp footerApp footerApp footerApp footerApp"; */
     "footer footer footer footer footer";
   grid-gap: 5px;
@@ -96,19 +97,20 @@ header {
   margin: 2px;
 }
 
-.display {
-  grid-area: display;
+.response {
+  grid-area: response;
+  margin: 25px 0 25px 0;
 }
 
 footer {
-  grid-area: footer;
   font-size: 1em;
-  padding: 70px;
-  margin: 25px;
+  /* padding: 70px; */
+  margin-top: 25px;
 }
 
 .navBar {
-  padding: 20px 0 0 0;
+  grid-area: footer;
+  padding: 100px 0 0 0;
   position: sticky;
 }
 
@@ -155,7 +157,7 @@ footer {
   /* letter-spacing: 2px; */
   text-shadow: 0.5px 0.5px rgb(179, 174, 174);
   transition: all 0.15s;
-  /* background-color: #edc7b7; */
+  background-color: white;
 }
 
 #moodButton:active {

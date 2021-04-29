@@ -4,6 +4,8 @@ import AdminView from "./components/AdminView";
 import UserView from "./components/UserView";
 import Homepage from "./components/Homepage";
 import Navigation from "./components/Navigation";
+// import Navbar from 'react-bootstrap/Navbar';
+// import Container from 'react-bootstrap/Container';
 
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
@@ -18,12 +20,16 @@ function App() {
       <div className="App">
 
         <Router>
-        <Navigation />
+        
         <Switch>
           <Route path="/admin" component={AdminView} /> 
           <Route path="/user" component={UserView} />
           <Route path="/" component={Homepage} />
         </Switch>
+
+
+        <Navigation />
+
         </Router>
       </div>
 

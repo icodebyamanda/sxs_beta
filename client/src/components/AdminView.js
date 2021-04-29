@@ -123,7 +123,7 @@ export default function AdminView() {
         </div>
 
           { newEntryDisplay && (     
-            <div className="display">
+            <div className="response">
               <div id="EntryAdded">New entry added!</div>
               <a href={url} target="_blank" > <span id="UrlAdmin">Click here to enjoy it right away </span></a>
             </div>
