@@ -166,15 +166,17 @@ header {
   /* font-family: "Sacramento", cursive; */
   /* font-family: "Comfortaa", cursive; */
   font-weight: 500;
-  background: #00cc99;
-  color: white;
+  /* background: whitesmoke; */
+  color: #00cc99;
   /* color: #78244c; */
-  font-size: 1em;
+  font-size: 1.2em;
   transition: all 0.15s;
   /* letter-spacing: 5px; */
-  letter-spacing: 5px;
-  text-shadow: 0.5px 0.5px #edc7b7;
+  /* letter-spacing: 2px; */
+  /* text-shadow: 0.5px 0.5px black; */
+  /* text-shadow: 0.5px 0.5px #edc7b7; */
   /* text-shadow: 0.5px 0.5px rgb(179, 174, 174); */
+  /* text-shadow: 0.5px 0.5px rgb(63, 57, 57); */
 }
 
 .moodList {
