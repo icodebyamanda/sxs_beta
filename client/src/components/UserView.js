@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import backgroundUser from "../assets/headers/userHeader2.png"
 //import Headers from "./components/Headers";
-
+import Footer from './Footer';
 
 
 export default function UserView() {
@@ -58,7 +58,8 @@ export default function UserView() {
               ))}    
             </ul>
           </div>
-        </div>
+
+
             
             { pick &&  (
               <div className="response">
@@ -66,6 +67,12 @@ export default function UserView() {
                 <a href={pick.url} target="_blank"> <br></br> <div className="responseLink" id="userLink"> Good vibes only...  </div> </a>
               </div>
             )}
+
+          <div><Footer /></div>
+
+        </div>
+
+
 
       <div className="right">Right</div>
 

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import backgroundAdmin from "../assets/headers/adminHeader.png"
+import Footer from './Footer';
 
 export default function AdminView() {
 
@@ -121,7 +122,7 @@ export default function AdminView() {
             </form>
 
         
-        </div>
+
 
           { newEntryDisplay && (     
             <div className="response">
@@ -129,6 +130,10 @@ export default function AdminView() {
               <a href={url} target="_blank"> <div className="responseLink" id="adminLink">Click here to enjoy it right away </div></a>
             </div>
           )}
+
+        <div><Footer /></div>
+
+      </div>
 
       <div className="right">Right</div>
 
