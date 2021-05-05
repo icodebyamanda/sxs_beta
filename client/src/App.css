@@ -258,7 +258,7 @@ footer {
 }
 
 .formTitle {
-  padding-bottom: 30px;
+  padding-bottom: 15px;
   margin: 5px 0;
   letter-spacing: 2px;
   font-size: 1.3em;
@@ -331,16 +331,33 @@ select {
     height: auto;
     background-size: cover;
     background-position: center;
-    padding: 40px;
-    margin: 15px 5px;
+    padding: 5px;
+    margin: 15px 25px;
     justify-content: center;
     align-items: center;
+  }
+
+  h1 {
+    font-size: 3em;
+  }
+
+  h2 {
+    font-size: 1em;
   }
 
   ul {
     list-style: none;
     padding-inline-start: 0px;
     display: grid;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    width: 100%;
+    font-family: "Quicksand", sans-serif;
+    color: #78244c;
   }
 
   #userQuestion {
@@ -362,23 +379,31 @@ select {
     padding: 5px;
   }
 
-  .formLabel {
-    padding: 10px;
-    margin: 5px 0;
-    font-size: 0.5em;
+  .formTitle {
+    font-size: 0.8em;
+  }
+
+  .enteredValues {
+    font-family: "Quicksand", sans-serif;
+    letter-spacing: 2px;
+    font-size: 0.8em;
+    font-weight: 400;
   }
 
   #SubmitButton {
     appearance: none;
-    margin: 40px 0 20px 0;
+    margin: 15px 0 5px 0;
     border-radius: 10px;
     padding: 10px;
     border: none;
     background-color: #00cc99;
-    color: #78244c;
+    color: white;
     font-weight: 600;
-    font-size: 0.5em;
-    border-radius: 5px;
+    font-size: 0.8em;
     width: 100%;
+  }
+
+  #adminLink {
+    font-size: 1em;
   }
 }
