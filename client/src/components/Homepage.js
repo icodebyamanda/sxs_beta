@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Footer from './Footer';
 
 export default function Homepage() {
 
@@ -32,14 +33,22 @@ export default function Homepage() {
           <p className="spanHomepage"> Simple right ?  </p>
           
           <p> So jump out of bed to embrace the day, and allow yourself to do so, <span className="spanHomepage"> Step By Step. </span> </p>
+        
+        </div>
+
+        <div><Footer /></div>
+
+      </div>
+
+
+
 
       <div className="right">Right</div>
 
 
-    </div>
-
-
     
+
+    </div>
 
   );
 }

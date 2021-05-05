@@ -129,6 +129,21 @@ a:hover {
   margin: 2px;
 }
 
+footer {
+  width: 100%;
+  font-size: 0.7em;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 900;
+  line-height: 1.6;
+  border-top: 1px dotted #00cc99;
+  margin-top: 70px;
+  padding-top: 20px;
+}
+
+.inlineSpacing {
+  padding-inline: 5% 2%;
+}
+
 .response {
   grid-area: response;
   padding: 15px 0 55px 0;
@@ -326,13 +341,6 @@ select {
     justify-content: center;
     align-items: center;
   }
-
-  footer {
-    font-size: 0.8em;
-    padding: 70px;
-    margin: 25px;
-  }
-
   ul {
     list-style: none;
     padding-inline-start: 0px;

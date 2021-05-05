@@ -10,11 +10,9 @@ export default function Navigation() {
 
       <nav>
 
-      <Link to="/"> Homepage </Link>
-      {' | '} 
-      <Link to="/user"> User Tab </Link>
-        {' | '} 
-      <Link to="/admin"> Admin Tab </Link>
+      <span className="inlineSpacing"> <Link to="/"> Homepage </Link> </span>
+      <span className="inlineSpacing"> <Link to="/user"> User Tab </Link> </span>
+      <span className="inlineSpacing"> <Link to="/admin"> Admin Tab </Link> </span>
       
       </nav>
 
