@@ -14,6 +14,7 @@ export default function AdminView() {
     e.preventDefault();
     addNewEntry();
     displayLastEntry();
+    // clearForm();
   };
 
   function handleMoodChange(e) {
@@ -26,7 +27,6 @@ export default function AdminView() {
 
   function handleUrlChange(e) {
     setUrl(e.target.value);
-        // clearForm();
   };
 
  const displayLastEntry = () => {
@@ -34,11 +34,11 @@ export default function AdminView() {
 
  }
 
- function clearForm() {
-    setMood('')
-    setFormat('')
-    setUrl('')
- };
+//  function clearForm() {
+//     setMood('')
+//     setFormat('')
+//     setUrl('')
+//  };
 
   const getResponses = () => {
     fetch("/responses")
