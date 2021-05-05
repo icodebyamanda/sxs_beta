@@ -22,17 +22,17 @@ export default function Homepage() {
         <div className="homepageText">
 
           <h3 className="alignLeft"> Welcome Friend, </h3>
-          <h4 className="alignLeft"> This morning tool aims at helping you acknowledge your emotions, avoid denial and receive back some positive vibes to get you going with your day. </h4>
+          <h4 className="alignLeft"> This morning tool aims at helping you acknowledge your emotions, avoid denial for which you receive back some positive vibes to get you going with your day. </h4>
 
-          <p> In the <span className="spanHomepage"> 'Admin Tab' </span>, store some links, videos or quotes, that inspire you, make you happy and which you know, would get you on a positive foot.<br></br>
-          You would need to organise these links according to the emotion you think they should address. </p>
+          <p> In the <span className="spanHomepage"> 'Admin Space' </span>, store some links, videos or quotes, that inspire you, make you happy and make you feel good.<br></br>
+          You would need to match these links according to the emotion you would like them to address to. </p>
 
-          <p> In the <span className="spanHomepage"> 'User Tab' </span>, select the emoticon that matches the closest your emotions. <br></br>
-          You will receive back one of these links you have previously stored for yourself.  </p>
+          <p> In <span className="spanHomepage"> 'Your Routine' </span>, select the emoticon that matches the closest your current emotions. <br></br>
+          In return, you will receive one of these links you have previously stored.  </p>
          
-          <p className="spanHomepage"> Simple right ?  </p>
+          <p className="spanHomepage"> Simple, right ?  </p>
           
-          <p> So jump out of bed to embrace the day, and allow yourself to do so, <span className="spanHomepage"> Step By Step. </span> </p>
+          <p> So jump out of bed and <span className="spanHomepage"> Step By Step, </span> embrace the day. </p>
         
         </div>
 
