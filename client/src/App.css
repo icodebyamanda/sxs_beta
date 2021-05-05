@@ -339,10 +339,12 @@ select {
 
   h1 {
     font-size: 3em;
+    /* padding-bottom: 5px; */
   }
 
   h2 {
     font-size: 1em;
+    padding-top: 5px;
   }
 
   ul {
@@ -381,6 +383,7 @@ select {
 
   .formTitle {
     font-size: 0.8em;
+    font-weight: 600;
   }
 
   .enteredValues {
@@ -405,5 +408,19 @@ select {
 
   #adminLink {
     font-size: 1em;
+  }
+
+  footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    font-size: 0.7em;
+    font-family: "Quicksand", sans-serif;
+    font-weight: 500;
+    line-height: 1.7;
+    border-top: 1px dotted #00cc99;
+    margin-top: 5px;
+    padding-top: 15px;
   }
 }
