@@ -9,12 +9,12 @@ export default function Navigation() {
     <div className="navBar">
 
       <nav>
-      
+
+      <Link to="/"> Homepage </Link>
+      {' | '} 
       <Link to="/user"> User Page </Link>
         {' | '} 
       <Link to="/admin"> Admin Page </Link>
-        {' | '} 
-      <Link to="/"> Homepage </Link>
       
       </nav>
 

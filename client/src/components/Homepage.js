@@ -20,15 +20,11 @@ export default function Homepage() {
           Today will be grand, <br />
           and for everything else... <br />
         </span>
-        <span> 'Hindsight is a gift' (H.Gadsby) </span>
+        <span> 'Hindsight is a gift' (H. Gadsby) </span>
       
       </div>
 
       <div className="right">Right</div>
-
-      <div className="footer">
-        Footer
-      </div>
 
 
     </div>
