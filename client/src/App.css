@@ -82,6 +82,7 @@ h4 {
 }
 
 p {
+  font-size: 1em;
   text-align: left;
   line-height: 1.6;
 }
@@ -105,10 +106,6 @@ a:link {
 
 a:hover {
   color: #00cc99;
-}
-
-.forSpacing {
-  padding: 10px 0px;
 }
 
 .left {
@@ -177,15 +174,13 @@ footer {
   margin: 15px 5px;
 }
 
-/* #homepageHOne {
-  padding-bottom: 1px;
-} */
-
 #HomepageSubheading {
   font-family: "Quicksand", sans-serif;
-  font-size: 0.8em;
+  font-size: 3em;
+  font-style: oblique;
   color: #00cc99;
-  padding: 5px;
+  line-height: 1.6;
+  padding: 0 5px 5px 5px;
 }
 
 .homepageText {
@@ -341,6 +336,7 @@ select {
     justify-content: center;
     align-items: center;
   }
+
   ul {
     list-style: none;
     padding-inline-start: 0px;
