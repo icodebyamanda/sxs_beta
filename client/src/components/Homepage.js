@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import backgroundAdmin from "../assets/headers/3_Banner_Hello.png"
 
 export default function Homepage() {
 
@@ -7,9 +8,11 @@ export default function Homepage() {
 
     <div className="grid-container">
 
-      <div className="header">
-        Header
-      </div>
+    <header className="header" id="homepageHeader"
+        style={{ backgroundImage: `url(${backgroundAdmin})`}}
+      >
+ 
+      </header>
 
       <div className="left">Left</div>
 

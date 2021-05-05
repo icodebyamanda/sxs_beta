@@ -136,6 +136,12 @@ header {
 #adminLink {
   font-size: 1.5em;
 }
+
+/* ! --- Homepage Only --- */
+
+#homepageHeader {
+}
+
 /* ! --- UserView Only --- */
 
 .userxCore {
