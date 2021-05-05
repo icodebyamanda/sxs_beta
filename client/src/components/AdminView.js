@@ -26,18 +26,19 @@ export default function AdminView() {
 
   function handleUrlChange(e) {
     setUrl(e.target.value);
+        // clearForm();
   };
 
  const displayLastEntry = () => {
     setNewEntryDisplay(url)
-    // clearForm();
+
  }
 
-//  function clearForm() {
-//     setMood('')
-//     setFormat('')
-//     setUrl('')
-//  };
+ function clearForm() {
+    setMood('')
+    setFormat('')
+    setUrl('')
+ };
 
   const getResponses = () => {
     fetch("/responses")
