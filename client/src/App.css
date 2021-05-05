@@ -89,7 +89,6 @@ p {
 
 ul {
   list-style: none;
-  padding-inline-start: 0px;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
@@ -353,15 +352,6 @@ select {
     display: grid;
   }
 
-  form {
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
-    width: 100%;
-    font-family: "Quicksand", sans-serif;
-    color: #78244c;
-  }
-
   #userQuestion {
     font-family: "Comfortaa", cursive;
     font-size: 1em;
@@ -379,6 +369,27 @@ select {
     font-family: "Comfortaa", cursive;
     font-size: 0.8em;
     padding: 5px;
+  }
+
+  #userLink {
+    font-size: 1em;
+  }
+
+  .urlHeading {
+    padding-top: 20px;
+  }
+
+  .responseLink {
+    padding: 5px 0 5px 0;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    width: 100%;
+    font-family: "Quicksand", sans-serif;
+    color: #78244c;
   }
 
   .formTitle {
@@ -408,6 +419,15 @@ select {
 
   #adminLink {
     font-size: 1em;
+  }
+
+  #HomepageSubheading {
+    font-family: "Quicksand", sans-serif;
+    font-size: 1em;
+    font-style: oblique;
+    color: #00cc99;
+    line-height: 1.6;
+    padding: 0 5px 5px 5px;
   }
 
   footer {
