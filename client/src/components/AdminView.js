@@ -14,7 +14,7 @@ export default function AdminView() {
     e.preventDefault();
     addNewEntry();
     displayLastEntry();
-    clearForm();
+    // clearForm();
   };
 
   function handleMoodChange(e) {
@@ -33,11 +33,11 @@ export default function AdminView() {
     setNewEntryDisplay(url)
  }
 
- function clearForm() {
-    setMood('')
-    setFormat('')
-    setUrl('')
- };
+//  function clearForm() {
+//     setMood('')
+//     setFormat('')
+//     setUrl('')
+//  };
 
   const getResponses = () => {
     fetch("/responses")
@@ -125,7 +125,7 @@ export default function AdminView() {
           { newEntryDisplay && (     
             <div className="response">
               <div className="urlHeading" id="entryAdded">New entry added!</div>
-              <a href={url} target="_blank" > <div className="responseLink" id="adminLink">Click here to enjoy it right away </div></a>
+              <a href={url} target="_blank"> <div className="responseLink" id="adminLink">Click here to enjoy it right away </div></a>
             </div>
           )}
 
