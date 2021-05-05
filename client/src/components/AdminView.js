@@ -14,7 +14,6 @@ export default function AdminView() {
     e.preventDefault();
     addNewEntry();
     displayLastEntry();
-    // clearForm();
   };
 
   function handleMoodChange(e) {
@@ -31,6 +30,7 @@ export default function AdminView() {
 
  const displayLastEntry = () => {
     setNewEntryDisplay(url)
+    // clearForm();
  }
 
 //  function clearForm() {
