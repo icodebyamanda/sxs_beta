@@ -12,9 +12,9 @@ export default function Navigation() {
 
       <Link to="/"> Homepage </Link>
       {' | '} 
-      <Link to="/user"> User Page </Link>
+      <Link to="/user"> User Tab </Link>
         {' | '} 
-      <Link to="/admin"> Admin Page </Link>
+      <Link to="/admin"> Admin Tab </Link>
       
       </nav>
 
