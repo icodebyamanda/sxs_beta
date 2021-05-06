@@ -20,8 +20,8 @@ export default function Homepage() {
         
         <div className="homepageText">
 
-          <h3 className="alignLeft"> Welcome Friend, </h3>
-          <h4 className="alignLeft"> This morning tool aims at helping you acknowledge your emotions, avoid denial for which you receive back some positive vibes to get you going with your day. </h4>
+          <h3 className="alignLeft hThreehomepageFontSize"> Welcome Friend, </h3>
+          <h4 className="alignLeft hFourhomepageFontSize"> This morning tool aims at helping you acknowledge your emotions, avoid denial for which you receive back some positive vibes to get you going with your day. </h4>
 
           <p> In the <span className="spanHomepage"> 'Admin Space' </span>, store some links, videos or quotes, that inspire you, make you happy and make you feel good.<br></br>
           You would need to match these links to the emotion you would like them to address to. </p>

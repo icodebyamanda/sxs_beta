@@ -78,7 +78,7 @@ h4 {
 }
 
 p {
-  font-size: 1em;
+  font-size: 1.5em;
   text-align: left;
   line-height: 1.6;
 }
@@ -183,11 +183,19 @@ footer {
 
 #HomepageSubheading {
   font-family: "Quicksand", sans-serif;
-  font-size: 3em;
+  font-size: 2.5em;
   font-style: oblique;
   color: #00cc99;
   line-height: 1.6;
   padding: 0 5px 5px 5px;
+}
+
+.hThreehomepageFontSize {
+  font-size: 2em;
+}
+
+.hFourhomepageFontSize {
+  font-size: 1.7em;
 }
 
 .homepageText {
