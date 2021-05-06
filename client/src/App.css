@@ -365,10 +365,19 @@ select {
     justify-content: space-evenly;
   }
 
-  #moodButton {
-    font-family: "Comfortaa", cursive;
-    font-size: 0.8em;
-    padding: 5px;
+  #moodTitle {
+    font-family: "Montserrat Alternates", sans-serif;
+    margin-top: 2px;
+    margin: 0;
+    font-weight: 500;
+    color: #78244c;
+    font-size: 1em;
+    transition: all 0.15s;
+  }
+
+  #moodEmoji {
+    margin: 1px;
+    font-size: 35px;
   }
 
   #userLink {
