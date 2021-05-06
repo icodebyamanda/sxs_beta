@@ -34,7 +34,8 @@ body {
   /* height: 500px; */
   grid-template-areas:
     "header header header header header"
-    "core core core core core";
+    /* "core core core core core"; */
+    "left core core core right";
   /* "left core core core right"
     "left core core core right"
     "left core core core right"; */
@@ -125,11 +126,11 @@ footer {
   padding-top: 20px;
 }
 
-/* .left {
+.left {
   grid-area: left;
   margin: 2px;
   border: solid;
-} */
+}
 
 .core {
   grid-area: core;
@@ -139,11 +140,11 @@ footer {
   grid-template-areas: "userxCore";
 }
 
-/* .right {
+.right {
   grid-area: right;
   margin: 2px;
   border: solid;
-} */
+}
 
 /* ! ALL USEFUL UTILITIES */
 
@@ -167,7 +168,7 @@ footer {
 }
 
 .response {
-  grid-area: response;
+  /* grid-area: response; */
   padding: 10px 0 35px 0;
   font-family: "Comfortaa", cursive;
   font-size: 1em;
