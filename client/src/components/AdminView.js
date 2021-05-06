@@ -82,6 +82,7 @@ export default function AdminView() {
       <div className="left"></div>
 
         <div className="core adminCore">
+        <div className="userxCore">
 
             <form onSubmit={handleSubmit} className="adminFormStyle">
 
@@ -121,7 +122,7 @@ export default function AdminView() {
 
             </form>
 
-        
+        </div>
 
 
           { newEntryDisplay && (     

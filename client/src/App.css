@@ -30,12 +30,16 @@ body {
 .grid-container {
   display: grid;
   width: 100%;
-  height: 500px;
+  height: 100%;
+  /* height: 500px; */
   grid-template-areas:
     "header header header header header"
+    "core core core core core";
+  /* "left core core core right"
     "left core core core right"
-    "left response response response right";
-  grid-gap: 5px;
+    "left core core core right"; */
+  /* "left response response response right"; */
+  grid-gap: 1px;
   padding: 10px;
 }
 
@@ -104,7 +108,7 @@ a:hover {
 form {
   display: flex;
   flex-direction: column;
-  padding: 20px;
+  padding: 10px;
   width: 100%;
   font-family: "Quicksand", sans-serif;
   color: #78244c;
@@ -121,23 +125,25 @@ footer {
   padding-top: 20px;
 }
 
-.left {
+/* .left {
   grid-area: left;
   margin: 2px;
-}
+  border: solid;
+} */
 
 .core {
   grid-area: core;
-  /* background-color: #edc7b7; */
-  width: 100%;
+  background-color: #edc7b7;
+  /* width: 100%; */
   margin: 25px;
   grid-template-areas: "userxCore";
 }
 
-.right {
+/* .right {
   grid-area: right;
   margin: 2px;
-}
+  border: solid;
+} */
 
 /* ! ALL USEFUL UTILITIES */
 
@@ -154,6 +160,11 @@ footer {
 }
 
 /* ! USER & ADMIN VIEWS */
+
+.userxCore {
+  display: flex;
+  flex-wrap: wrap;
+}
 
 .response {
   grid-area: response;
@@ -200,11 +211,6 @@ footer {
 }
 
 /* ! USERVIEW */
-
-.userxCore {
-  display: flex;
-  flex-wrap: wrap;
-}
 
 .userxCore > ul {
   width: 100%;
@@ -261,7 +267,7 @@ footer {
 
 .adminCore {
   width: 100%;
-  margin: 5% auto;
+  margin: 5px auto;
 }
 
 .formTitle {
