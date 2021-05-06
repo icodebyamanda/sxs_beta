@@ -41,7 +41,7 @@ export default function UserView() {
           </h2>        
       </header>
 
-      <div className="left">Left</div>
+      <div className="left"></div>
 
         <div className="core userCore">
 
@@ -60,7 +60,6 @@ export default function UserView() {
           </div>
 
 
-            
             { pick &&  (
               <div className="response">
                 <div className="urlHeading" id="responseSent">Today you get,</div>
@@ -72,9 +71,7 @@ export default function UserView() {
 
         </div>
 
-
-
-      <div className="right">Right</div>
+      <div className="right"></div>
 
     </div>
   );

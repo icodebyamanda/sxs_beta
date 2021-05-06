@@ -14,7 +14,7 @@ export default function Homepage() {
       </h2> 
     </header>
 
-      <div className="left">Left</div>
+      <div className="left"></div>
 
       <div className="core">
         
@@ -39,13 +39,7 @@ export default function Homepage() {
 
       </div>
 
-
-
-
-      <div className="right">Right</div>
-
-
-    
+      <div className="right"></div>
 
     </div>
 

@@ -79,7 +79,7 @@ export default function AdminView() {
           </h2>      
       </header>
 
-      <div className="left">Left</div>
+      <div className="left"></div>
 
         <div className="core adminCore">
 
@@ -135,7 +135,7 @@ export default function AdminView() {
 
       </div>
 
-      <div className="right">Right</div>
+      <div className="right"></div>
 
 
     </div>
