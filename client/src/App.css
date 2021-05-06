@@ -4,6 +4,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
+/* ! ALL */
+
 * {
   text-align: center;
 }
@@ -25,14 +27,6 @@ body {
   width: 100%;
 }
 
-nav {
-  padding: 20px 0 2px 0;
-  letter-spacing: 0.5px;
-  font-family: "Quicksand", sans-serif;
-  font-size: 0.8em;
-  font-weight: 500;
-}
-
 .grid-container {
   display: grid;
   width: 100%;
@@ -43,6 +37,14 @@ nav {
     "left response response response right";
   grid-gap: 5px;
   padding: 10px;
+}
+
+nav {
+  padding: 20px 0 2px 0;
+  letter-spacing: 0.5px;
+  font-family: "Quicksand", sans-serif;
+  font-size: 0.8em;
+  font-weight: 500;
 }
 
 header {
@@ -77,10 +79,6 @@ h4 {
   line-height: 1.6;
 }
 
-.alignLeft {
-  text-align: left;
-}
-
 p {
   font-size: 1em;
   text-align: left;
@@ -94,10 +92,6 @@ ul {
   flex-direction: row;
 }
 
-.no-bullet {
-  list-style: none;
-}
-
 a:link {
   text-decoration: none;
   color: #78244c;
@@ -105,6 +99,26 @@ a:link {
 
 a:hover {
   color: #00cc99;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  width: 100%;
+  font-family: "Quicksand", sans-serif;
+  color: #78244c;
+}
+
+footer {
+  width: 100%;
+  font-size: 0.8em;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 500;
+  line-height: 1.6;
+  border-top: 1px dotted #00cc99;
+  margin-top: 70px;
+  padding-top: 20px;
 }
 
 .left {
@@ -125,20 +139,21 @@ a:hover {
   margin: 2px;
 }
 
-footer {
-  width: 100%;
-  font-size: 0.8em;
-  font-family: "Quicksand", sans-serif;
-  font-weight: 500;
-  line-height: 1.6;
-  border-top: 1px dotted #00cc99;
-  margin-top: 70px;
-  padding-top: 20px;
+/* ! ALL USEFUL UTILITIES */
+
+.alignLeft {
+  text-align: left;
 }
 
 .inlineSpacing {
   padding-inline: 5% 2%;
 }
+
+.no-bullet {
+  list-style: none;
+}
+
+/* ! USER & ADMIN VIEWS */
 
 .response {
   grid-area: response;
@@ -156,17 +171,10 @@ footer {
 
 .responseLink {
   padding: 15px 0 15px 0;
-}
-
-#userLink {
   font-size: 1.5em;
 }
 
-#adminLink {
-  font-size: 1.5em;
-}
-
-/* ! --- Homepage Only --- */
+/* ! HOMEPAGE */
 
 #homepageHeader {
   padding: 25px;
@@ -191,7 +199,7 @@ footer {
   font-weight: 800;
 }
 
-/* ! --- UserView Only --- */
+/* ! USERVIEW */
 
 .userxCore {
   display: flex;
@@ -205,6 +213,10 @@ footer {
 .userxCore > ul > li {
   width: 50%;
   margin: 5px 0 5px 0;
+}
+
+.moodList {
+  justify-content: space-evenly;
 }
 
 .no-bullet {
@@ -241,11 +253,7 @@ footer {
   transition: all 0.15s;
 }
 
-.moodList {
-  justify-content: space-evenly;
-}
-
-/* ! --- AdminView Only --- */
+/* ! ADMIN VIEW */
 
 #adminSubheading {
   color: #78244c;
@@ -261,15 +269,6 @@ footer {
   margin: 5px 0;
   letter-spacing: 2px;
   font-size: 1.3em;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-  width: 100%;
-  font-family: "Quicksand", sans-serif;
-  color: #78244c;
 }
 
 .enteredValues {
@@ -313,6 +312,8 @@ select {
 }
 
 @media only screen and (min-width: 551px) {
+  /* ! - USER VIEW - */
+
   .moodList {
     justify-content: space-evenly;
     padding: 40px 0 40px 0;
@@ -320,6 +321,8 @@ select {
 }
 
 @media only screen and (max-width: 550px) {
+  /* ! - ALL - */
+
   .App {
     width: 100%;
   }
@@ -352,18 +355,52 @@ select {
     display: grid;
   }
 
-  #userQuestion {
-    font-family: "Comfortaa", cursive;
-    font-size: 1em;
-    color: whitesmoke;
-    font-weight: 400;
-    padding: 20px 0 20px 0;
-    letter-spacing: 1px;
+  form {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    width: 100%;
+    font-family: "Quicksand", sans-serif;
+    color: #78244c;
   }
 
-  #moodList {
-    justify-content: space-evenly;
+  footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    font-size: 0.7em;
+    font-family: "Quicksand", sans-serif;
+    font-weight: 500;
+    line-height: 1.7;
+    border-top: 1px dotted #00cc99;
+    margin-top: 5px;
+    padding-top: 15px;
   }
+
+  /* ! - USER & ADMIN VIEWS - */
+
+  .responseLink {
+    padding: 5px 0 5px 0;
+    font-size: 0.8em;
+  }
+
+  .urlHeading {
+    padding-top: 20px;
+  }
+
+  /* ! - HOMEPAGE - */
+
+  #HomepageSubheading {
+    font-family: "Quicksand", sans-serif;
+    font-size: 1em;
+    font-style: oblique;
+    color: #00cc99;
+    line-height: 1.6;
+    padding: 0 5px 5px 5px;
+  }
+
+  /* ! - USERVIEW - */
 
   #moodTitle {
     font-family: "Montserrat Alternates", sans-serif;
@@ -380,26 +417,7 @@ select {
     font-size: 35px;
   }
 
-  #userLink {
-    font-size: 1em;
-  }
-
-  .urlHeading {
-    padding-top: 20px;
-  }
-
-  .responseLink {
-    padding: 5px 0 5px 0;
-  }
-
-  form {
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
-    width: 100%;
-    font-family: "Quicksand", sans-serif;
-    color: #78244c;
-  }
+  /* ! - ADMINVIEW - */
 
   .formTitle {
     font-size: 0.8em;
@@ -424,32 +442,5 @@ select {
     font-weight: 600;
     font-size: 0.8em;
     width: 100%;
-  }
-
-  #adminLink {
-    font-size: 1em;
-  }
-
-  #HomepageSubheading {
-    font-family: "Quicksand", sans-serif;
-    font-size: 1em;
-    font-style: oblique;
-    color: #00cc99;
-    line-height: 1.6;
-    padding: 0 5px 5px 5px;
-  }
-
-  footer {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 100%;
-    font-size: 0.7em;
-    font-family: "Quicksand", sans-serif;
-    font-weight: 500;
-    line-height: 1.7;
-    border-top: 1px dotted #00cc99;
-    margin-top: 5px;
-    padding-top: 15px;
   }
 }

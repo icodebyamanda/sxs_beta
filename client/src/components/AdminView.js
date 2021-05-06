@@ -127,7 +127,7 @@ export default function AdminView() {
           { newEntryDisplay && (     
             <div className="response">
               <div className="urlHeading" id="entryAdded">New entry added!</div>
-              <a href={url} target="_blank"> <div className="responseLink" id="adminLink">Click here to enjoy it right away </div></a>
+              <a href={url} target="_blank"> <div className="responseLink">Click here to enjoy it right away </div></a>
             </div>
           )}
 
