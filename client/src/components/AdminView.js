@@ -122,12 +122,13 @@ export default function AdminView() {
               </label>
 
               <label id="inputAsAText" >
-              <div className="formTitle">Author's name <span className="italicStyling">(e.g. Lizzo)</span></div>
+              <div className="formTitle">Author's name</div>
                 <input
                   className="enteredValues"
                   type="text"
                   name="author"
                   value={author}
+                  placeholder="e.g. Lizzo"
                   onChange={handleUrlChange}/>
               </label>
 
@@ -139,26 +140,29 @@ export default function AdminView() {
                   type="text"
                   name="url"
                   value={url}
+                  placeholder="e.g. https://youtu.be/SmbmeOgWsqE"
                   onChange={handleUrlChange}/>
               </label>
 
               <label id="inputAsAText" >
-              <div className="formTitle">Short description of the link <span className="italicStyling">(e.g. Lizzo' Song Good as Hell)</span></div>
+              <div className="formTitle">Short description of the link</div>
                 <input
                   className="enteredValues"
                   type="text"
                   name="description"
                   value={description}
+                  placeholder="e.g. Lizzo' Song Good as Hell"
                   onChange={handleUrlChange}/>
               </label>
 
               <label id="inputAsAText" >
-              <div className="formTitle"> Note to yourself<span className="italicStyling"> (e.g. Whenever you may feel bad about yourself, know you're Good As Hell)</span></div>
+              <div className="formTitle"> Note to yourself</div>
                 <input
                   className="enteredValues"
                   type="text"
                   name="note"
                   value={note}
+                  placeholder="e.g. Be kind to yourself, you're 'Good As Hell!'"
                   onChange={handleUrlChange}/>
               </label>
       ​
