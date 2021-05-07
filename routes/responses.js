@@ -25,8 +25,8 @@ router.get("/:mood", function(req, res, next) {
 //! INSERT a new entry
 router.post("/", function(req, res, next) {
 
-  const { mood, format, url } = req.body;
-  db(`INSERT INTO responses (mood, format, url) VALUES ("${mood}", "${format}", "${url}");`)
+  const { mood, format,  author, url, description, note } = req.body;
+  db(`INSERT INTO responses (mood, format,  author, url, description, note) VALUES ("${mood}", "${format}", "${author}", "${url}", "${description}", "${note}");`)
   .then((results) => {
     res.send({message: "New Entry added"});
   })
