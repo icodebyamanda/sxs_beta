@@ -122,7 +122,7 @@ export default function AdminView() {
               </label>
 
               <label id="inputAsAText" >
-              <div className="formTitle">Author's name</div>
+              <div className="formTitle">Add the author's name</div>
                 <input
                   className="enteredValues"
                   type="text"
@@ -145,7 +145,7 @@ export default function AdminView() {
               </label>
 
               <label id="inputAsAText" >
-              <div className="formTitle">Short description of the link</div>
+              <div className="formTitle">Add a short description of the link</div>
                 <input
                   className="enteredValues"
                   type="text"
@@ -156,13 +156,13 @@ export default function AdminView() {
               </label>
 
               <label id="inputAsAText" >
-              <div className="formTitle"> Note to yourself</div>
+              <div className="formTitle"> Send a note to your future self</div>
                 <input
                   className="enteredValues"
                   type="text"
                   name="note"
                   value={note}
-                  placeholder="e.g. Be kind to yourself, you're 'Good As Hell!'"
+                  placeholder="e.g. Be kind to yourself, you're 'Good As Hell'!"
                   onChange={handleUrlChange}/>
               </label>
       ​
