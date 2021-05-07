@@ -7,7 +7,10 @@ export default function AdminView() {
   const [newEntries, setNewEntries] = useState([]);
   const [mood, setMood] = useState("");
   const [format, setFormat] = useState("");
+  const [author, setAuthor] = useState("");
   const [url, setUrl] = useState("");
+  const [description, setDescription] = useState("");
+  const [note, setNote] = useState("");
   const [newEntryDisplay, setNewEntryDisplay] = useState(null);
 
 
@@ -27,7 +30,19 @@ export default function AdminView() {
   };
 
   function handleUrlChange(e) {
+    setAuthor(e.target.value);
+  };
+
+  function handleUrlChange(e) {
     setUrl(e.target.value);
+  };
+
+  function handleUrlChange(e) {
+    setDescription(e.target.value);
+  };
+
+  function handleUrlChange(e) {
+    setNote(e.target.value);
   };
 
  const displayLastEntry = () => {
@@ -107,12 +122,43 @@ export default function AdminView() {
               </label>
 
               <label id="inputAsAText" >
+              <div className="formTitle">Author's name <span className="italicStyling">(e.g. Lizzo)</span></div>
+                <input
+                  className="enteredValues"
+                  type="text"
+                  name="author"
+                  value={author}
+                  onChange={handleUrlChange}/>
+              </label>
+
+
+              <label id="inputAsAText" >
               <div className="formTitle">Bring on the URL</div>
                 <input
                   className="enteredValues"
                   type="text"
                   name="url"
                   value={url}
+                  onChange={handleUrlChange}/>
+              </label>
+
+              <label id="inputAsAText" >
+              <div className="formTitle">Short description of the link <span className="italicStyling">(e.g. Lizzo' Song Good as Hell)</span></div>
+                <input
+                  className="enteredValues"
+                  type="text"
+                  name="description"
+                  value={description}
+                  onChange={handleUrlChange}/>
+              </label>
+
+              <label id="inputAsAText" >
+              <div className="formTitle"> Note to yourself<span className="italicStyling"> (e.g. Whenever you may feel bad about yourself, know you're Good As Hell)</span></div>
+                <input
+                  className="enteredValues"
+                  type="text"
+                  name="note"
+                  value={note}
                   onChange={handleUrlChange}/>
               </label>
       ​
