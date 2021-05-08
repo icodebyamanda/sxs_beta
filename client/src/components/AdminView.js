@@ -29,7 +29,7 @@ export default function AdminView() {
     setFormat(e.target.value);
   };
 
-  function handleUrlChange(e) {
+  function handleAuthorChange(e) {
     setAuthor(e.target.value);
   };
 
@@ -37,11 +37,11 @@ export default function AdminView() {
     setUrl(e.target.value);
   };
 
-  function handleUrlChange(e) {
+  function handleDescriptionChange(e) {
     setDescription(e.target.value);
   };
 
-  function handleUrlChange(e) {
+  function handleNoteChange(e) {
     setNote(e.target.value);
   };
 
@@ -73,7 +73,7 @@ export default function AdminView() {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({mood, format, url}),
+      body: JSON.stringify({mood, format, author, url, description, note}),
     })
     .then(() => setNewEntries(newEntryDisplay))
     .catch((error) => { 
@@ -129,7 +129,7 @@ export default function AdminView() {
                   name="author"
                   value={author}
                   placeholder="e.g. Lizzo"
-                  onChange={handleUrlChange}/>
+                  onChange={handleAuthorChange}/>
               </label>
 
 
@@ -152,7 +152,7 @@ export default function AdminView() {
                   name="description"
                   value={description}
                   placeholder="e.g. Lizzo' Song Good as Hell"
-                  onChange={handleUrlChange}/>
+                  onChange={handleDescriptionChange}/>
               </label>
 
               <label id="inputAsAText" >
@@ -163,7 +163,7 @@ export default function AdminView() {
                   name="note"
                   value={note}
                   placeholder="e.g. Be kind to yourself, you're 'Good As Hell'!"
-                  onChange={handleUrlChange}/>
+                  onChange={handleNoteChange}/>
               </label>
       ​
               <label>
