@@ -11,9 +11,9 @@ export default function Footer() {
 
         <span className="inlineSpacing" id="leftInline"> Step By Step is a student's bootcamp project.</span>
       
-        <span className="inlineSpacing" id="centerInline"> Find the <a href="https://github.com/icodebyamanda/sxs_beta" target="_blank"> project's documentation here </a> </span>
+        <span className="inlineSpacing" id="centerInline"> Read the <a href="https://github.com/icodebyamanda/sxs_beta" target="_blank"> documentation here </a> </span>
         
-        <span className="inlineSpacing" id="rightInline"> Find out about <a href="https://github.com/icodebyamanda" target="_blank"> the author here </a> </span>
+        <span className="inlineSpacing" id="rightInline"> Read about <a href="https://github.com/icodebyamanda" target="_blank"> the author here </a> </span>
 
     </footer>
 
