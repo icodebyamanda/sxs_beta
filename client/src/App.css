@@ -162,15 +162,27 @@ footer {
   font-family: "Comfortaa", cursive;
   font-size: 1em;
   color: #00cc99;
-  font-weight: bold;
+  font-weight: 200;
+}
+
+.noteIntro {
+  font-weight: 200;
+  color: #78244c;
+}
+
+.noteLine {
+  padding: 2px 0 35px 0;
+  color: #00cc99;
+  /* font-style: oblique; */
+  font-weight: 700;
 }
 
 .urlHeading {
-  padding-top: 35px;
+  padding-top: 10px;
 }
 
 .responseLink {
-  padding: 15px 0 15px 0;
+  padding: 2px 0 15px 0;
   font-size: 1.5em;
 }
 
@@ -382,13 +394,25 @@ select {
 
   /* ! - USER & ADMIN VIEWS - */
 
-  .responseLink {
-    padding: 5px 0 5px 0;
+  .noteLine {
+    padding-top: 25px;
     font-size: 0.8em;
+    color: #78244c;
+  }
+
+  .noteIntro {
+    font-weight: 100;
+    color: #00cc99;
   }
 
   .urlHeading {
-    padding-top: 20px;
+    padding-top: 5px;
+    font-size: 0.8em;
+  }
+
+  .responseLink {
+    padding: 5px 0 5px 0;
+    font-size: 0.8em;
   }
 
   /* ! - HOMEPAGE - */
