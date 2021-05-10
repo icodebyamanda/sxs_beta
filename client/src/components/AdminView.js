@@ -25,7 +25,7 @@ export default function AdminView() {
   }));
   }
 
-  function handleSubmit(e) {
+  const handleSubmit = (e) => {
     e.preventDefault();
     addNewEntry();
     displayLastEntry();
