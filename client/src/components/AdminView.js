@@ -4,15 +4,26 @@ import Footer from './Footer';
 
 export default function AdminView() {
 
-  const [newEntries, setNewEntries] = useState([]);
-  const [mood, setMood] = useState("");
-  const [format, setFormat] = useState("");
-  const [author, setAuthor] = useState("");
-  const [url, setUrl] = useState("");
-  const [description, setDescription] = useState("");
-  const [note, setNote] = useState("");
-  const [newEntryDisplay, setNewEntryDisplay] = useState(null);
+  const [newEntries, setNewEntries] = useState({
+    mood: "",
+    format: "",
+    author: "",
+    url: "",
+    description: "",
+    note: "",
+  });
 
+  const [newEntryDisplay, setNewEntryDisplay] = useState(newEntries.url);
+
+
+  const handleChange = (e) => {
+    const value = e.target.value;
+  
+  setNewEntries((state) => ({
+    ...state,
+    [e.target.name]: value,
+  }));
+  }
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -21,32 +32,9 @@ export default function AdminView() {
     // clearForm();
   };
 
-  function handleMoodChange(e) {
-    setMood(e.target.value);
-  }
-
-  function handleFormatChange(e) {
-    setFormat(e.target.value);
-  };
-
-  function handleAuthorChange(e) {
-    setAuthor(e.target.value);
-  };
-
-  function handleUrlChange(e) {
-    setUrl(e.target.value);
-  };
-
-  function handleDescriptionChange(e) {
-    setDescription(e.target.value);
-  };
-
-  function handleNoteChange(e) {
-    setNote(e.target.value);
-  };
 
  const displayLastEntry = () => {
-    setNewEntryDisplay(url)
+    setNewEntryDisplay(newEntries.url)
 
  }
 
@@ -73,7 +61,7 @@ export default function AdminView() {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({mood, format, author, url, description, note}),
+      body: JSON.stringify(newEntries),
     })
     .then(() => setNewEntries(newEntryDisplay))
     .catch((error) => { 
@@ -100,10 +88,10 @@ export default function AdminView() {
         <div className="userxCore">
 
             <form onSubmit={handleSubmit} className="adminFormStyle">
-
+              
               <label>           
                 <div className="formTitle">Pick the mood this gift will address</div>
-                <select className="enteredValues"  id="moods" name="moods" value={mood} onChange={handleMoodChange}>
+                <select className="enteredValues"  id="mood" name="mood" value={newEntries.mood} onChange={handleChange}>
                   <option value="empty"></option>
                   <option value="blessed">Blessed</option>
                   <option value="determined">Determined</option>
@@ -114,7 +102,7 @@ export default function AdminView() {
       ​
               <label>
                 <div className="formTitle">Pick the media format</div>
-                <select className="enteredValues" id="formats" name="formats" value={format} onChange={handleFormatChange}>
+                <select className="enteredValues" id="format" name="format" selected={newEntries.format} value={newEntries.format} onChange={handleChange}>
                   <option value="empty"></option>
                   <option value="video">Video</option>
                   <option value="quote">Quote</option>
@@ -127,9 +115,9 @@ export default function AdminView() {
                   className="enteredValues"
                   type="text"
                   name="author"
-                  value={author}
+                  value={newEntries.author}
                   placeholder="e.g. Lizzo"
-                  onChange={handleAuthorChange}/>
+                  onChange={handleChange}/>
               </label>
 
 
@@ -139,9 +127,9 @@ export default function AdminView() {
                   className="enteredValues"
                   type="text"
                   name="url"
-                  value={url}
+                  value={newEntries.url}
                   placeholder="e.g. https://youtu.be/SmbmeOgWsqE"
-                  onChange={handleUrlChange}/>
+                  onChange={handleChange}/>
               </label>
 
               <label id="inputAsAText" >
@@ -150,9 +138,9 @@ export default function AdminView() {
                   className="enteredValues"
                   type="text"
                   name="description"
-                  value={description}
+                  value={newEntries.description}
                   placeholder="e.g. Lizzo' Song Good as Hell"
-                  onChange={handleDescriptionChange}/>
+                  onChange={handleChange}/>
               </label>
 
               <label id="inputAsAText" >
@@ -161,9 +149,9 @@ export default function AdminView() {
                   className="enteredValues"
                   type="text"
                   name="note"
-                  value={note}
+                  value={newEntries.note}
                   placeholder="e.g. Be kind to yourself, you're 'Good As Hell'!"
-                  onChange={handleNoteChange}/>
+                  onChange={handleChange}/>
               </label>
       ​
               <label>
@@ -178,7 +166,7 @@ export default function AdminView() {
           { newEntryDisplay && (     
             <div className="response">
               <div className="urlHeading" id="entryAdded">New entry added!</div>
-              <a href={url} target="_blank"> <div className="responseLink">Click here to enjoy it right away </div></a>
+              <a href={newEntryDisplay} target="_blank"> <div className="responseLink">Click here to enjoy it right away </div></a>
             </div>
           )}
 
