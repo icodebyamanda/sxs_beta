@@ -29,7 +29,7 @@ export default function AdminView() {
     e.preventDefault();
     addNewEntry();
     displayLastEntry();
-    // clearForm();
+    clearForm();
   };
 
 
@@ -38,11 +38,16 @@ export default function AdminView() {
 
  }
 
-//  function clearForm() {
-//     setMood('')
-//     setFormat('')
-//     setUrl('')
-//  };
+ const clearForm = () => {
+  setNewEntries({
+    mood: "",
+    format: "",
+    author: "",
+    url: "",
+    description: "",
+    note: "",
+  });
+};
 
   const getResponses = () => {
     fetch("/responses")
@@ -88,7 +93,7 @@ export default function AdminView() {
         <div className="userxCore">
 
             <form onSubmit={handleSubmit} className="adminFormStyle">
-              
+
               <label>           
                 <div className="formTitle">Pick the mood this gift will address</div>
                 <select className="enteredValues"  id="mood" name="mood" value={newEntries.mood} onChange={handleChange}>
