@@ -62,7 +62,7 @@ export default function UserView() {
 
             { pick &&  (
               <div className="response">
-                <div className="noteLine"><span className="noteIntro">Note to self </span> '{pick.note}'</div>
+                <div className="noteLine"><span className="noteIntro">Note to self  </span><br></br><span className="noteData"> {pick.note} xxx </span></div>
                 <div className="urlHeading" id="responseSent">Today you get,</div>
                 <a href={pick.url} target="_blank"> <br></br> <div className="responseLink"> Good vibes only...  </div> </a>
               </div>

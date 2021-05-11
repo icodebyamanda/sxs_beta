@@ -165,16 +165,19 @@ footer {
   font-weight: 200;
 }
 
-.noteIntro {
-  font-weight: 200;
-  color: #78244c;
-}
-
 .noteLine {
   padding: 2px 0 35px 0;
-  color: #00cc99;
+  /* color: #00cc99; */
+  color: #78244c;
+  font-size: 1em;
   /* font-style: oblique; */
   font-weight: 700;
+  line-height: 1.6;
+}
+
+.noteIntro {
+  background-color: #00cc99;
+  color: #fff;
 }
 
 .urlHeading {
@@ -398,11 +401,13 @@ select {
     padding-top: 25px;
     font-size: 0.8em;
     color: #78244c;
+    font-weight: 100;
   }
 
   .noteIntro {
-    font-weight: 100;
-    color: #00cc99;
+    font-weight: 200;
+    background-color: #00cc99;
+    color: #78244c;
   }
 
   .urlHeading {
