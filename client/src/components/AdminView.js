@@ -155,7 +155,7 @@ export default function AdminView() {
                   type="text"
                   name="note"
                   value={newEntries.note}
-                  placeholder="e.g. Be kind to yourself, you're 'Good As Hell'!"
+                  placeholder="e.g. Be kind to yourself, you're Good As Hell!"
                   onChange={handleChange}/>
               </label>
       ​
