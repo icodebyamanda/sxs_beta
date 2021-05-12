@@ -50,8 +50,8 @@ export default function AdminView() {
 };
 
   const getResponses = () => {
-    fetch("/responses")
-    .then((response) => response.json())
+    fetch("/selections")
+    .then((selection) => selection.json())
     .then((newEntries) => {
       setNewEntries(newEntries);
     })
@@ -61,7 +61,7 @@ export default function AdminView() {
   };
 
   const addNewEntry = () => {
-    fetch("/responses", {
+    fetch("/selections", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
