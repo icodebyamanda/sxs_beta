@@ -3,15 +3,16 @@
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     return queryInterface.bulkInsert('Selections', [{
-      mood: 'blessed',
+      mood: 'determined',
       format: 'video',
-      author: 'Van Morrison',
-      url: 'https://youtu.be/3UUWkr4FUlo',
-      description: 'Days Like This',
-      note: "When everything falls into place, There'll be days like this",
+      author: 'Chuck Berry',
+      url: 'https://youtu.be/aKCt8ssC7cs',
+      description: 'Johnny B. Goode',
+      note: "Someday your name will be in lights, Saying: Johnny B. Goode tonight",
       createdAt: new Date(),
       updatedAt: new Date()
      }], {});
+
   },
 
   down: async (queryInterface, Sequelize) => {
