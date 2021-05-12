@@ -14,13 +14,13 @@ export default function UserView() {
   const [pick, setPick] = useState(null) // Match to the correct one
 
 
-  const getAresponse = (mood) => {
+  const getOneSelection = (mood) => {
 
-    fetch(`/responses/${mood}`)
-      .then((response) => response.json())
-      .then((resp) => {
-        console.log(resp)
-        setPick(resp)})
+    fetch(`/selections/${mood}`)
+      .then((selection) => selection.json())
+      .then((select) => {
+        console.log(select)
+        setPick(select)})
 
       .catch((error) => {
         return error
@@ -51,7 +51,7 @@ export default function UserView() {
               
             { moods.map((mood) => (          
                 <li key={mood.name}>
-                  <button className="moodButton" name={mood.name} onClick={() => getAresponse(mood.name)}>
+                  <button className="moodButton" name={mood.name} onClick={() => getOneSelection(mood.name)}>
                     <div id="moodTitle"> {mood.name} </div>  <br></br> <div id="moodEmoji"> {mood.emoji}</div>
                   </button> 
                 </li>
