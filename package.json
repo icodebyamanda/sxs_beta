@@ -26,5 +26,8 @@
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
     "sequelize": "^6.6.2"
+  },
+  "devDependencies": {
+    "sequelize-cli": "^6.2.0"
   }
 }
