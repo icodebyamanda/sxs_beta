@@ -13,6 +13,23 @@ router.get("/", function (req, res) {
     });
 });
 
+// Get all selections in random order
+
+// //! Get all selections
+// router.get("/", function (req, res) {
+//   models.Selection.findAll({
+//     // limit: 1,
+//     order: [
+//       [sequelize.fn('RANDOM')
+//     ]
+//     ]
+//   })
+//     .then((data) => res.send(data))
+//     .catch((error) => {
+//       res.status(500).send(error);
+//     });
+// });
+
 //! GET all selections of one mood
 
 // router.get('/:mood', function(req, res) {
