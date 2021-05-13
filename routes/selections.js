@@ -32,21 +32,21 @@ router.get("/", function (req, res) {
 
 //! GET all selections of one mood
 
-// router.get('/:mood', function(req, res) {
+router.get('/all/:mood', function(req, res) {
 
-//   const {mood} = req.params;
+  const {mood} = req.params;
 
-//   models.Selection.findAll({
-//     where: {
-//       mood, 
-//     },
-//   })
-//   .then(data => {
-//     res.send(data);
-//   })
-//   .catch(err => res.status(500).send(err));
+  models.Selection.findAll({
+    where: {
+      mood: `${mood}` 
+    },
+  })
+  .then(data => {
+    res.send(data);
+  })
+  .catch(err => res.status(500).send(err));
 
-//  });
+ });
 
 //! GET a random selection based on the selected user's mood
 
@@ -58,7 +58,7 @@ router.get('/:mood', function(req, res) {
 
   models.Selection.findAll({
     where: {
-      mood, 
+      mood: `${mood}`
     },
 
     // Below is alternative
