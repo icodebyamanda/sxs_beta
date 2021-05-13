@@ -166,22 +166,28 @@ footer {
 }
 
 .noteLine {
-  padding: 2px 0 35px 0;
-  /* color: #00cc99; */
+  padding: 2px 0 25px 0;
   color: #78244c;
   font-size: 1em;
-  /* font-style: oblique; */
-  font-weight: 700;
-  line-height: 1.6;
+  line-height: 2;
 }
 
-.noteIntro {
-  background-color: #00cc99;
-  color: #fff;
+#noteIntro {
+  color: #00cc99;
+  font-weight: 900;
+}
+
+#noteData {
+  color: rgb(77, 75, 75);
+  padding-top: 25px;
 }
 
 .urlHeading {
   padding-top: 10px;
+}
+
+#responseSent {
+  font-weight: 900;
 }
 
 .responseLink {
