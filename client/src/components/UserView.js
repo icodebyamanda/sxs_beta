@@ -17,10 +17,10 @@ export default function UserView() {
   const getOneSelection = (mood) => {
 
     fetch(`/selections/${mood}`)
-      .then((selection) => selection.json())
-      .then((select) => {
-        console.log(select)
-        setPick(select)})
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data)
+        setPick(data)})
 
       .catch((error) => {
         return error
