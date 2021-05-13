@@ -18,9 +18,9 @@ export default function UserView() {
 
     fetch(`/selections/${mood}`)
       .then((response) => response.json())
-      .then((data) => {
-        console.log(data)
-        setPick(data)})
+      .then((resp) => {
+        console.log(resp)
+        setPick(resp)})
 
       .catch((error) => {
         return error

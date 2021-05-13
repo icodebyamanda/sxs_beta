@@ -1,7 +1,7 @@
 var express = require("express");
 const { sequelize } = require("../models");
 var router = express.Router();
-var models = require("../models");
+const models = require("../models");
 
 
 //! Get all selections
@@ -56,7 +56,7 @@ router.get('/:mood', function(req, res) {
 
   const {mood} = req.params;
 
-  models.Selection.findAll({
+  models.Selection.findOne({
     where: {
       mood: `${mood}`
     },
