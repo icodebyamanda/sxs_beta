@@ -42,5 +42,19 @@ router.get('/:userId', function(req, res) {
   .catch(err => res.status(500).send(err));
 })
 
+// ! Delete User
+
+router.delete('/:userId', function (req, res) {
+  const {userId} = req.params;
+
+  models.User.destroy({
+    where: {
+      id: `${userId}`
+    },
+  })
+  .then((data) => {
+    res.send({message:'User deleted'});
+  })
+})
 
 module.exports = router;
