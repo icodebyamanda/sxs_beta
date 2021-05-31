@@ -3,6 +3,23 @@ const { sequelize } = require("../models");
 var router = express.Router();
 const models = require("../models");
 
+//! Create a new selection
+
+router.post("/", function(req, res) {
+  
+  const UserId = req.params.UserId;
+
+  const { mood, format, author, url, description, note } = req.body;
+
+  models.Selection.create({ UserId, mood, format,  author, url, description, note,
+  })
+  .then((data) => {
+    res.send({message: "New Selection added to user"});
+  })
+  .catch((err) => {res.status(500).send(err)});
+});
+
+/*
 
 //! Get all selections
 router.get("/", function (req, res) {
@@ -12,6 +29,28 @@ router.get("/", function (req, res) {
       res.status(500).send(error);
     });
 });
+
+*/
+
+//! Get all selections of one user
+
+router.get('/:userId', function (req, res) {
+
+  const {userId} = req.params;
+
+  models.Selection.findAll({
+    where: {
+      id: `${userId}`
+    },
+  })
+  .then(data => {
+    res.send(data);
+  })
+  .catch(err => res.status(500).send(err));
+})
+
+
+/*
 
 // Get all selections in random order
 
@@ -74,17 +113,8 @@ router.get('/:mood', function(req, res) {
 
  });
 
+*/
 
-//! Create a new selection
-
-router.post("/", function(req, res) {
-  const { mood, format, author, url, description, note } = req.body;
-  models.Selection.create({ mood, format,  author, url, description, note })
-  .then((data) => {
-    res.send({message: "New Selection added"});
-  })
-  .catch((err) => {res.status(500).send(err)});
-});
 
 
 module.exports = router;
