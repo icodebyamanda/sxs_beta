@@ -7,6 +7,7 @@ var logger = require('morgan');
 //var indexRouter = require('./routes/index');
 // var responsesRouter = require('./routes/responses');
 var selectionsRouter = require('./routes/selections');
+var usersRouter = require('./routes/users');
 
 
 var app = express();
@@ -21,6 +22,7 @@ app.use(express.static(path.join(__dirname, "/client/build")));
 //app.use('/', indexRouter);
 // app.use('/responses', responsesRouter);
 app.use('/selections', selectionsRouter);
+app.use('/users', usersRouter);
 
 // Anything that doesn't match the above, send back index.html
 app.get("*", (req, res) => {
