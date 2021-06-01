@@ -80,6 +80,31 @@ router.get('/list/:mood', userShouldBeLoggedIn, async (req, res) => {
 
 //! Get ONE user a random selection based on the selected user's mood
 
+router.get('/:mood', userShouldBeLoggedIn, async (req, res) => {
+
+  const UserId = req.user_id;
+  const { mood } = req.params
+
+  try {
+
+  const moods = await models.Selection.findAll({
+    where: {
+      UserId,
+      mood: `${mood}`,
+    },
+
+    order: sequelize.random(), limit: 1
+
+  })
+  res.send(moods);
+  }
+  catch (error) {
+    res.status(500).send(error);
+  }
+});
+
+//! Get ONE user's format segregation
+
 //! Delete ONE user's selection based on selection's id
 
 //! Get ALL users' ALL selections
