@@ -8,19 +8,15 @@ const models = require("../models");
 
 router.post("/", userShouldBeLoggedIn, async (req, res) => {
   
-  const id = req.user_id;
+  const UserId = req.user_id;
   const { mood, format, author, url, description, note } = req.body;
 
   try {
 
-  models.Selection.create(
-    { mood, format,  author, url, description, note },
-    { where: {
-      id,
-    },
-  });
+  await models.Selection.create(
+    { UserId , mood, format,  author, url, description, note });
 
-  res.send({message: id + ' has added a new selection'});
+  res.send({message: UserId + ' has added a new selection'});
   }
   catch(error) { 
     res.status(500).send(error);
