@@ -1,21 +1,30 @@
 var express = require("express");
 const { sequelize } = require("../models");
 var router = express.Router();
+var userShouldBeLoggedIn = require("../guards/userShouldBeLoggedIn");
 const models = require("../models");
 
 //! Create one selection for one user (based on one mood)
 
-router.post("/", function(req, res) {
+router.post("/", userShouldBeLoggedIn, async (req, res) => {
   
-  const UserId = req.params.UserId;
+  const id = req.user_id;
   const { mood, format, author, url, description, note } = req.body;
 
-  models.Selection.create({ UserId, mood, format,  author, url, description, note,
-  })
-  .then((data) => {
-    res.send({message: "New Selection added to user"});
-  })
-  .catch((err) => {res.status(500).send(err)});
+  try {
+
+  models.Selection.create(
+    { mood, format,  author, url, description, note },
+    { where: {
+      id,
+    },
+  });
+
+  res.send({message: id + ' has added a new selection'});
+  }
+  catch(error) { 
+    res.status(500).send(error);
+  }
 });
 
 /*
