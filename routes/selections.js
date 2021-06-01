@@ -3,12 +3,11 @@ const { sequelize } = require("../models");
 var router = express.Router();
 const models = require("../models");
 
-//! Create a new selection
+//! Create one selection for one user (based on one mood)
 
 router.post("/", function(req, res) {
   
   const UserId = req.params.UserId;
-
   const { mood, format, author, url, description, note } = req.body;
 
   models.Selection.create({ UserId, mood, format,  author, url, description, note,
@@ -32,7 +31,7 @@ router.get("/", function (req, res) {
 
 */
 
-//! Get all selections of one user
+//! Get ONE user's all selections
 
 router.get('/:userId', function (req, res) {
 
@@ -49,6 +48,15 @@ router.get('/:userId', function (req, res) {
   .catch(err => res.status(500).send(err));
 })
 
+//! Get ONE user's all selections of ONE mood
+
+//! Get ONE user a random selection based on the selected user's mood
+
+//! Delete ONE user's selection based on selection's id
+
+//! Get ALL users' ALL selections
+
+//! Get ALL user's selections of ONE mood
 
 /*
 

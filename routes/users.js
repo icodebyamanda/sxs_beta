@@ -3,15 +3,35 @@ const { sequelize } = require("../models");
 var router = express.Router();
 const models = require("../models");
 
-//! Create a new user
+//! Would need update when authentication is done
 
-router.post('/', function(req, res) {
+//! Create a new user -> Sign Up
+
+router.post('/register', function(req, res) {
   const { email, username, password } = req.body;
   models.User.create({email, username, password})
   .then((data) => {
     res.send({message:'New User added'});
   })
   .catch((err) => {res.status(500).send(err)});
+});
+
+
+//! Post User Login
+
+router.post('/login', function(req, res) {
+  const {email, password} = req.body;
+  const user = models.User.findOne(
+    {where: { email }})
+    .then((data) => {
+    if(user === null) {
+      res.send({ message: 'user does not exist'});
+    } else {
+      UserId = user.id;
+      res.send({ message: 'Login successful'});
+    }
+    })
+    .catch((error) => {res.status(400).send({ message: error.message })});
 });
 
 
@@ -26,35 +46,56 @@ models.User.findAll()
   });
 });
 
-//! Get one user
+//! Get one user's profile
 
-router.get('/:userId', function(req, res) {
-  const {userId} = req.params;
+router.get('/profile/:UserId', function(req, res) {
+  const {UserId} = req.params;
 
   models.User.findOne({
     where: {
-      id: `${userId}`
+      id: `${UserId}`
     },
   })
   .then(data => {
     res.send(data);
   })
   .catch(err => res.status(500).send(err));
-})
+});
+
+//! Update one user's profile
+
+router.put('/profile', function(req, res) {
+  const {email, username, password} = req.body;
+  const id = req.UserId;
+
+  models.User.update(
+    {email, username, password},
+    {
+      where: {
+        id
+      },
+    })
+
+  .then(data => {
+    res.send({ message: "user updated succesfully!" });
+  })
+  .catch(err => res.status(500).send(err));
+});
 
 // ! Delete User
 
-router.delete('/:userId', function (req, res) {
-  const {userId} = req.params;
+router.delete('/profile', function (req, res) {
+  const id = req.UserId;
 
   models.User.destroy({
     where: {
-      id: `${userId}`
+      id
     },
   })
   .then((data) => {
     res.send({message:'User deleted'});
   })
-})
+  .catch(err => res.status(500).send(err));
+});
 
 module.exports = router;
