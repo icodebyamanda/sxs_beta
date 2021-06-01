@@ -15,9 +15,8 @@ router.post("/register", async (req, res) => {
   const { email, username, password } = req.body;
 
   try {
-    const hash = await bcrypt.hash(password, saltRounds);
 
-    await models.Users.create({ email, username, password: hash });
+    await models.Users.create({ email, username, password });
 
     res.send({ message: "Register successful" });
   } catch (err) {
