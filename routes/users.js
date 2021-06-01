@@ -2,7 +2,7 @@ var express = require("express");
 const { sequelize } = require("../models");
 var router = express.Router();
 var jwt = require("jsonwebtoken");
-var userShouldBeLoggedIn = require("../guards/userShouldBeLoggedIn");
+//var userShouldBeLoggedIn = require("../guards/userShouldBeLoggedIn");
 const models = require("../models");
 require("dotenv").config();
 var bcrypt = require("bcrypt");
@@ -14,16 +14,31 @@ const supersecret = process.env.SUPER_SECRET;
 
 //! Create a new user -> Sign Up
 
+/*
 router.post('/register', function(req, res) {
   const { email, username, password } = req.body;
   const hash = bcrypt.hash(password, saltRounds);
-  models.User.create({email, username, password: hash})
-  .then((data) => {
+  models.User.create({ email, username, password: hash })
+  .then(() => {
     res.send({message:'Registration successful'});
   })
-  .catch((err) => {res.status(400).send({ message: err.message });
+  .catch((err) => {res.status(400).send({ message: err.message })});
 });
+*/
 
+router.post("/register", async (req, res) => {
+  const { email, username, password } = req.body;
+
+  try {
+    const hash = await bcrypt.hash(password, saltRounds);
+
+    await models.User.create({ email, username, password: hash });
+
+    res.send({ message: "Register successful" });
+  } catch (err) {
+    res.status(400).send({ message: err.message });
+  }
+});
 
 //! Post User Login
 
