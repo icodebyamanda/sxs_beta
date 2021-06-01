@@ -107,18 +107,20 @@ router.put('/profile', userShouldBeLoggedIn, async (req, res) => {
 
 // ! Delete User
 
-router.delete('/profile', function (req, res) {
-  const id = req.UserId;
+router.delete('/profile', userShouldBeLoggedIn, async (req, res) => {
+  const id = req.user_id;
 
-  models.User.destroy({
+  try {
+
+  const user = await models.User.destroy({
     where: {
-      id
+      id,
     },
-  })
-  .then((data) => {
+  });
     res.send({message:'User deleted'});
-  })
-  .catch(err => res.status(500).send(err));
+  
+  } catch(err) { 
+    res.status(500).send(err)};
 });
 
 module.exports = router;
