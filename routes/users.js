@@ -10,8 +10,6 @@ const saltRounds = 10; // encryption generated
 
 const supersecret = process.env.SUPER_SECRET;
 
-//! Would need update when authentication is done
-
 //! Create a new user -> Sign Up
 
 router.post("/register", async (req, res) => {
@@ -105,6 +103,25 @@ router.put('/profile', userShouldBeLoggedIn, async (req, res) => {
   }
 });
 
+//! Get all selections from one user
+
+router.get('/dashboard', userShouldBeLoggedIn, async (req, res) => {
+  const id = req.user_id;
+
+  try {
+    await models.User.findOne({
+      where: {
+        id,
+      },
+      include: models.Selection,
+    }); 
+    res.send({message: id + ' all selections are visible'});
+  }
+  catch(error) { 
+    res.status(500).send(error);
+  }
+});
+
 // ! Delete User
 
 router.delete('/profile', userShouldBeLoggedIn, async (req, res) => {
@@ -116,6 +133,7 @@ router.delete('/profile', userShouldBeLoggedIn, async (req, res) => {
     where: {
       id,
     },
+    include: models.Selection,
   });
     res.send({message:'User deleted'});
   
