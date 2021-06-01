@@ -64,58 +64,44 @@ models.User.findAll()
 
 //! Get one user's profile
 
-router.get('/profile', userShouldBeLoggedIn, (req, res) => {
-  res.send({
-    message: 'Here is the Protected data for user' + req.user_id, 
     // req.user_id comes from the guard, user_id placed in the request object (coming from the x-access-token in the header) to not have to ask it all the time
+    // This is how we will also make personalised request to user
+
+router.get('/profile', userShouldBeLoggedIn, async (req, res) => {
+  const id = req.user_id;
+  
+  try {
+    const user = await models.User.findOne({
+        where: {
+          id,
+        },
+      });
+    res.send(user);
+    } 
+    catch (error) {
+      res.status(500).send(error);
+    }
   });
-});
-
-
-
-// router.get('/profile', (req, res) => {
-//   const token = req.headers['x-access-token'];
-//   if(!token) return res.status(400).send('Please identify yourself');
-//   jwt.verify(token, supersecret, function (err, decoded) {
-//     if(err) res.status(401).send({ message: err.message });
-//     else {
-//       res.send(decoded)
-//     }
-//   });
-// })
-
-// router.get('/profile/:UserId', function(req, res) {
-//   const {UserId} = req.params;
-
-//   models.User.findOne({
-//     where: {
-//       id: `${UserId}`
-//     },
-//   })
-//   .then(data => {
-//     res.send(data);
-//   })
-//   .catch(err => res.status(500).send(err));
-// });
 
 //! Update one user's profile
 
-router.put('/profile', function(req, res) {
+router.put('/profile', userShouldBeLoggedIn, async (req, res) => {
   const {email, username, password} = req.body;
-  const id = req.UserId;
+  const id = req.user_id;
 
-  models.User.update(
-    {email, username, password},
-    {
-      where: {
-        id
+  try {
+  await models.User.update(
+    { email, username, password },
+    { where: {
+        id,
       },
-    })
+    });
 
-  .then(data => {
     res.send({ message: "user updated succesfully!" });
-  })
-  .catch(err => res.status(500).send(err));
+  }
+  catch(error) { 
+    res.status(500).send(error);
+  }
 });
 
 // ! Delete User
