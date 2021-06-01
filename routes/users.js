@@ -2,7 +2,7 @@ var express = require("express");
 const { sequelize } = require("../models");
 var router = express.Router();
 var jwt = require("jsonwebtoken");
-//var userShouldBeLoggedIn = require("../guards/userShouldBeLoggedIn");
+var userShouldBeLoggedIn = require("../guards/userShouldBeLoggedIn");
 const models = require("../models");
 require("dotenv").config(); // To be able to process the supersecret to enhance encryption
 var bcrypt = require("bcrypt");
@@ -64,23 +64,25 @@ models.User.findAll()
 
 //! Get one user's profile
 
-// First check there is a token in the request
-  // token would be sent in the header of the request -> choice made -> x-access-token
-// If there isn't, send an error back
-// if there is a token: verify that is valid -> use jwt verify function with two arguments: token and supersecret key
-// - If not, send an error
-// - If valid, proceed and return the information
-
-router.get('/profile', (req, res) => {
-  const token = req.headers['x-access-token'];
-  if(!token) return res.status(400).send('Please identify yourself');
-  jwt.verify(token, supersecret, function (err, decoded) {
-    if(err) res.status(401).send({ message: err.message });
-    else {
-      res.send(decoded)
-    }
+router.get('/profile', userShouldBeLoggedIn, (req, res) => {
+  res.send({
+    message: 'Here is the Protected data for user' + req.user_id, 
+    // req.user_id comes from the guard, user_id placed in the request object (coming from the x-access-token in the header) to not have to ask it all the time
   });
-})
+});
+
+
+
+// router.get('/profile', (req, res) => {
+//   const token = req.headers['x-access-token'];
+//   if(!token) return res.status(400).send('Please identify yourself');
+//   jwt.verify(token, supersecret, function (err, decoded) {
+//     if(err) res.status(401).send({ message: err.message });
+//     else {
+//       res.send(decoded)
+//     }
+//   });
+// })
 
 // router.get('/profile/:UserId', function(req, res) {
 //   const {UserId} = req.params;
