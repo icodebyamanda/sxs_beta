@@ -90,8 +90,9 @@ router.put('/profile', userShouldBeLoggedIn, async (req, res) => {
   const id = req.user_id;
 
   try {
-  await models.User.update(
-    { email, username, password },
+    const hash = await bcrypt.hash(password, saltRounds);
+    await models.User.update(
+    { email, username, password : hash },
     { where: {
         id,
       },
