@@ -18,7 +18,7 @@ router.post("/register", async (req, res) => {
   try {
     const hash = await bcrypt.hash(password, saltRounds);
 
-    await models.User.create({ email, username, password: hash });
+    await models.Users.create({ email, username, password: hash });
 
     res.send({ message: "Register successful" });
   } catch (err) {
@@ -32,7 +32,7 @@ router.post('/login', async (req, res) => {
   const { email, password } = req.body;
 
   try {
-    const user = await models.User.findOne({ where: { email } });
+    const user = await models.Users.findOne({ where: { email } });
 
     if (user) {
       const user_id = user.id;
@@ -53,7 +53,7 @@ router.post('/login', async (req, res) => {
 
 router.get('/', function(req, res) {
 
-models.User.findAll()
+models.Users.findAll()
   .then((data) => res.send(data))
   .catch((error) => {
     res.status(500).send(error);
@@ -69,7 +69,7 @@ router.get('/profile', userShouldBeLoggedIn, async (req, res) => {
   const id = req.user_id;
   
   try {
-    const user = await models.User.findOne({
+    const user = await models.Users.findOne({
         where: {
           id,
         },
@@ -89,7 +89,7 @@ router.put('/profile', userShouldBeLoggedIn, async (req, res) => {
 
   try {
     const hash = await bcrypt.hash(password, saltRounds);
-    await models.User.update(
+    await models.Users.update(
     { email, username, password : hash },
     { where: {
         id,
@@ -111,7 +111,7 @@ router.delete('/profile', userShouldBeLoggedIn, async (req, res) => {
 
   try {
 
-  const user = await models.User.destroy({
+  const user = await models.Users.destroy({
     where: {
       id,
     },
