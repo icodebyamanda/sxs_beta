@@ -4,7 +4,7 @@ var router = express.Router();
 var jwt = require("jsonwebtoken");
 //var userShouldBeLoggedIn = require("../guards/userShouldBeLoggedIn");
 const models = require("../models");
-require("dotenv").config();
+require("dotenv").config(); // To be able to process the supersecret to enhance encryption
 var bcrypt = require("bcrypt");
 const saltRounds = 10; // encryption generated
 
@@ -13,18 +13,6 @@ const supersecret = process.env.SUPER_SECRET;
 //! Would need update when authentication is done
 
 //! Create a new user -> Sign Up
-
-/*
-router.post('/register', function(req, res) {
-  const { email, username, password } = req.body;
-  const hash = bcrypt.hash(password, saltRounds);
-  models.User.create({ email, username, password: hash })
-  .then(() => {
-    res.send({message:'Registration successful'});
-  })
-  .catch((err) => {res.status(400).send({ message: err.message })});
-});
-*/
 
 router.post("/register", async (req, res) => {
   const { email, username, password } = req.body;
@@ -42,6 +30,7 @@ router.post("/register", async (req, res) => {
 
 //! Post User Login
 
+/*
 router.post('/login', function(req, res) {
   const {email, password} = req.body;
   const user = models.User.findOne(
@@ -56,7 +45,28 @@ router.post('/login', function(req, res) {
     })
     .catch((error) => {res.status(400).send({ message: error.message })});
 });
+*/
 
+router.post('/login', async (req, res) => {
+  const { email, password } = req.body;
+
+  try {
+    const user = await models.User.findOne({ where: { email } });
+
+    if (user) {
+      const user_id = user.id;
+      const correctPassword = await bcrypt.compare(password, user.password);
+      if (!correctPassword) throw new Error("Incorrect password");
+      var token = jwt.sign({ user_id }, supersecret);
+
+      res.send({ message: "Login successful, here is your token", token });
+    } else {
+      throw new Error("User does not exist");
+    }
+  } catch (err) {
+    res.status(400).send({ message: err.message });
+  }
+});
 
 //! Get all users
 
