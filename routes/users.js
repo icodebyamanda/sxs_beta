@@ -30,23 +30,6 @@ router.post("/register", async (req, res) => {
 
 //! Post User Login
 
-/*
-router.post('/login', function(req, res) {
-  const {email, password} = req.body;
-  const user = models.User.findOne(
-    {where: { email }})
-    .then((data) => {
-    if(user === null) {
-      res.send({ message: 'user does not exist'});
-    } else {
-      UserId = user.id;
-      res.send({ message: 'Login successful'});
-    }
-    })
-    .catch((error) => {res.status(400).send({ message: error.message })});
-});
-*/
-
 router.post('/login', async (req, res) => {
   const { email, password } = req.body;
 
@@ -81,19 +64,37 @@ models.User.findAll()
 
 //! Get one user's profile
 
-router.get('/profile/:UserId', function(req, res) {
-  const {UserId} = req.params;
+// First check there is a token in the request
+  // token would be sent in the header of the request -> choice made -> x-access-token
+// If there isn't, send an error back
+// if there is a token: verify that is valid -> use jwt verify function with two arguments: token and supersecret key
+// - If not, send an error
+// - If valid, proceed and return the information
 
-  models.User.findOne({
-    where: {
-      id: `${UserId}`
-    },
-  })
-  .then(data => {
-    res.send(data);
-  })
-  .catch(err => res.status(500).send(err));
-});
+router.get('/profile', (req, res) => {
+  const token = req.headers['x-access-token'];
+  if(!token) return res.status(400).send('Please identify yourself');
+  jwt.verify(token, supersecret, function (err, decoded) {
+    if(err) res.status(401).send({ message: err.message });
+    else {
+      res.send(decoded)
+    }
+  });
+})
+
+// router.get('/profile/:UserId', function(req, res) {
+//   const {UserId} = req.params;
+
+//   models.User.findOne({
+//     where: {
+//       id: `${UserId}`
+//     },
+//   })
+//   .then(data => {
+//     res.send(data);
+//   })
+//   .catch(err => res.status(500).send(err));
+// });
 
 //! Update one user's profile
 
