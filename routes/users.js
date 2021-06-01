@@ -1,7 +1,14 @@
 var express = require("express");
 const { sequelize } = require("../models");
 var router = express.Router();
+var jwt = require("jsonwebtoken");
+var userShouldBeLoggedIn = require("../guards/userShouldBeLoggedIn");
 const models = require("../models");
+require("dotenv").config();
+var bcrypt = require("bcrypt");
+const saltRounds = 10; // encryption generated
+
+const supersecret = process.env.SUPER_SECRET;
 
 //! Would need update when authentication is done
 
@@ -9,11 +16,12 @@ const models = require("../models");
 
 router.post('/register', function(req, res) {
   const { email, username, password } = req.body;
-  models.User.create({email, username, password})
+  const hash = bcrypt.hash(password, saltRounds);
+  models.User.create({email, username, password: hash})
   .then((data) => {
-    res.send({message:'New User added'});
+    res.send({message:'Registration successful'});
   })
-  .catch((err) => {res.status(500).send(err)});
+  .catch((err) => {res.status(400).send({ message: err.message });
 });
 
 
