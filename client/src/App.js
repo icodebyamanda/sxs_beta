@@ -3,6 +3,7 @@ import './App.css';
 import AdminView from "./components/AdminView";
 import UserView from "./components/UserView";
 import Homepage from "./components/Homepage";
+import SignUp from "./components/SignUp";
 import Navigation from "./components/Navigation";
 
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
@@ -24,6 +25,7 @@ function App() {
         <Switch>
           <Route path="/admin" component={AdminView} /> 
           <Route path="/user" component={UserView} />
+          <Route path="/register" component={SignUp} />
           <Route path="/" component={Homepage} />
         </Switch>
 
