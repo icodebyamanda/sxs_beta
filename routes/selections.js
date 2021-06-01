@@ -103,13 +103,30 @@ router.get('/:mood', userShouldBeLoggedIn, async (req, res) => {
   }
 });
 
+//! Get ALL users' ALL selections
+
 //! Get ONE user's format segregation
 
 //! Delete ONE user's selection based on selection's id
 
-//! Get ALL users' ALL selections
+router.delete('/:itemId', userShouldBeLoggedIn, async (req, res) => {
+  const UserId = req.user_id;
+  const { itemId } = req.params;
 
-//! Get ALL user's selections of ONE mood
+  try {
+    await models.Selection.destroy({
+      where: {
+        UserId,
+        id: `${itemId}`, 
+      },
+    });
+    res.send({message:'Selection deleted'});
+  
+  } catch(err) { 
+    res.status(500).send(err)};
+})
+
+
 
 /*
 
