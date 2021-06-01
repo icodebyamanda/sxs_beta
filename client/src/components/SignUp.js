@@ -9,6 +9,36 @@ export default function AdminView() {
     password: '',
   });
 
+  const [confirmationMessage, setConfirmation] = useState(null);
+
+  const handleChange = (e) => {
+    const value = e.target.value;
+
+    setSignUp((state) => ({
+      ...state,
+      [e.target.name]: value,
+    }));
+  };
+
+  const clearForm = () => {
+    setSignUp({
+      email: '',
+      username: '',
+      password: '',
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    registerUser();
+    clearForm();
+    displayConfirmationMessage();
+  }
+
+  const displayConfirmationMessage = () => {
+    setConfirmation();
+  }
+
   const registerUser = () => {
 
     fetch('/users/register', {
@@ -23,20 +53,6 @@ export default function AdminView() {
       return error;
     });
   };
-
-  const handleChange = (e) => {
-    const value = e.target.value;
-
-    setSignUp((state) => ({
-      ...state,
-      [e.target.name]: value,
-    }));
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    registerUser();
-  }
 
 
   return (
@@ -84,6 +100,13 @@ export default function AdminView() {
         </form>
 
       </div>
+
+      {confirmationMessage && (
+        <div>
+        <div> Thank you for signing up!</div>
+        <div> Please log in to access your personal space </div>
+        </div>
+      )}
 
       <div><Footer /></div>
 
