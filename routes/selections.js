@@ -58,6 +58,26 @@ router.get('/list', userShouldBeLoggedIn, async (req, res) => {
 
 //! Get ONE user's all selections of ONE mood
 
+router.get('/list/:mood', userShouldBeLoggedIn, async (req, res) => {
+
+  const UserId = req.user_id;
+  const { mood } = req.params
+
+  try {
+
+  const moods = await models.Selection.findAll({
+    where: {
+      UserId,
+      mood: `${mood}`,
+    },
+  })
+  res.send(moods);
+  }
+  catch (error) {
+    res.status(500).send(error);
+  }
+});
+
 //! Get ONE user a random selection based on the selected user's mood
 
 //! Delete ONE user's selection based on selection's id
