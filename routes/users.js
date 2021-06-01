@@ -7,7 +7,6 @@ const models = require("../models");
 require("dotenv").config(); // To be able to process the supersecret to enhance encryption
 var bcrypt = require("bcrypt");
 const saltRounds = 10; // encryption generated
-
 const supersecret = process.env.SUPER_SECRET;
 
 //! Create a new user -> Sign Up
