@@ -4,7 +4,7 @@ var router = express.Router();
 var userShouldBeLoggedIn = require("../guards/userShouldBeLoggedIn");
 const models = require("../models");
 
-//! Create one selection for one user (based on one mood)
+//! Create one selection for one user
 
 router.post("/", userShouldBeLoggedIn, async (req, res) => {
   
@@ -14,7 +14,7 @@ router.post("/", userShouldBeLoggedIn, async (req, res) => {
   try {
 
   await models.Selection.create(
-    { UserId , mood, format,  author, url, description, note });
+    { UserId, mood, format,  author, url, description, note });
 
   res.send({message: UserId + ' has added a new selection'});
   }
@@ -36,22 +36,25 @@ router.get("/", function (req, res) {
 
 */
 
-//! Get ONE user's all selections
+//! Get ONE user's all selections <- User's dashboard
 
-router.get('/:userId', function (req, res) {
+router.get('/list', userShouldBeLoggedIn, async (req, res) => {
 
-  const {userId} = req.params;
+  const UserId = req.user_id;
 
-  models.Selection.findAll({
+  try {
+
+  const list = await models.Selection.findAll({
     where: {
-      id: `${userId}`
+      UserId,
     },
   })
-  .then(data => {
-    res.send(data);
-  })
-  .catch(err => res.status(500).send(err));
-})
+  res.send(list);
+  }
+  catch (error) {
+    res.status(500).send(error);
+  }
+});
 
 //! Get ONE user's all selections of ONE mood
 

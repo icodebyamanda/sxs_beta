@@ -103,24 +103,6 @@ router.put('/profile', userShouldBeLoggedIn, async (req, res) => {
   }
 });
 
-//! Get all selections from one user
-
-router.get('/dashboard', userShouldBeLoggedIn, async (req, res) => {
-  const id = req.user_id;
-
-  try {
-    await models.User.findOne({
-      where: {
-        id,
-      },
-      include: models.Selection,
-    }); 
-    res.send({message: id + ' all selections are visible'});
-  }
-  catch(error) { 
-    res.status(500).send(error);
-  }
-});
 
 // ! Delete User
 
