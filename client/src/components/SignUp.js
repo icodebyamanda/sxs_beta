@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Footer from './Footer';
 
-export default function AdminView() {
+export default function SignUp() {
 
   const [signUpDetails, setSignUp] = useState({
     email: '',
@@ -9,7 +9,7 @@ export default function AdminView() {
     password: '',
   });
 
-  const [confirmationMessage, setConfirmation] = useState(null);
+  const [confirmationMessage, setConfirmation] = useState(false);
 
   const handleChange = (e) => {
     const value = e.target.value;
@@ -20,6 +20,13 @@ export default function AdminView() {
     }));
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    registerUser();
+    displayConfirmationMessage();
+
+  }
+
   const clearForm = () => {
     setSignUp({
       email: '',
@@ -27,17 +34,6 @@ export default function AdminView() {
       password: '',
     });
   };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    registerUser();
-    clearForm();
-    displayConfirmationMessage();
-  }
-
-  const displayConfirmationMessage = () => {
-    setConfirmation();
-  }
 
   const registerUser = () => {
 
@@ -49,9 +45,15 @@ export default function AdminView() {
       body: JSON.stringify(signUpDetails),
     })
     .then(() => setSignUp(signUpDetails))
+    .then(() => clearForm())
     .catch((error) => { 
       return error;
     });
+  };
+  
+  const displayConfirmationMessage = () => {
+    setConfirmation(true);
+
   };
 
 
@@ -94,9 +96,11 @@ export default function AdminView() {
         </label>
 
         <label>
-          <input type="submit" value="submit" />
+          <input 
+          type="submit" 
+          value="submit"
+          />
         </label>
-
         </form>
 
       </div>
