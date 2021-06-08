@@ -34,6 +34,10 @@ export default function SignUp() {
     });
   };
 
+  const displayConfirmationMessage = () => {
+    setConfirmation(true);
+  };
+
   const registerUser = () => {
 
     fetch('/users/register', {
@@ -50,9 +54,7 @@ export default function SignUp() {
     });
   };
 
-  const displayConfirmationMessage = () => {
-    setConfirmation(true);
-  };
+
 
 
   return (
