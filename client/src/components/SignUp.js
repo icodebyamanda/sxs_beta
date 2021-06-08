@@ -24,7 +24,6 @@ export default function SignUp() {
     e.preventDefault();
     registerUser();
     displayConfirmationMessage();
-
   }
 
   const clearForm = () => {
@@ -50,10 +49,9 @@ export default function SignUp() {
       return error;
     });
   };
-  
+
   const displayConfirmationMessage = () => {
     setConfirmation(true);
-
   };
 
 
@@ -88,7 +86,7 @@ export default function SignUp() {
         <label>
           <div>Password</div>
           <input
-          type="text"
+          type="password"
           name="password"
           value={signUpDetails.password}
           onChange={handleChange}
