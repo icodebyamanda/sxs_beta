@@ -1,7 +1,11 @@
-# CURRENT STATUS: WIP
-
-
 # Step By Step Project (SxS)
+
+## CURRENT STATUS: WIP
+
+Check my **project board** to know where I am at:
+[Click here to view the Board](https://github.com/icodebyamanda/sxs_beta/projects/1)
+
+**--- Everything below needs an update will be updated ---**
 
 ## Run Your Development Servers
 
