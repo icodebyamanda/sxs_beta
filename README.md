@@ -7,7 +7,7 @@ Check my **project board** to know where I am at:
 
 **--- Everything below needs an update will be updated ---**
 
-## Run Your Development Servers
+### Run Your Development Servers
 
 - Run `yarn start` or `npm start`in project directory to start the Express server on port 5000
 - `cd client` and run `yarn start` or `npm start` to start client server in development mode with hot reloading in port 3000.
