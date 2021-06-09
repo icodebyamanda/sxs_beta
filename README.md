@@ -1,7 +1,11 @@
-# CURRENT STATUS: WIP
-
-
 # Step By Step Project (SxS)
+
+## CURRENT STATUS: WIP
+
+Check my **project board** to know where I am at:
+[Click here to view the Board](https://github.com/icodebyamanda/sxs_beta/projects/1)
+
+**--- Everything below needs an update ---**
 
 ## Run Your Development Servers
 
@@ -130,4 +134,3 @@ As a user, I see this wellbeing app as a wellbeing social link tool and would li
 \*. Embed the content so the user can stay on the app
 
 \*. Go beyond the emotional wellbeing and make it be an overall bonding tool between people (e.g. lovers, distant friends or relatives, acquaintances)
-
