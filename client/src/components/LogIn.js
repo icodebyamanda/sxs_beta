@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { History } from "react-router-dom";
 import Footer from './Footer';
 
 export default function LogIn() {
@@ -9,23 +10,25 @@ export default function LogIn() {
     password: '',
   });
 
-  const [userConfirmation, setUserConfirmation] = useState(false)
+  // const [userConfirmation, setUserConfirmation] = useState(false)
+
+  const useHistory = History();
 
   const handleChange = (e) => {
     // e.persist();
     setLogin((state) => ({ ...state, [e.target.name]: e.target.value }));
   };
 
-  const clearForm = () => {
-    setLogin({
-      email: '',
-      password: '',
-    });
-  };
+  // const clearForm = () => {
+  //   setLogin({
+  //     email: '',
+  //     password: '',
+  //   });
+  // };
 
-  const displayConfirmationMessage = () => {
-    setUserConfirmation(true);
-  }
+  // const displayConfirmationMessage = () => {
+  //   setUserConfirmation(true);
+  // }
 
   const logUserIn = () => {
 
@@ -36,8 +39,11 @@ export default function LogIn() {
       localStorage.setItem("token", result.data.token);
       console.log(result.data.message, result.data.token);
     })
-    .then(() => clearForm())
-    .then(() => displayConfirmationMessage())
+    // .then(() => clearForm())
+    // .then(() => displayConfirmationMessage())
+    .then(() => {
+      useHistory.push('/homepage');
+    })
     .catch((error) => { return error});
   };
 
@@ -72,11 +78,11 @@ export default function LogIn() {
 
         </div>
 
-        {userConfirmation && (
+        {/* {userConfirmation && (
           <div>
             <div> Great! You are now logged in. </div>
           </div>
-        )}
+        )} */}
 
 
     <div><Footer /></div>

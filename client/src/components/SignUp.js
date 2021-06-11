@@ -1,5 +1,5 @@
-import axios from "axios";
 import React, { useState } from "react";
+import axios from "axios";
 import Footer from './Footer';
 
 export default function SignUp() {
@@ -47,8 +47,6 @@ export default function SignUp() {
     <div>
 
       <div>
-
-        {/* <form onSubmit={handleSubmit}> */}
 
         <label>
           <div>Email</div>
