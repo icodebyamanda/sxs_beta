@@ -53,6 +53,7 @@ export default function SignUp() {
       return error;
     });
   };
+  
 
   return (
 
