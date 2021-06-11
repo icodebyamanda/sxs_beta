@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import Footer from './Footer';
 
@@ -85,7 +86,7 @@ export default function SignUp() {
       {confirmationMessage && (
         <div>
         <div> Thank you for signing up!</div>
-        <div> Please log in to access your personal space </div>
+        <div> Please <span><Link to='/Login'> log in </Link></span> to access your personal space </div>
         </div>
       )}
 
