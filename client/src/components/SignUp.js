@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useState } from "react";
 import Footer from './Footer';
 
@@ -20,11 +21,11 @@ export default function SignUp() {
     }));
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    registerUser();
-    displayConfirmationMessage();
-  }
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   registerUser();
+  //   displayConfirmationMessage();
+  // }
 
   const clearForm = () => {
     setSignUp({
@@ -38,22 +39,31 @@ export default function SignUp() {
     setConfirmation(true);
   };
 
-  const registerUser = () => {
-
-    fetch('/users/register', {
-      method: 'POST',
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(signUpDetails),
-    })
+  const RegisterUser = () => {
+    axios.post('/users/register', signUpDetails)
     .then(() => setSignUp(signUpDetails))
     .then(() => clearForm())
-    .catch((error) => { 
-      return error;
-    });
+    .then(() => displayConfirmationMessage())
+    .catch((error) => { return error});
   };
-  
+
+
+  // const registerUser = () => {
+
+  //   fetch('/users/register', {
+  //     method: 'POST',
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //     },
+  //     body: JSON.stringify(signUpDetails),
+  //   })
+  //   .then(() => setSignUp(signUpDetails))
+  //   .then(() => clearForm())
+  //   .catch((error) => { 
+  //     return error;
+  //   });
+  // };
+
 
   return (
 
@@ -61,7 +71,7 @@ export default function SignUp() {
 
       <div>
 
-        <form onSubmit={handleSubmit}>
+        {/* <form onSubmit={handleSubmit}> */}
 
         <label>
           <div>Email</div>
@@ -93,13 +103,15 @@ export default function SignUp() {
           />
         </label>
 
-        <label>
+        <button onClick={RegisterUser}> submit</button>
+
+        {/* <label>
           <input 
           type="submit" 
           value="submit"
           />
         </label>
-        </form>
+        </form> */}
 
       </div>
 
