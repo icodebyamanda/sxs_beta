@@ -6,8 +6,10 @@ import Homepage from "./components/Homepage";
 import SignUp from "./components/SignUp";
 import LogIn from "./components/LogIn";
 import Navigation from "./components/Navigation";
+import LogSignNavBar from "./components/LogSignNavBar";
 
 import { BrowserRouter as Router, Switch, Route, Link, useParams } from "react-router-dom";
+
 
 
 function App() { 
@@ -22,6 +24,7 @@ function App() {
         <Router>
 
         <Navigation />
+        <LogSignNavBar />
 
         <Switch>
           <Route path="/admin" component={AdminView} /> 
