@@ -7,7 +7,7 @@ import SignUp from "./components/SignUp";
 import LogIn from "./components/LogIn";
 import Navigation from "./components/Navigation";
 
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link, useParams } from "react-router-dom";
 
 
 function App() { 
