@@ -9,6 +9,8 @@ export default function LogIn() {
     password: '',
   });
 
+  const [userConfirmation, setUserConfirmation] = useState(false)
+
   const handleChange = (e) => {
     // e.persist();
     setLogin((state) => ({ ...state, [e.target.name]: e.target.value }));
@@ -17,10 +19,13 @@ export default function LogIn() {
   const clearForm = () => {
     setLogin({
       email: '',
-      username: '',
       password: '',
     });
   };
+
+  const displayConfirmationMessage = () => {
+    setUserConfirmation(true);
+  }
 
   const logUserIn = () => {
 
@@ -32,13 +37,16 @@ export default function LogIn() {
       console.log(result.data.message, result.data.token);
     })
     .then(() => clearForm())
-    .catch((error) => console.log(error));
+    .then(() => displayConfirmationMessage())
+    .catch((error) => { return error});
   };
 
 
   return (
 
     <div>
+
+      <div>
       
         <label>
           <div>Email</div>
@@ -61,6 +69,15 @@ export default function LogIn() {
         </label>
 
         <button onClick={logUserIn}> Log In</button>
+
+        </div>
+
+        {userConfirmation && (
+          <div>
+            <div> Great! You are now logged in. </div>
+          </div>
+        )}
+
 
     <div><Footer /></div>
 

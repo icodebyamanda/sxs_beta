@@ -82,14 +82,6 @@ export default function SignUp() {
 
         <button onClick={RegisterUser}> submit</button>
 
-        {/* <label>
-          <input 
-          type="submit" 
-          value="submit"
-          />
-        </label>
-        </form> */}
-
       </div>
 
       {confirmationMessage && (
