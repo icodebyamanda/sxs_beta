@@ -4,38 +4,15 @@ import Footer from './Footer';
 
 export default function LogIn() {
 
-  // const [loginDetails, setLogin] = useState({
-  //   email: '',
-  //   password: '',
-  // });
-
   const [loginDetails, setLogin] = useState({
     email: '',
     password: '',
   });
 
-  // const handleChange = (e) => {
-  //   e.persist()
-    
-  //   const value = e.target.value;
-
-  //   setLogin((state) => ({
-  //     ...state,
-  //     [e.target.name]: value,
-  //   }));
-  // };
-
   const handleChange = (e) => {
-    // e.preventDefault();
     // e.persist();
-    console.log(e.target.name, e.target.value)
     setLogin((state) => ({ ...state, [e.target.name]: e.target.value }));
   };
-
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   logUserIn();
-  // };
 
   const logUserIn = () => {
 
@@ -50,28 +27,9 @@ export default function LogIn() {
   };
 
 
-
-  // const logUserIn = () => {
-
-  //   axios('/users/login', {
-  //     method: 'POST',
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //     body: JSON.stringify(loginDetails),
-  //   })
-  //   .then(() => setLogin(loginDetails))
-  //   .catch((error) => { 
-  //     return error;
-  //   });
-  // };
-
-
   return (
 
     <div>
-
-      {/* <form onSubmit={handleSubmit}>  */}
       
         <label>
           <div>Email</div>
@@ -94,15 +52,6 @@ export default function LogIn() {
         </label>
 
         <button onClick={logUserIn}> Log In</button>
-
-        {/* <label>
-          <input 
-            type="submit" 
-            value="submit"
-          />
-        </label> */}
-      
-      {/* </form> */}
 
     <div><Footer /></div>
 
