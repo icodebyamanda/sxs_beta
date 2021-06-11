@@ -5,6 +5,7 @@ import UserView from "./components/UserView";
 import Homepage from "./components/Homepage";
 import SignUp from "./components/SignUp";
 import LogIn from "./components/LogIn";
+import HelloWorld from "./components/HelloWorld";
 import Navigation from "./components/Navigation";
 import LogSignNavBar from "./components/LogSignNavBar";
 
@@ -31,7 +32,8 @@ function App() {
           <Route path="/user" component={UserView} />
           <Route path="/register" component={SignUp} />
           <Route path="/login" component={LogIn} />
-          <Route path="/" component={Homepage} />
+          <Route path="/Home" component={Homepage} />
+          <Route path="/" component={HelloWorld} />
         </Switch>
 
         </Router>
