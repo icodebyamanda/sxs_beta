@@ -21,12 +21,6 @@ export default function SignUp() {
     }));
   };
 
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   registerUser();
-  //   displayConfirmationMessage();
-  // }
-
   const clearForm = () => {
     setSignUp({
       email: '',
@@ -46,23 +40,6 @@ export default function SignUp() {
     .then(() => displayConfirmationMessage())
     .catch((error) => { return error});
   };
-
-
-  // const registerUser = () => {
-
-  //   fetch('/users/register', {
-  //     method: 'POST',
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //     body: JSON.stringify(signUpDetails),
-  //   })
-  //   .then(() => setSignUp(signUpDetails))
-  //   .then(() => clearForm())
-  //   .catch((error) => { 
-  //     return error;
-  //   });
-  // };
 
 
   return (

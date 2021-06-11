@@ -14,6 +14,14 @@ export default function LogIn() {
     setLogin((state) => ({ ...state, [e.target.name]: e.target.value }));
   };
 
+  const clearForm = () => {
+    setLogin({
+      email: '',
+      username: '',
+      password: '',
+    });
+  };
+
   const logUserIn = () => {
 
     // when using syntax axios.post, data isn't used and second param is state's variable
@@ -23,6 +31,7 @@ export default function LogIn() {
       localStorage.setItem("token", result.data.token);
       console.log(result.data.message, result.data.token);
     })
+    .then(() => clearForm())
     .catch((error) => console.log(error));
   };
 
