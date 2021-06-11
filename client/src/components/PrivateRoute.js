@@ -6,6 +6,7 @@ import useAuth from './hooks/useAuth';
 
 export default function PrivateRoute({ children, ...rest }) {
   let auth = useAuth();
+  
   return (
     <Route
       {...rest}
