@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { History } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import Footer from './Footer';
 
-export default function LogIn() {
+function LogIn() {
+
+  // let history = useHistory();
 
   const [loginDetails, setLogin] = useState({
     email: '',
@@ -12,7 +14,6 @@ export default function LogIn() {
 
   // const [userConfirmation, setUserConfirmation] = useState(false)
 
-  const useHistory = History();
 
   const handleChange = (e) => {
     // e.persist();
@@ -30,6 +31,9 @@ export default function LogIn() {
   //   setUserConfirmation(true);
   // }
 
+
+  
+
   const logUserIn = () => {
 
     // when using syntax axios.post, data isn't used and second param is state's variable
@@ -41,10 +45,8 @@ export default function LogIn() {
     })
     // .then(() => clearForm())
     // .then(() => displayConfirmationMessage())
-    .then(() => {
-      useHistory.push('/homepage');
-    })
-    .catch((error) => { return error});
+    // .then(() => { history.push('/')})
+    .catch((error) => { return error });
   };
 
 
@@ -74,7 +76,7 @@ export default function LogIn() {
           />
         </label>
 
-        <button onClick={logUserIn}> Log In</button>
+        <button type="button" onClick={logUserIn}> Log In</button>
 
         </div>
 
@@ -93,3 +95,5 @@ export default function LogIn() {
 
 
 }
+
+export default LogIn;
