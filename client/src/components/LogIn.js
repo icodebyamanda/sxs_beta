@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import axios from "axios";
+import useAuth from '../hooks/useAuth';
 //import { useHistory } from "react-router-dom";
 import Footer from './Footer';
 
 function LogIn() {
 
+  let auth = useAuth();
   // let history = useHistory();
 
   const [loginDetails, setLogin] = useState({
@@ -31,22 +33,13 @@ function LogIn() {
     setUserConfirmation(true);
   }
 
-
-  
-
   const logUserIn = () => {
 
-    // when using syntax axios.post, data isn't used and second param is state's variable
-    axios.post('/users/login', loginDetails)
-    .then((result) => {
-      //store it locally - setItem a method of storage
-      localStorage.setItem("token", result.data.token);
-      console.log(result.data.message, result.data.token);
-    })
-    .then(() => clearForm())
-    .then(() => displayConfirmationMessage())
-    // .then(() => { history.push('/')})
-    .catch((error) => { return error });
+    // full request went to useProvideAuth.js file, here using a modular function keeping context
+    auth.signin(loginDetails)
+    clearForm()
+    displayConfirmationMessage()
+
   };
 
 

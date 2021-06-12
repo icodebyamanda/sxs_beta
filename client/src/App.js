@@ -9,7 +9,7 @@ import HelloWorld from "./components/HelloWorld";
 import Navigation from "./components/Navigation";
 import LogSignNavBar from "./components/LogSignNavBar";
 
-import { BrowserRouter as Router, Switch, Route, Link, useParams } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link, useParams, useHistory } from "react-router-dom";
 
 import ProvideAuth from './components/ProvideAuth'; // all route use authentication context
 import PrivateRoute from './components/PrivateRoute';
@@ -26,18 +26,17 @@ function App() {
       <ProvideAuth>
 
         <Router>
-
+          
+          <LogSignNavBar />
           <Navigation />
             
-          <LogSignNavBar />
-
           <Switch>
-            <Route path="/Home" component={Homepage} /> 
+            <Route path="/home" component={Homepage} /> 
             <Route path="/admin" component={AdminView} /> 
             <Route path="/user" component={UserView} />
             <Route path="/register" component={SignUp} />
             <Route path="/login" component={LogIn} />
-            <Route path="/" component={HelloWorld} />
+            <Route exact path="/" component={HelloWorld} />
           </Switch>
         
         </Router>
