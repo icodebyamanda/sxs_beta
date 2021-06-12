@@ -1,9 +1,10 @@
 import { useContext } from 'react';
-import authContext from './contexts/auth';
+import authContext from '../contexts/auth';
 
-// Allows to know the authentication context of a user (logged in or not)
+// Will allow to know the authentication context of a user (logged in or not)
 // Will be reused in PrivateRoute and Login.js
-//This is a custom hooks
+// This is a custom hooks
+// In conjunction with auth.js
 
 export default function useAuth() {
   return useContext(authContext);

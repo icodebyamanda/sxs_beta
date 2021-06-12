@@ -2,7 +2,7 @@
 // screen if you're not yet authenticated.
 
 import { Route, Redirect } from 'react-router-dom'
-import useAuth from './hooks/useAuth';
+import useAuth from '../hooks/useAuth';
 
 export default function PrivateRoute({ children, ...rest }) {
   let auth = useAuth();
@@ -11,7 +11,7 @@ export default function PrivateRoute({ children, ...rest }) {
     <Route
       {...rest}
       render={({ location }) =>
-        auth.user ? (
+        auth.isLoggedIn ? (
           children
         ) : (
           <Redirect

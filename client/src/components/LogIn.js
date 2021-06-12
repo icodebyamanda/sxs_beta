@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { useHistory } from "react-router-dom";
+//import { useHistory } from "react-router-dom";
 import Footer from './Footer';
 
 function LogIn() {
@@ -12,7 +12,7 @@ function LogIn() {
     password: '',
   });
 
-  // const [userConfirmation, setUserConfirmation] = useState(false)
+  const [userConfirmation, setUserConfirmation] = useState(false)
 
 
   const handleChange = (e) => {
@@ -20,16 +20,16 @@ function LogIn() {
     setLogin((state) => ({ ...state, [e.target.name]: e.target.value }));
   };
 
-  // const clearForm = () => {
-  //   setLogin({
-  //     email: '',
-  //     password: '',
-  //   });
-  // };
+  const clearForm = () => {
+    setLogin({
+      email: '',
+      password: '',
+    });
+  };
 
-  // const displayConfirmationMessage = () => {
-  //   setUserConfirmation(true);
-  // }
+  const displayConfirmationMessage = () => {
+    setUserConfirmation(true);
+  }
 
 
   
@@ -43,8 +43,8 @@ function LogIn() {
       localStorage.setItem("token", result.data.token);
       console.log(result.data.message, result.data.token);
     })
-    // .then(() => clearForm())
-    // .then(() => displayConfirmationMessage())
+    .then(() => clearForm())
+    .then(() => displayConfirmationMessage())
     // .then(() => { history.push('/')})
     .catch((error) => { return error });
   };
@@ -80,11 +80,11 @@ function LogIn() {
 
         </div>
 
-        {/* {userConfirmation && (
+        {userConfirmation && (
           <div>
             <div> Great! You are now logged in. </div>
           </div>
-        )} */}
+        )}
 
 
     <div><Footer /></div>

@@ -11,7 +11,8 @@ import LogSignNavBar from "./components/LogSignNavBar";
 
 import { BrowserRouter as Router, Switch, Route, Link, useParams } from "react-router-dom";
 
-
+import ProvideAuth from './components/ProvideAuth'; // all route use authentication context
+import PrivateRoute from './components/PrivateRoute';
 
 function App() { 
     
@@ -20,23 +21,29 @@ function App() {
   return (
     
 
-      <div className="App">
+    <div className="App">
+
+      <ProvideAuth>
 
         <Router>
 
-        <Navigation />
-        <LogSignNavBar />
+          <Navigation />
+            
+          <LogSignNavBar />
 
-        <Switch>
-          <Route path="/admin" component={AdminView} /> 
-          <Route path="/user" component={UserView} />
-          <Route path="/register" component={SignUp} />
-          <Route path="/login" component={LogIn} />
-          <Route path="/Home" component={Homepage} />
-          <Route path="/" component={HelloWorld} />
-        </Switch>
-
+          <Switch>
+            <Route path="/Home" component={Homepage} /> 
+            <Route path="/admin" component={AdminView} /> 
+            <Route path="/user" component={UserView} />
+            <Route path="/register" component={SignUp} />
+            <Route path="/login" component={LogIn} />
+            <Route path="/" component={HelloWorld} />
+          </Switch>
+        
         </Router>
+
+      </ProvideAuth>
+      
       </div>
 
 
