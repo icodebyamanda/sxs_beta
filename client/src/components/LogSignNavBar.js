@@ -1,15 +1,25 @@
-import { Link } from "react-router-dom";
+import useAuth from '../hooks/useAuth';
+import { Link, useHistory } from "react-router-dom";
 
 export default function LogSignNavBar() {
+
+  const history = useHistory();
+  const auth = useAuth();
+
+
+  // const logout = () => {
+  //   auth.signout(() => history.push("/login"));
+  // }
+
 
   return (
 
     <div>
 
       <nav>
-      <span className="inlineSpacing"> <Link to="/"> Hello World </Link> </span>
-      <span className="inlineSpacing"> <Link to="/login"> Login </Link> </span>
-      <span className="inlineSpacing"> <Link to="/register"> Register </Link> </span>
+      {!auth.isLoggedIn && <span className="inlineSpacing"> <Link to="/"> Hello World </Link> </span>}
+      {!auth.isLoggedIn && <span className="inlineSpacing"> <Link to="/login"> Login </Link> </span>}
+      {!auth.isLoggedIn && <span className="inlineSpacing"> <Link to="/register"> Register </Link> </span>}
       
       </nav>
 

@@ -9,6 +9,7 @@ import HelloWorld from "./components/HelloWorld";
 import Navigation from "./components/Navigation";
 import LogSignNavBar from "./components/LogSignNavBar";
 
+import { BrowserRouter } from "react-router-dom";
 import { BrowserRouter as Router, Switch, Route, Link, useParams, useHistory } from "react-router-dom";
 
 import ProvideAuth from './components/ProvideAuth'; // all route use authentication context
@@ -22,6 +23,8 @@ function App() {
     
 
     <div className="App">
+
+    <BrowserRouter>
 
       <ProvideAuth>
 
@@ -42,6 +45,8 @@ function App() {
         </Router>
 
       </ProvideAuth>
+    
+    </BrowserRouter>
       
       </div>
 

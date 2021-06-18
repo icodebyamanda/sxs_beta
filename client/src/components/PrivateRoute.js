@@ -1,6 +1,6 @@
 // A wrapper for <Route> that redirects to the login
 // screen if you're not yet authenticated.
-
+import React from "react";
 import { Route, Redirect } from 'react-router-dom'
 import useAuth from '../hooks/useAuth';
 
