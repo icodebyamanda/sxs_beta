@@ -19,19 +19,11 @@ function LogIn() {
     setLogin((state) => ({ ...state, [e.target.name]: e.target.value }));
   };
 
-  const clearForm = () => {
-    setLogin({
-      email: '',
-      password: '',
-    });
-  };
-
   const logUserIn = () => {
 
     // full request went to useProvideAuth.js file, here using a modular function keeping context
     auth.signin(loginDetails)
     history.push('/home')
-    clearForm()
 
   };
 
