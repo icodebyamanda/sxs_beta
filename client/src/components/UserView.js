@@ -1,4 +1,7 @@
 import React, { useEffect, useState } from "react";
+import axios from "axios";
+import useAuth from '../hooks/useAuth';
+import { useHistory } from "react-router-dom";
 import backgroundUser from "../assets/headers/userHeader2.png"
 //import Headers from "./components/Headers";
 import Footer from './Footer';
@@ -6,25 +9,64 @@ import Footer from './Footer';
 
 export default function UserView() {
 
+  const auth = useAuth();
+	const history = useHistory();
+
   const [moods, setMoods] = useState([
     {name:"Sad", emoji:"😕"}, 
     {name:"Blessed", emoji:"🤗"}, 
     {name:"Determined", emoji:"😏"}, 
     {name:"Fidgety", emoji:"😣"}]); // Take all the moods
-  const [pick, setPick] = useState(null) // Match to the correct one
+  
+    const [pick, setPick] = useState(null) // Match to the correct one
 
 
-  const getOneSelection = (mood) => {
+  // const getOneSelection = (mood) => {
 
-    fetch(`/selections/${mood}`)
-      .then((response) => response.json())
-      .then((resp) => {
-        console.log(resp)
-        setPick(resp)})
+  //   fetch(`/selections/${mood}`)
+  //     .then((response) => response.json())
+  //     .then((resp) => {
+  //       console.log(resp)
+  //       setPick(resp)})
 
-      .catch((error) => {
-        return error
+  //     .catch((error) => {
+  //       return error
+  //     });
+  //   };
+
+  // const getOneSelection = (mood) => {
+
+  //   axios.get(`/selections/${mood}`)
+  //     .then((response) => response.json())
+  //     .then((resp) => {
+  //       console.log(resp)
+  //       setPick(resp)})
+
+  //     .catch((error) => {
+  //       return error
+  //     });
+  //   };
+    
+  useEffect(() => {
+		getOneSelection();
+
+		let token = localStorage.getItem("token");
+		if (!token) {
+			history.push("/login");
+		}
+		console.log(token);
+	}, []);
+
+  const getOneSelection = async (mood) => {
+
+    try {
+      const database = await axios.get(`/selections/${mood}`, {
+        headers: { "x-access-token": localStorage.getItem("token") },
       });
+      setPick(database.data);
+    } catch (error) {
+      console.log(error);
+    }
     };
     
 

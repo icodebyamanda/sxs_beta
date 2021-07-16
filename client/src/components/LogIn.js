@@ -15,7 +15,7 @@ function LogIn() {
 
 
   const handleChange = (e) => {
-    // e.persist();
+    e.persist();
     setLogin((state) => ({ ...state, [e.target.name]: e.target.value }));
   };
 
