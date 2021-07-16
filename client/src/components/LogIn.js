@@ -1,14 +1,12 @@
 import React, { useState } from "react";
-import axios from "axios";
 import useAuth from '../hooks/useAuth';
 import { useHistory } from "react-router-dom";
 import Footer from './Footer';
 
 function LogIn() {
 
+  const auth = useAuth();
   const history = useHistory()
-  let auth = useAuth();
-  // let history = useHistory();
 
   const [loginDetails, setLogin] = useState({
     email: '',
@@ -38,7 +36,7 @@ function LogIn() {
 
     // full request went to useProvideAuth.js file, here using a modular function keeping context
     auth.signin(loginDetails)
-    .then(() => history.push('/home'))
+    history.push('/home')
     clearForm()
     displayConfirmationMessage()
 
