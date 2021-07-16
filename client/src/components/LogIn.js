@@ -13,8 +13,6 @@ function LogIn() {
     password: '',
   });
 
-  const [userConfirmation, setUserConfirmation] = useState(false)
-
 
   const handleChange = (e) => {
     // e.persist();
@@ -28,17 +26,12 @@ function LogIn() {
     });
   };
 
-  const displayConfirmationMessage = () => {
-    setUserConfirmation(true);
-  }
-
   const logUserIn = () => {
 
     // full request went to useProvideAuth.js file, here using a modular function keeping context
     auth.signin(loginDetails)
     history.push('/home')
     clearForm()
-    displayConfirmationMessage()
 
   };
 
@@ -72,12 +65,6 @@ function LogIn() {
         <button type="button" onClick={logUserIn}> Log In</button>
 
         </div>
-
-        {userConfirmation && (
-          <div>
-            <div> Great! You are now logged in. </div>
-          </div>
-        )}
 
 
     <div><Footer /></div>
