@@ -19,11 +19,10 @@ export default function UserView() {
     {name:"Fidgety", emoji:"😣"}]); // Take all the moods
   
     const [pick, setPick] = useState([]) // Match to the correct one
-    console.log(`this is pick ${pick}`)
 
     
   useEffect(() => {
-		getOneSelection();
+		// getOneSelection();
     displayPick();
 
 		let token = localStorage.getItem("token");
@@ -38,9 +37,9 @@ export default function UserView() {
       const database = await axios.get(`/selections/${mood}`, {
         headers: { "x-access-token": localStorage.getItem("token") },
       });
-      console.log(database.data);
+      //console.log(database.data);
       //setPick(database.data);
-      //displayPick(database.data);
+      displayPick(database.data);
     } catch (error) {
       console.log(error);
     }
@@ -65,6 +64,7 @@ export default function UserView() {
       setPick(pick);
     }
     
+    //console.log(`this is pick ${pick.author}`)
 
 
   return (
