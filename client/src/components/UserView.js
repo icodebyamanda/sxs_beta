@@ -90,13 +90,13 @@ export default function UserView() {
           </div>
 
 
-            { pick &&  (
+            { pick.length === 1 ?  (
               <div className="response">
                 <div className="noteLine"><span id="noteIntro">Note to self  </span><br></br><span id="noteData"> {pick.note} xxx </span></div>
                 <div className="urlHeading" id="responseSent">Today you get,</div>
                 <a href={pick.url} target="_blank"> <br></br> <div className="responseLink"> Good vibes only...  </div> </a>
               </div>
-            )}
+            ) : <div> Sorry, sounds like you have no resource to match this mood :-/</div>}
 
           <div><Footer /></div>
 
