@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from "react";
+import axios from "axios";
+import { useHistory } from "react-router-dom";
 import backgroundAdmin from "../assets/headers/adminHeader.png"
 import Footer from './Footer';
 
 export default function AdminView() {
+
+  const history = useHistory();
 
   const [newEntries, setNewEntries] = useState({
     mood: "",
@@ -14,6 +18,16 @@ export default function AdminView() {
   });
 
   const [newEntryDisplay, setNewEntryDisplay] = useState(newEntries.url);
+
+
+  useEffect(() => {
+
+		let token = localStorage.getItem("token");
+		if (!token) {
+			history.push("/login");
+		}
+		console.log(token);
+	}, []);
 
 
   const handleChange = (e) => {
@@ -49,30 +63,54 @@ export default function AdminView() {
   });
 };
 
-  const getResponses = () => {
-    fetch("/selections")
-    .then((selection) => selection.json())
-    .then((newEntries) => {
-      setNewEntries(newEntries);
-    })
-    .catch((error) => {
-      return error;
-    });
-  };
+  // const addNewEntry = () => {
+  //   fetch("/selections", {
+  //     method: "POST",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //     },
+  //     body: JSON.stringify(newEntries),
+  //   })
+  //   .then(() => setNewEntries(newEntryDisplay))
+  //   .catch((error) => { 
+  //     return error;
+  //   });
+  // };
 
-  const addNewEntry = () => {
-    fetch("/selections", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(newEntries),
-    })
-    .then(() => setNewEntries(newEntryDisplay))
-    .catch((error) => { 
-      return error;
-    });
-  };
+  const addNewEntry = async () => {
+    try {
+      await axios.post(`/selections`, newEntries, {
+        headers: { "x-access-token": localStorage.getItem("token") },
+      });
+      //setNewEntryDisplay(database.data)
+    } catch (error) {
+      console.log(error);
+    }  
+  }
+
+  // const getResponses = () => {
+  //   fetch("/selections")
+  //   .then((selection) => selection.json())
+  //   .then((newEntries) => {
+  //     setNewEntries(newEntries);
+  //   })
+  //   .catch((error) => {
+  //     return error;
+  //   });
+  // };
+
+  const getResponses = async () => {
+    try {
+      const database = await axios.get(`/selections/list`, {
+        headers: { "x-access-token": localStorage.getItem("token") },
+      });
+      setNewEntries(database.data)
+    } catch (error) {
+      console.log(error);
+    }  
+  }
+
+
 
   return (
     
