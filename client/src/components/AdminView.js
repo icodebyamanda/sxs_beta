@@ -63,41 +63,17 @@ export default function AdminView() {
   });
 };
 
-  // const addNewEntry = () => {
-  //   fetch("/selections", {
-  //     method: "POST",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //     body: JSON.stringify(newEntries),
-  //   })
-  //   .then(() => setNewEntries(newEntryDisplay))
-  //   .catch((error) => { 
-  //     return error;
-  //   });
-  // };
-
   const addNewEntry = async () => {
     try {
       await axios.post(`/selections`, newEntries, {
         headers: { "x-access-token": localStorage.getItem("token") },
       });
-      //setNewEntryDisplay(database.data)
     } catch (error) {
       console.log(error);
     }  
   }
 
-  // const getResponses = () => {
-  //   fetch("/selections")
-  //   .then((selection) => selection.json())
-  //   .then((newEntries) => {
-  //     setNewEntries(newEntries);
-  //   })
-  //   .catch((error) => {
-  //     return error;
-  //   });
-  // };
+
 
   const getResponses = async () => {
     try {
