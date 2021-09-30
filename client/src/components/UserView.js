@@ -22,8 +22,6 @@ export default function UserView() {
 
     
   useEffect(() => {
-		//getOneSelection();
-    //displayPick(pick);
 
 		let token = localStorage.getItem("token");
 		if (!token) {
@@ -39,9 +37,8 @@ export default function UserView() {
       const database = await axios.get(`/selections/${mood}`, {
         headers: { "x-access-token": localStorage.getItem("token") },
       });
-      //displayPick(database.data);
-      // database.data
-      console.log(database.data);
+
+      //console.log(database.data);
       setPick(database.data);
       
     } catch (error) {
@@ -49,10 +46,6 @@ export default function UserView() {
     }
     };
     
-
-    // const displayPick = (data) => {
-    //   setPick(data)
-    // }
 
 
   return (
