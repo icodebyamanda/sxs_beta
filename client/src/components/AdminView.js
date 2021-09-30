@@ -121,7 +121,6 @@ export default function AdminView() {
                   type="text"
                   name="author"
                   value={newEntries.author}
-                  placeholder="e.g. Lizzo"
                   onChange={handleChange}/>
               </label>
 
@@ -133,7 +132,6 @@ export default function AdminView() {
                   type="text"
                   name="url"
                   value={newEntries.url}
-                  placeholder="e.g. https://youtu.be/SmbmeOgWsqE"
                   onChange={handleChange}/>
               </label>
 
@@ -144,7 +142,6 @@ export default function AdminView() {
                   type="text"
                   name="description"
                   value={newEntries.description}
-                  placeholder="e.g. Lizzo' Song Good as Hell"
                   onChange={handleChange}/>
               </label>
 
@@ -155,7 +152,6 @@ export default function AdminView() {
                   type="text"
                   name="note"
                   value={newEntries.note}
-                  placeholder="e.g. Be kind to yourself, you're Good As Hell!"
                   onChange={handleChange}/>
               </label>
       ​
