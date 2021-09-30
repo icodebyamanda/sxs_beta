@@ -18,7 +18,7 @@ export default function UserView() {
     {name:"Determined", emoji:"😏"}, 
     {name:"Fidgety", emoji:"😣"}]); // Take all the moods
   
-    const [pick, setPick] = useState({}) // Match to the correct one
+    const [pick, setPick] = useState(null) // Match to the correct one
 
     
   useEffect(() => {
