@@ -65,7 +65,7 @@ router.get('/list/:mood', userShouldBeLoggedIn, async (req, res) => {
   }
 });
 
-//! Get ONE user a random selection based on the selected user's mood
+//! Get ONE user a RANDOM selection based on the selected user's mood
 
 router.get('/:mood', userShouldBeLoggedIn, async (req, res) => {
 
@@ -74,13 +74,13 @@ router.get('/:mood', userShouldBeLoggedIn, async (req, res) => {
 
   try {
 
-  const moods = await models.Selection.findAll({
+  const moods = await models.Selection.findOne({
     where: {
       UserId,
       mood: `${mood}`,
     },
 
-    order: sequelize.random(), limit: 1
+    order: sequelize.random()
 
   })
   res.send(moods);

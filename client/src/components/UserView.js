@@ -18,12 +18,12 @@ export default function UserView() {
     {name:"Determined", emoji:"😏"}, 
     {name:"Fidgety", emoji:"😣"}]); // Take all the moods
   
-    const [pick, setPick] = useState([]) // Match to the correct one
+    const [pick, setPick] = useState({}) // Match to the correct one
 
     
   useEffect(() => {
-		// getOneSelection();
-    // displayPick();
+		//getOneSelection();
+    //displayPick(pick);
 
 		let token = localStorage.getItem("token");
 		if (!token) {
@@ -50,13 +50,9 @@ export default function UserView() {
     };
     
 
-  //   const displayPick = () => {
-    
-  // }
-
-   
-    
-    //console.log(`this is pick ${pick.author}`)
+    // const displayPick = (data) => {
+    //   setPick(data)
+    // }
 
 
   return (
@@ -90,13 +86,19 @@ export default function UserView() {
           </div>
 
 
-            { pick.length === 1 ?  (
+            { pick && (
+
+             pick.length ? (
               <div className="response">
                 <div className="noteLine"><span id="noteIntro">Note to self  </span><br></br><span id="noteData"> {pick.note} xxx </span></div>
                 <div className="urlHeading" id="responseSent">Today you get,</div>
                 <a href={pick.url} target="_blank"> <br></br> <div className="responseLink"> Good vibes only...  </div> </a>
               </div>
-            ) : <div> Sorry, sounds like you have no resource to match this mood :-/</div>}
+             ) 
+             : 
+             (<div> Sorry, sounds like you have no resource to match this mood :-/</div>)
+
+            )}
 
           <div><Footer /></div>
 
