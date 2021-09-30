@@ -23,7 +23,7 @@ export default function UserView() {
     
   useEffect(() => {
 		// getOneSelection();
-    displayPick();
+    // displayPick();
 
 		let token = localStorage.getItem("token");
 		if (!token) {
@@ -32,37 +32,29 @@ export default function UserView() {
 		console.log(token);
 	}, []);
 
+
+  
   const getOneSelection = async (mood) => {
     try {
       const database = await axios.get(`/selections/${mood}`, {
         headers: { "x-access-token": localStorage.getItem("token") },
       });
-      //console.log(database.data);
-      //setPick(database.data);
-      displayPick(database.data);
+      //displayPick(database.data);
+      // database.data
+      console.log(database.data);
+      setPick(database.data);
+      
     } catch (error) {
       console.log(error);
     }
     };
     
-  // const getOneSelection = (mood) => {
 
-  //     let database
-
-  //     database = axios.get(`/selections/${mood}`, {
-  //       headers: { "x-access-token": localStorage.getItem("token") },
-  //     })
-  //     .then(() => console.log(database))
-  //     //.then((database) => setPick(database.data))
-  //     .then((database) => displayPick(database))
-  //     .then(() => displayPick())
-  //     .catch((error) => { return error });
+  //   const displayPick = () => {
     
-  //   };
+  // }
 
-    const displayPick = (pick) => {
-      setPick(pick);
-    }
+   
     
     //console.log(`this is pick ${pick.author}`)
 
