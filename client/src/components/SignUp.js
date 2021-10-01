@@ -81,18 +81,19 @@ export default function SignUp() {
 
         <label>
           <div>Password</div>
-          <input
-          type={passwordShown ? "text" : "password"}
-          name="password"
-          value={signUpDetails.password}
-          onChange={handleChange}
-          />
-          <img
-            title={passwordShown ? "Hide" : "Show"}
-            src={passwordShown ? closedEye : openedEye}
-            onClick={togglePassword}
-          />
-          {/* <button onClick={togglePassword}>Show Password</button> */}
+          <div className="pwd-container">
+            <input
+            type={passwordShown ? "text" : "password"}
+            name="password"
+            value={signUpDetails.password}
+            onChange={handleChange}
+            />
+            <img
+              title={passwordShown ? "Hide" : "Show"}
+              src={passwordShown ? closedEye : openedEye}
+              onClick={togglePassword}
+            />
+          </div>
         </label>
 
         <button onClick={RegisterUser}> submit</button>
