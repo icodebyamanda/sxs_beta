@@ -75,16 +75,16 @@ export default function AdminView() {
 
 
 
-  const getResponses = async () => {
-    try {
-      const database = await axios.get(`/selections/list`, {
-        headers: { "x-access-token": localStorage.getItem("token") },
-      });
-      setNewEntries(database.data)
-    } catch (error) {
-      console.log(error);
-    }  
-  }
+  // const getResponses = async () => {
+  //   try {
+  //     const database = await axios.get(`/selections/list`, {
+  //       headers: { "x-access-token": localStorage.getItem("token") },
+  //     });
+  //     setNewEntries(database.data)
+  //   } catch (error) {
+  //     console.log(error);
+  //   }  
+  // }
 
 
 

@@ -3,7 +3,7 @@ import { Link, useHistory } from "react-router-dom";
 
 export default function LogSignNavBar() {
 
-  const history = useHistory();
+  //const history = useHistory();
   const auth = useAuth();
 
 

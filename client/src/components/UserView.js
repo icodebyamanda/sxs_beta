@@ -68,7 +68,7 @@ export default function UserView() {
 
             <ul className="no-bullet moodList">
               
-            { moods.map((mood) => (          
+              { moods.map((mood) => (          
                 <li key={mood.name}>
                   <button className="moodButton" name={mood.name} onClick={() => getOneSelection(mood.name)}>
                     <div id="moodTitle"> {mood.name} </div>  <br></br> <div id="moodEmoji"> {mood.emoji}</div>
@@ -79,23 +79,20 @@ export default function UserView() {
           </div>
 
 
-            { pick && (
+          { pick && (
 
-             pick ? 
-             (
+            pick ? (
               <div className="response">
                 <div className="noteLine"><span id="noteIntro">Note to self  </span><br></br><span id="noteData"> {pick.note} xxx </span></div>
                 <div className="urlHeading" id="responseSent">Today you get,</div>
                 <a href={pick.url} target="_blank"> <br></br> <div className="responseLink"> Good vibes only...  </div> </a>
               </div>
 
-             )
-             :
-             (
+            ) : (
               <div> Sorry, sounds like you have no resource to match this mood :-/</div>
             ) 
               
-             )}
+          )}
 
           <div><Footer /></div>
 
