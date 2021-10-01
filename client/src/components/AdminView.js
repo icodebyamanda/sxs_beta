@@ -106,7 +106,7 @@ export default function AdminView() {
         <div className="core adminCore">
         <div className="userxCore">
 
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className="AdminForm">
 
               <label>           
                 <div className="formTitle">Pick the mood this gift will address</div>

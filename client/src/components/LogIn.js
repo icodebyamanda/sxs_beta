@@ -39,38 +39,39 @@ function LogIn() {
 
     <div>
 
-      <div>
-      
-        <label>
-          <div className="formTitle">Email</div>
-          <input
-            type="text"
-            name="email"
-            value={loginDetails.email}
-            onChange={handleChange}
-          />
-        </label>
-
-        <label>
-          <div className="formTitle">Password</div>
-          <div className="pwd-container">
+      <form>
+        <div className="AdminForm">
+          <label>
+            <div className="formTitle">Email</div>
             <input
-              type={passwordShown ? "text" : "password"}
-              name="password"
-              value={loginDetails.password}
+              type="text"
+              name="email"
+              value={loginDetails.email}
               onChange={handleChange}
             />
-            <img
-              title={passwordShown ? "Hide" : "Show"}
-              src={passwordShown ? closedEye : openedEye}
-              onClick={togglePassword}
-            />
-          </div>
-        </label>
+          </label>
 
+          <label>
+            <div className="formTitle">Password</div>
+            <div className="pwd-container">
+              <input
+                type={passwordShown ? "text" : "password"}
+                name="password"
+                value={loginDetails.password}
+                onChange={handleChange}
+              />
+              <img
+                title={passwordShown ? "Hide" : "Show"}
+                src={passwordShown ? closedEye : openedEye}
+                onClick={togglePassword}
+              />
+            </div>
+          </label>
+        </div>
+        
         <button type="button" onClick={logUserIn} className="SmallSubmitButton"> Log In</button>
 
-        </div>
+        </form>
 
 
     <div><Footer /></div>

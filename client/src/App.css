@@ -98,15 +98,6 @@ a:hover {
   color: #00cc99;
 }
 
-form {
-  display: flex;
-  flex-direction: column;
-  padding: 10px;
-  width: 100%;
-  font-family: "Quicksand", sans-serif;
-  color: #78244c;
-}
-
 footer {
   width: 100%;
   font-size: 0.9em;
@@ -180,6 +171,15 @@ footer {
   font-weight: 300em;
   font-size: 1em;
   border-radius: 5px;
+}
+
+.AdminForm {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  width: 100%;
+  font-family: "Quicksand", sans-serif;
+  color: #78244c;
 }
 
 /* ! USER & ADMIN VIEWS */
