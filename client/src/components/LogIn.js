@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import useAuth from '../hooks/useAuth';
 import { useHistory } from "react-router-dom";
+import openedEye from '../assets/icons/openedEye.png';
+import closedEye from '../assets/icons/closedEye.png';
 import Footer from './Footer';
 
 function LogIn() {
@@ -13,10 +15,15 @@ function LogIn() {
     password: '',
   });
 
+  const [passwordShown, setPasswordShown] = useState(false);
 
   const handleChange = (e) => {
     e.persist();
     setLogin((state) => ({ ...state, [e.target.name]: e.target.value }));
+  };
+
+  const togglePassword = () => {
+    setPasswordShown(!passwordShown);
   };
 
   const logUserIn = () => {
@@ -46,12 +53,19 @@ function LogIn() {
 
         <label>
           <div>Password</div>
-          <input
-            type="password"
-            name="password"
-            value={loginDetails.password}
-            onChange={handleChange}
-          />
+          <div className="pwd-container">
+            <input
+              type={passwordShown ? "text" : "password"}
+              name="password"
+              value={loginDetails.password}
+              onChange={handleChange}
+            />
+            <img
+                title={passwordShown ? "Hide" : "Show"}
+                src={passwordShown ? closedEye : openedEye}
+                onClick={togglePassword}
+              />
+          </div>
         </label>
 
         <button type="button" onClick={logUserIn}> Log In</button>
