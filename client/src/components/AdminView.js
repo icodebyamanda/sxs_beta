@@ -106,7 +106,7 @@ export default function AdminView() {
         <div className="core adminCore">
         <div className="userxCore">
 
-            <form onSubmit={handleSubmit} className="adminFormStyle">
+            <form onSubmit={handleSubmit}>
 
               <label>           
                 <div className="formTitle">Pick the mood this gift will address</div>
@@ -170,7 +170,7 @@ export default function AdminView() {
               </label>
       ​
               <label>
-                <input type="submit" value="Submit" id="SubmitButton" />
+                <input type="submit" value="Submit" className="SubmitButton" />
               </label>
 
             </form>

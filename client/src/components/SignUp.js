@@ -60,7 +60,7 @@ export default function SignUp() {
       <div>
 
         <label>
-          <div>Email</div>
+          <div className="formTitle">Email</div>
           <input
           type="text"
           name="email"
@@ -70,7 +70,7 @@ export default function SignUp() {
         </label>
 
         <label>
-          <div>Username</div>
+          <div className="formTitle">Username</div>
           <input
           type="text"
           name="username"
@@ -80,7 +80,7 @@ export default function SignUp() {
         </label>
 
         <label>
-          <div>Password</div>
+          <div className="formTitle">Password</div>
           <div className="pwd-container">
             <input
             type={passwordShown ? "text" : "password"}
@@ -96,7 +96,7 @@ export default function SignUp() {
           </div>
         </label>
 
-        <button onClick={RegisterUser}> submit</button>
+        <button onClick={RegisterUser} className="SmallSubmitButton"> Submit</button>
 
       </div>
 

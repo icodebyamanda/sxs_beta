@@ -42,7 +42,7 @@ function LogIn() {
       <div>
       
         <label>
-          <div>Email</div>
+          <div className="formTitle">Email</div>
           <input
             type="text"
             name="email"
@@ -52,7 +52,7 @@ function LogIn() {
         </label>
 
         <label>
-          <div>Password</div>
+          <div className="formTitle">Password</div>
           <div className="pwd-container">
             <input
               type={passwordShown ? "text" : "password"}
@@ -68,7 +68,7 @@ function LogIn() {
           </div>
         </label>
 
-        <button type="button" onClick={logUserIn}> Log In</button>
+        <button type="button" onClick={logUserIn} className="SmallSubmitButton"> Log In</button>
 
         </div>
 

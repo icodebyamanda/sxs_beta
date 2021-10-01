@@ -22,7 +22,7 @@ function Navigation() {
       {auth.isLoggedIn && <span className="inlineSpacing"> <Link to="/home"> Homepage </Link> </span>}
       {auth.isLoggedIn && <span className="inlineSpacing"> <Link to="/user"> Your Routine </Link> </span>}
       {auth.isLoggedIn && <span className="inlineSpacing"> <Link to="/admin"> Add an inspiration </Link> </span>}
-      {auth.isLoggedIn && <span className="inlineSpacing"> <button type="button" onClick={logout}> Log Out </button> </span>}
+      {auth.isLoggedIn && <span className="inlineSpacing"> <button type="button" onClick={logout} className="SmallSubmitButton"> Log Out </button> </span>}
 
       </nav>
 
