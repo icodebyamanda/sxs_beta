@@ -11,6 +11,8 @@ export default function SignUp() {
     password: '',
   });
 
+  const [passwordShown, setPasswordShown] = useState(false);
+
   const [confirmationMessage, setConfirmation] = useState(false);
 
   const handleChange = (e) => {
@@ -20,6 +22,10 @@ export default function SignUp() {
       ...state,
       [e.target.name]: value,
     }));
+  };
+
+  const togglePassword = () => {
+    setPasswordShown(!passwordShown);
   };
 
   const clearForm = () => {
@@ -72,11 +78,12 @@ export default function SignUp() {
         <label>
           <div>Password</div>
           <input
-          type="password"
+          type={passwordShown ? "text" : "password"}
           name="password"
           value={signUpDetails.password}
           onChange={handleChange}
           />
+          <button onClick={togglePassword}>Show Password</button>
         </label>
 
         <button onClick={RegisterUser}> submit</button>
