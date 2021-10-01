@@ -61,10 +61,10 @@ function LogIn() {
               onChange={handleChange}
             />
             <img
-                title={passwordShown ? "Hide" : "Show"}
-                src={passwordShown ? closedEye : openedEye}
-                onClick={togglePassword}
-              />
+              title={passwordShown ? "Hide" : "Show"}
+              src={passwordShown ? closedEye : openedEye}
+              onClick={togglePassword}
+            />
           </div>
         </label>
 
