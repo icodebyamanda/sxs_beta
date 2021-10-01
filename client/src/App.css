@@ -155,32 +155,17 @@ footer {
 }
 
 .pwd-container input {
-  /* padding: 5px 30px 5px 10px;
-  font-size: 20px; */
-  position: absolute;
+  width: 100%;
 }
 
 .pwd-container img {
   cursor: pointer;
-  position: relative;
+  position: absolute;
   width: 20px;
-  left: 350px;
-  top: 20px;
+  right: 10px;
+  top: 265px;
+  bottom: 260px;
 }
-
-/* input[type="password"],
-select {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: block;
-  border: 2px solid #00cc99;
-  border-radius: 10px;
-  box-sizing: border-box;
-  box-shadow: 0 0 15px 4px rgba(56, 56, 56, 0.06);
-  cursor: pointer;
-  line-height: 1.1;
-} */
 
 /* ! USER & ADMIN VIEWS */
 
@@ -432,6 +417,16 @@ select {
     border-top: 1px dotted #00cc99;
     margin-top: 5px;
     padding-top: 15px;
+  }
+
+  /* ! Useful Utilities */
+
+  .pwd-container img {
+    cursor: pointer;
+    position: absolute;
+    width: 20px;
+    right: 10px;
+    top: 255px;
   }
 
   /* ! - USER & ADMIN VIEWS - */
