@@ -1,7 +1,11 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import openedEye from '../assets/icons/openedEye.png';
+import closedEye from '../assets/icons/closedEye.png';
 import Footer from './Footer';
+
+
 
 export default function SignUp() {
 
@@ -83,7 +87,12 @@ export default function SignUp() {
           value={signUpDetails.password}
           onChange={handleChange}
           />
-          <button onClick={togglePassword}>Show Password</button>
+          <img
+            title={passwordShown ? "Hide" : "Show"}
+            src={passwordShown ? closedEye : openedEye}
+            onClick={togglePassword}
+          />
+          {/* <button onClick={togglePassword}>Show Password</button> */}
         </label>
 
         <button onClick={RegisterUser}> submit</button>
