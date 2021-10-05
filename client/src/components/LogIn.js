@@ -37,8 +37,15 @@ function LogIn() {
 
   return (
 
-    <div>
-
+    <div className="grid-container">
+      <header className="header"> 
+        <h1>Log in to get your day going</h1>
+      </header>
+      
+      <div className="left"></div>
+      
+      <div className="core">
+      
       <form>
         <div className="AdminForm">
           <label>
@@ -72,9 +79,11 @@ function LogIn() {
         <button type="button" onClick={logUserIn} className="SmallSubmitButton"> Log In</button>
 
         </form>
-
+        </div>
 
     <div><Footer /></div>
+
+    <div className="right"></div>
 
     </div>
 
