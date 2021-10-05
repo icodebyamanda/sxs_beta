@@ -39,7 +39,7 @@ function LogIn() {
 
     <div className="grid-container">
       <header className="header OverlapOnHeader"> 
-        <h3>Log in and get your day going</h3>
+        <h3 className="homepageText">Log in and enjoy the day</h3>
       </header>
       
       <div className="left"></div>

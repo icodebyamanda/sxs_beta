@@ -55,7 +55,16 @@ export default function SignUp() {
 
   return (
 
-    <div>
+    <div className="grid-container">
+
+      <header className="header OverlapOnHeader"> 
+        <h3 className="homepageText">Register and step into a positive routine</h3>
+      </header>
+
+      <div className="left"></div>
+
+      <div className="core adminCore">
+        <div className="userxCore">
 
       <form>
         <div className="AdminForm">
@@ -101,6 +110,8 @@ export default function SignUp() {
 
       </form>
 
+      </div>
+
       {confirmationMessage && (
         <div>
         <div> Thank you for signing up!</div>
@@ -109,6 +120,8 @@ export default function SignUp() {
       )}
 
       <div><Footer /></div>
+
+      </div>
 
     </div>
 

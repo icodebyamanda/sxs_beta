@@ -74,6 +74,7 @@ h2 {
 h3,
 h4 {
   line-height: 1.6;
+  font-weight: 700;
 }
 
 p {
@@ -180,12 +181,6 @@ footer {
   width: 100%;
   font-family: "Quicksand", sans-serif;
   color: #78244c;
-}
-
-.SmallerForm {
-  /* margin: 0 100px 0 100px; */
-  width: 50%;
-  margin-left: 25%;
 }
 
 /* ! USER & ADMIN VIEWS */
@@ -387,6 +382,11 @@ select {
     justify-content: space-evenly;
     padding: 40px 0 40px 0;
   }
+
+  .SmallerForm {
+    width: 50%;
+    margin-left: 25%;
+  }
 }
 
 @media only screen and (max-width: 550px) {
@@ -423,14 +423,14 @@ select {
     display: grid;
   }
 
-  /* form {
+  form {
     display: flex;
     flex-direction: column;
     padding: 10px;
     width: 100%;
     font-family: "Quicksand", sans-serif;
     color: #78244c;
-  } */
+  }
 
   footer {
     display: flex;
