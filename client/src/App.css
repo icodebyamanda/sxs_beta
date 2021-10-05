@@ -182,6 +182,12 @@ footer {
   color: #78244c;
 }
 
+.SmallerForm {
+  /* margin: 0 100px 0 100px; */
+  width: 50%;
+  margin-left: 25%;
+}
+
 /* ! USER & ADMIN VIEWS */
 
 .userxCore {
@@ -225,6 +231,12 @@ footer {
 .responseLink {
   padding: 2px 0 15px 0;
   font-size: 1.5em;
+}
+
+/* ! SIGN UP & LOG IN */
+
+.OverlapOnHeader {
+  margin-bottom: -30px;
 }
 
 /* ! HOMEPAGE */
@@ -411,14 +423,14 @@ select {
     display: grid;
   }
 
-  form {
+  /* form {
     display: flex;
     flex-direction: column;
     padding: 10px;
     width: 100%;
     font-family: "Quicksand", sans-serif;
     color: #78244c;
-  }
+  } */
 
   footer {
     display: flex;

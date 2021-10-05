@@ -38,58 +38,59 @@ function LogIn() {
   return (
 
     <div className="grid-container">
-      <header className="header"> 
-        <h1>Log in to get your day going</h1>
+      <header className="header OverlapOnHeader"> 
+        <h3>Log in and get your day going</h3>
       </header>
       
       <div className="left"></div>
-      
-      <div className="core">
-      
-      <form>
-        <div className="AdminForm">
-          <label>
-            <div className="formTitle">Email</div>
-            <input
-              type="text"
-              name="email"
-              value={loginDetails.email}
-              onChange={handleChange}
-            />
-          </label>
 
-          <label>
-            <div className="formTitle">Password</div>
-            <div className="pwd-container">
+      <div className="core adminCore">
+        <div className="userxCore">
+      
+          <form className="AdminForm SmallerForm">
+
+            <label>
+              <div className="formTitle">Email</div>
               <input
-                type={passwordShown ? "text" : "password"}
-                name="password"
-                value={loginDetails.password}
+                type="text"
+                name="email"
+                value={loginDetails.email}
                 onChange={handleChange}
               />
-              <img
-                title={passwordShown ? "Hide" : "Show"}
-                src={passwordShown ? closedEye : openedEye}
-                onClick={togglePassword}
-              />
-            </div>
-          </label>
+            </label>
+
+            <label>
+              <div className="formTitle">Password</div>
+                <div className="pwd-container">
+                  <input
+                    type={passwordShown ? "text" : "password"}
+                    name="password"
+                    value={loginDetails.password}
+                    onChange={handleChange}
+                  />
+                  <img
+                    title={passwordShown ? "Hide" : "Show"}
+                    src={passwordShown ? closedEye : openedEye}
+                    onClick={togglePassword}
+                  />
+              </div>
+            </label>
+
+            <button type="button" onClick={logUserIn} className="SmallSubmitButton"> Log In</button>
+
+          </form>
+
         </div>
-        
-        <button type="button" onClick={logUserIn} className="SmallSubmitButton"> Log In</button>
 
-        </form>
-        </div>
+        <div><Footer /></div>
 
-    <div><Footer /></div>
+      </div>
 
-    <div className="right"></div>
+      <div className="right"></div>
 
     </div>
 
   );
-
-
 }
 
 export default LogIn;

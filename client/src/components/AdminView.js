@@ -98,7 +98,7 @@ export default function AdminView() {
         <h1>Step By Step</h1>
         <h2 id="adminSubheading">
           Got inspired?
-          </h2>      
+        </h2>      
       </header>
 
       <div className="left"></div>
