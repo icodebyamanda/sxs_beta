@@ -66,8 +66,8 @@ export default function SignUp() {
       <div className="core adminCore">
         <div className="userxCore">
 
-      <form>
-        <div className="AdminForm">
+      <form className="AdminForm SmallerForm">
+
           <label>
             <div className="formTitle">Email</div>
             <input
@@ -104,7 +104,6 @@ export default function SignUp() {
               />
             </div>
           </label>
-        </div>
         
         <button onClick={RegisterUser} className="SmallSubmitButton"> Submit</button>
 
@@ -114,14 +113,16 @@ export default function SignUp() {
 
       {confirmationMessage && (
         <div>
-        <div> Thank you for signing up!</div>
-        <div> Please <span><Link to='/Login'> log in </Link></span> to access your personal space </div>
+        <p className="spanHomepage"> Thank you for signing up!</p>
+        <p> Please <p><Link to='/Login'> log in </Link></p> to access your personal space </p>
         </div>
       )}
 
       <div><Footer /></div>
 
       </div>
+
+      <div className="right"></div>
 
     </div>
 
