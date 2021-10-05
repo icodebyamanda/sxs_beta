@@ -104,7 +104,7 @@ export default function AdminView() {
       <div className="left"></div>
 
         <div className="core adminCore">
-        <div className="userxCore">
+          <div className="userxCore">
 
             <form onSubmit={handleSubmit} className="AdminForm">
 

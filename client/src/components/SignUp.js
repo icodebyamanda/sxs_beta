@@ -32,6 +32,16 @@ export default function SignUp() {
     setPasswordShown(!passwordShown);
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    RegisterUser();
+  }
+
+
+  const displayConfirmationMessage = () => {
+    setConfirmation(true);
+  };
+
   const clearForm = () => {
     setSignUp({
       email: '',
@@ -40,9 +50,6 @@ export default function SignUp() {
     });
   };
 
-  const displayConfirmationMessage = () => {
-    setConfirmation(true);
-  };
 
   const RegisterUser = () => {
     axios.post('/users/register', signUpDetails)
@@ -51,6 +58,8 @@ export default function SignUp() {
     .then(() => displayConfirmationMessage())
     .catch((error) => { return error});
   };
+
+
 
 
   return (
@@ -66,7 +75,7 @@ export default function SignUp() {
       <div className="core adminCore">
         <div className="userxCore">
 
-      <form className="AdminForm SmallerForm">
+      <form onSubmit={handleSubmit} className="AdminForm SmallerForm">
 
           <label>
             <div className="formTitle">Email</div>
@@ -104,8 +113,10 @@ export default function SignUp() {
               />
             </div>
           </label>
-        
-        <button onClick={RegisterUser} className="SmallSubmitButton"> Submit</button>
+
+        <label>
+          <input type="submit" value="Submit" className="SmallSubmitButton" />
+        </label>
 
       </form>
 
@@ -113,8 +124,8 @@ export default function SignUp() {
 
       {confirmationMessage && (
         <div>
-        <p className="spanHomepage"> Thank you for signing up!</p>
-        <p> Please <p><Link to='/Login'> log in </Link></p> to access your personal space </p>
+        <div className="spanHomepage"> Thank you for signing up!</div>
+        <div className="inlineSpacing"> Please <span className="spanHomepage"><Link to='/Login'> log in </Link></span> to access your personal space </div>
         </div>
       )}
 
