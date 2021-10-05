@@ -5,8 +5,6 @@ import openedEye from '../assets/icons/openedEye.png';
 import closedEye from '../assets/icons/closedEye.png';
 import Footer from './Footer';
 
-
-
 export default function SignUp() {
 
   const [signUpDetails, setSignUp] = useState({
@@ -37,7 +35,6 @@ export default function SignUp() {
     RegisterUser();
   }
 
-
   const displayConfirmationMessage = () => {
     setConfirmation(true);
   };
@@ -50,7 +47,6 @@ export default function SignUp() {
     });
   };
 
-
   const RegisterUser = () => {
     axios.post('/users/register', signUpDetails)
     .then(() => setSignUp(signUpDetails))
@@ -58,8 +54,6 @@ export default function SignUp() {
     .then(() => displayConfirmationMessage())
     .catch((error) => { return error});
   };
-
-
 
 
   return (
@@ -75,61 +69,64 @@ export default function SignUp() {
       <div className="core adminCore">
         <div className="userxCore">
 
-      <form onSubmit={handleSubmit} className="AdminForm SmallerForm">
+          <form onSubmit={handleSubmit} className="AdminForm SmallerForm">
 
-          <label>
-            <div className="formTitle">Email</div>
-            <input
-            type="text"
-            name="email"
-            value={signUpDetails.email}
-            onChange={handleChange}
-            />
-          </label>
-
-          <label>
-            <div className="formTitle">Username</div>
-            <input
-            type="text"
-            name="username"
-            value={signUpDetails.username}
-            onChange={handleChange}
-            />
-          </label>
-
-          <label>
-            <div className="formTitle">Password</div>
-            <div className="pwd-container">
+            <label>
+              <div className="formTitle">Email</div>
               <input
-              type={passwordShown ? "text" : "password"}
-              name="password"
-              value={signUpDetails.password}
-              onChange={handleChange}
+                className="enteredValues"
+                type="text"
+                name="email"
+                value={signUpDetails.email}
+                onChange={handleChange}
               />
-              <img
-                title={passwordShown ? "Hide" : "Show"}
-                src={passwordShown ? closedEye : openedEye}
-                onClick={togglePassword}
+            </label>
+
+            <label>
+              <div className="formTitle">Username</div>
+              <input
+                className="enteredValues"
+                type="text"
+                name="username"
+                value={signUpDetails.username}
+                onChange={handleChange}
               />
-            </div>
-          </label>
+            </label>
 
-        <label>
-          <input type="submit" value="Submit" className="SmallSubmitButton" />
-        </label>
+            <label>
+              <div className="formTitle">Password</div>
+              <div className="pwd-container">
+                <input
+                  className="enteredValues"
+                  type={passwordShown ? "text" : "password"}
+                  name="password"
+                  value={signUpDetails.password}
+                  onChange={handleChange}
+                />
+                <img
+                  title={passwordShown ? "Hide" : "Show"}
+                  src={passwordShown ? closedEye : openedEye}
+                  onClick={togglePassword}
+                />
+              </div>
+            </label>
 
-      </form>
+            <label>
+              <input type="submit" value="Submit" className="SmallSubmitButton widthHundred" />
+            </label>
 
-      </div>
+          </form>
 
-      {confirmationMessage && (
-        <div className="inlineSpacing lineHeight">
-        <div className="spanHomepage"> Thank you for signing up!</div>
-        <div className="inlineSpacing"> Please <span className="spanHomepage"><Link to='/Login'> log in </Link></span> to access your personal space </div>
         </div>
-      )}
 
-      <div><Footer /></div>
+        {confirmationMessage && (
+          <div className="inlineSpacing lineHeight">
+            <div className="spanHomepage"> Thank you for signing up!</div>
+            <div className="inlineSpacing"> Please <span className="spanHomepage"><Link to='/Login'> log in </Link></span> to access your personal space </div>
+          </div>
+        )}
+
+        <div><Footer /></div>
 
       </div>
 

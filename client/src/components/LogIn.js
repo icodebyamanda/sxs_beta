@@ -52,6 +52,7 @@ function LogIn() {
             <label>
               <div className="formTitle">Email</div>
               <input
+                className="enteredValues"
                 type="text"
                 name="email"
                 value={loginDetails.email}
@@ -63,6 +64,7 @@ function LogIn() {
               <div className="formTitle">Password</div>
                 <div className="pwd-container">
                   <input
+                    className="enteredValues"
                     type={passwordShown ? "text" : "password"}
                     name="password"
                     value={loginDetails.password}
