@@ -123,7 +123,7 @@ export default function SignUp() {
       </div>
 
       {confirmationMessage && (
-        <div>
+        <div className="inlineSpacing lineHeight">
         <div className="spanHomepage"> Thank you for signing up!</div>
         <div className="inlineSpacing"> Please <span className="spanHomepage"><Link to='/Login'> log in </Link></span> to access your personal space </div>
         </div>
