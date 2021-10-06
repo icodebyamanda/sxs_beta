@@ -31,7 +31,7 @@ export default function UserName() {
 
   return (
     <div>
-      <h2 id="HomepageSubheading">Welcome {userName.username} !</h2>
+      <div> {userName.username}</div>
     </div>
   )
 }
