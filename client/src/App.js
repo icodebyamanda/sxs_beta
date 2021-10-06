@@ -9,8 +9,6 @@ import HelloWorld from "./components/HelloWorld";
 import Navigation from "./components/Navigation";
 import LogSignNavBar from "./components/LogSignNavBar";
 
-import UserName from "./components/UserName";
-
 import { BrowserRouter } from "react-router-dom";
 import { BrowserRouter as Router, Switch, Route, Link, useParams, useHistory } from "react-router-dom";
 
@@ -36,8 +34,7 @@ function App() {
           <LogSignNavBar />
           <Navigation />
             
-          <Switch>
-          <Route path="/pro" component={UserName} /> 
+          <Switch> 
             <Route path="/home" component={Homepage} /> 
             <Route path="/admin" component={AdminView} /> 
             <Route path="/user" component={UserView} />
