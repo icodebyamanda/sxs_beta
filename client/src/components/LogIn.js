@@ -26,6 +26,7 @@ function LogIn() {
     setPasswordShown(!passwordShown);
   };
 
+
   const logUserIn = () => {
 
     // full request went to useProvideAuth.js file, here using a modular function keeping context
