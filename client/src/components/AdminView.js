@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
 import backgroundAdmin from "../assets/headers/adminHeader.png"
+import UserName from "./UserName";
 import Footer from './Footer';
 
 export default function AdminView() {
@@ -97,7 +98,7 @@ export default function AdminView() {
       >
         <h1>Step By Step</h1>
         <h2 id="adminSubheading">
-          Got inspired?
+          Got inspired <UserName /> ?
         </h2>      
       </header>
 

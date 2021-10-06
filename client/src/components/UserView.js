@@ -3,7 +3,7 @@ import axios from "axios";
 //import useAuth from '../hooks/useAuth';
 import { useHistory } from "react-router-dom";
 import backgroundUser from "../assets/headers/userHeader2.png"
-//import Headers from "./components/Headers";
+import UserName from "./UserName";
 import Footer from './Footer';
 
 
@@ -56,7 +56,7 @@ export default function UserView() {
       >
           <h1> Step By Step </h1> 
           <h2>
-          How do you feel today?
+          How do you feel today <UserName />?
           </h2>        
       </header>
 

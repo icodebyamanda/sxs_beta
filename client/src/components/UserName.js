@@ -15,6 +15,7 @@ export default function UserName() {
 			history.push("/login");
 		}
 		console.log(token);
+
     getUserName();
 	}, []);
 
@@ -30,8 +31,6 @@ export default function UserName() {
   };
 
   return (
-    <div>
-      <div> {userName.username}</div>
-    </div>
+    <div><span>{userName.username}</span></div>
   )
 }
