@@ -1,4 +1,4 @@
-import React, { useEffect, useState }  from "react";
+import React from "react";
 import './App.css';
 import AdminView from "./components/AdminView";
 import UserView from "./components/UserView";
@@ -10,7 +10,7 @@ import Navigation from "./components/Navigation";
 import LogSignNavBar from "./components/LogSignNavBar";
 
 import { BrowserRouter } from "react-router-dom";
-import { BrowserRouter as Router, Switch, Route, Link, useParams, useHistory } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
 
 import ProvideAuth from './components/ProvideAuth'; // all route use authentication context
 import PrivateRoute from './components/PrivateRoute';
