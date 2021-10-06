@@ -31,6 +31,6 @@ export default function UserName() {
   };
 
   return (
-    <div><span>{userName.username}</span></div>
+    <div className="NoLineBreaks">{userName.username}</div>
   )
 }

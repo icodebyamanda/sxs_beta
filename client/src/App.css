@@ -145,6 +145,12 @@ footer {
   width: 100%;
 }
 
+.NoLineBreaks {
+  text-overflow: ellipsis;
+  display: inline-block;
+  white-space: nowrap;
+}
+
 .no-bullet {
   list-style: none;
 }

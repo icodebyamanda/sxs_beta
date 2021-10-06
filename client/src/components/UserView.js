@@ -56,7 +56,7 @@ export default function UserView() {
       >
           <h1> Step By Step </h1> 
           <h2>
-          How do you feel today <UserName />?
+          How do you feel today <UserName /> ?
           </h2>        
       </header>
 
